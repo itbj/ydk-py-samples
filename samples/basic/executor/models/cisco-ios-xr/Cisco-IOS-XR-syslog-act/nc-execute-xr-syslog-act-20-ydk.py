@@ -79,6 +79,5 @@ if __name__ == "__main__":
     # execute RPC on NETCONF device
     executor.execute_rpc(provider, logmsg_rpc)
 
-    provider.close()
     exit()
 # End of script

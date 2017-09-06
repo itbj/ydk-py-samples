@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # ospf = crud.read(provider, ospf)
     process_ospf(ospf)  # process object data
 
-    provider.close()
     exit()
 # End of script

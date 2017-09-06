@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # mpls_oam = crud.read(provider, mpls_oam)
     process_mpls_oam(mpls_oam)  # process object data
 
-    provider.close()
     exit()
 # End of script

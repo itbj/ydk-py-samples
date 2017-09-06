@@ -72,6 +72,5 @@ if __name__ == "__main__":
     # delete configuration on NETCONF device
     # crud.delete(provider, mac_sec_keychains)
 
-    provider.close()
     exit()
 # End of script

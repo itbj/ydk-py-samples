@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # routing_policy = crud.read(provider, routing_policy)
     process_routing_policy(routing_policy)  # process object data
 
-    provider.close()
     exit()
 # End of script

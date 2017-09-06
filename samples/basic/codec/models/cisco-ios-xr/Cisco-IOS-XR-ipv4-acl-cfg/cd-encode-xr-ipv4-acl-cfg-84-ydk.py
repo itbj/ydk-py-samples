@@ -99,6 +99,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, ipv4_acl_and_prefix_list))
 
-    provider.close()
     exit()
 # End of script

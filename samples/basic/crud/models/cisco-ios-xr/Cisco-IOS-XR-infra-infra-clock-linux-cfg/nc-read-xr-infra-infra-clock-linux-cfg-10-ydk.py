@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # clock = crud.read(provider, clock)
     process_clock(clock)  # process object data
 
-    provider.close()
     exit()
 # End of script

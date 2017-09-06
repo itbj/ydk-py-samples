@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # telemetry_model_driven = crud.read(provider, telemetry_model_driven)
     process_telemetry_model_driven(telemetry_model_driven)  # process object data
 
-    provider.close()
     exit()
 # End of script

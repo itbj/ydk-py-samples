@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # execute RPC on NETCONF device
     # executor.execute_rpc(provider, entity_fru_fan_tray_inserted_rpc)
 
-    provider.close()
     exit()
 # End of script

@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # vrfs = crud.read(provider, vrfs)
     process_vrfs(vrfs)  # process object data
 
-    provider.close()
     exit()
 # End of script

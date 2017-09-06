@@ -105,6 +105,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, ipv4_acl_and_prefix_list)
 
-    provider.close()
     exit()
 # End of script

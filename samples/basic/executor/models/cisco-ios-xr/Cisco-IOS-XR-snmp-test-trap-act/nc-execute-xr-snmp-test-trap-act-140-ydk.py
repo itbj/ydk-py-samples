@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # execute RPC on NETCONF device
     # executor.execute_rpc(provider, routing_mpls_tunnel_re_optimized_rpc)
 
-    provider.close()
     exit()
 # End of script

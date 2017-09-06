@@ -89,6 +89,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, ntp)
 
-    provider.close()
     exit()
 # End of script

@@ -103,6 +103,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, syslog))
 
-    provider.close()
     exit()
 # End of script

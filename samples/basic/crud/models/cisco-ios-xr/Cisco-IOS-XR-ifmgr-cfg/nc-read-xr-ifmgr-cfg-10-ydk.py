@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # global_interface_configuration = crud.read(provider, global_interface_configuration)
     process_global_interface_configuration(global_interface_configuration)  # process object data
 
-    provider.close()
     exit()
 # End of script

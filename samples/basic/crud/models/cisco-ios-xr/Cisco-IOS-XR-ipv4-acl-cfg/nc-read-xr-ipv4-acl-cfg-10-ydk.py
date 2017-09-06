@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # ipv4_acl_and_prefix_list = crud.read(provider, ipv4_acl_and_prefix_list)
     process_ipv4_acl_and_prefix_list(ipv4_acl_and_prefix_list)  # process object data
 
-    provider.close()
     exit()
 # End of script

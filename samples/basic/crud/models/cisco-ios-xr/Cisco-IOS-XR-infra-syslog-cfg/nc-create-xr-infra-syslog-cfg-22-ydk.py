@@ -79,6 +79,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, syslog_service)
 
-    provider.close()
     exit()
 # End of script

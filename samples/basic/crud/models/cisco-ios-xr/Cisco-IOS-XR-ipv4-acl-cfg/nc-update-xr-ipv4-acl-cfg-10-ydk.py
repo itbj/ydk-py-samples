@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # update configuration on NETCONF device
     # crud.update(provider, ipv4_acl_and_prefix_list)
 
-    provider.close()
     exit()
 # End of script

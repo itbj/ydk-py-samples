@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # isis = crud.read(provider, isis)
     process_isis(isis)  # process object data
 
-    provider.close()
     exit()
 # End of script

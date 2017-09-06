@@ -110,6 +110,5 @@ if __name__ == "__main__":
     ping_rpc.output = executor.execute_rpc(provider, ping_rpc)
     print(process_ping_rpc(ping_rpc))
 
-    provider.close()
     exit()
 # End of script

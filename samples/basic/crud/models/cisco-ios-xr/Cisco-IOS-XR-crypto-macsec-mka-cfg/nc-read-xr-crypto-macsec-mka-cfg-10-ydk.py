@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # macsec = crud.read(provider, macsec)
     process_macsec(macsec)  # process object data
 
-    provider.close()
     exit()
 # End of script

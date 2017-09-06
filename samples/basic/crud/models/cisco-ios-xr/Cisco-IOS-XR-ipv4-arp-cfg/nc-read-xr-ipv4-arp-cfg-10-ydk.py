@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # arp = crud.read(provider, arp)
     process_arp(arp)  # process object data
 
-    provider.close()
     exit()
 # End of script

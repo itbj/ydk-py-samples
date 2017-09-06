@@ -82,6 +82,5 @@ if __name__ == "__main__":
     # delete configuration on NETCONF device
     crud.delete(provider,
                 router_static.default_vrf.address_family.vrfipv4.vrf_unicast.vrf_prefixes.vrf_prefix[0])
-    provider.close()
     exit()
 # End of script

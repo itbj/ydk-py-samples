@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # router_static = crud.read(provider, router_static)
     process_router_static(router_static)  # process object data
 
-    provider.close()
     exit()
 # End of script

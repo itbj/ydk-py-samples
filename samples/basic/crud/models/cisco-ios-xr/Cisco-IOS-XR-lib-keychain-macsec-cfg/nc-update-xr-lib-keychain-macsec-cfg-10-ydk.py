@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # update configuration on NETCONF device
     # crud.update(provider, mac_sec_keychains)
 
-    provider.close()
     exit()
 # End of script

@@ -84,6 +84,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, mac_sec_keychains))
 
-    provider.close()
     exit()
 # End of script

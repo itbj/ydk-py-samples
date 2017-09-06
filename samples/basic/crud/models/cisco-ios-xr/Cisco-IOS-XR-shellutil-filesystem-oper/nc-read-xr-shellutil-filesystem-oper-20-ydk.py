@@ -107,6 +107,5 @@ if __name__ == "__main__":
     file_system = crud.read(provider, file_system)
     print(process_file_system(file_system))  # process object data
 
-    provider.close()
     exit()
 # End of script

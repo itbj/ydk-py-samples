@@ -81,6 +81,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, grpc)
 
-    provider.close()
     exit()
 # End of script

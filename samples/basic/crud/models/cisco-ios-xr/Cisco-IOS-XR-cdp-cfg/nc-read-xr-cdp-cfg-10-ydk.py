@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # cdp = crud.read(provider, cdp)
     process_cdp(cdp)  # process object data
 
-    provider.close()
     exit()
 # End of script

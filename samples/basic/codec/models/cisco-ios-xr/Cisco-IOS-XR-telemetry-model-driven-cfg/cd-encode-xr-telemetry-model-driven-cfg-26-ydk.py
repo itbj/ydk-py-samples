@@ -116,6 +116,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, telemetry_model_driven))
 
-    provider.close()
     exit()
 # End of script

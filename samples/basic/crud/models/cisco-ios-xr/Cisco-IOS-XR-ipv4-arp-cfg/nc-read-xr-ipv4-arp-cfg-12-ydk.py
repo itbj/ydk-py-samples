@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # arp_redundancy = crud.read(provider, arp_redundancy)
     process_arp_redundancy(arp_redundancy)  # process object data
 
-    provider.close()
     exit()
 # End of script

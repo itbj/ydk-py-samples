@@ -72,6 +72,5 @@ if __name__ == "__main__":
     crud.delete(provider,
                 router_static.default_vrf.address_family.vrfipv4.vrf_unicast)
 
-    provider.close()
     exit()
 # End of script
