@@ -65,7 +65,7 @@ def config_isis(isis):
     propagation.route_policy_name = "LOOPBACKS"
     af.af_data.propagations.propagation.append(propagation)
     # segment routing
-    mpls = xr_clns_isis_cfg.IsisLabelPreferenceEnum.LDP
+    mpls = xr_clns_isis_cfg.IsisLabelPreferenceEnum.ldp
     af.af_data.segment_routing.mpls = mpls
     af.af_data.segment_routing.prefix_sid_map.receive = True
     af.af_data.segment_routing.prefix_sid_map.advertise_local = Empty()
