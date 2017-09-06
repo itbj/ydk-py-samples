@@ -44,8 +44,8 @@ def config_bgp(bgp):
     # global configuration
     bgp.global_.config.as_ = 65001
     afi_safi = bgp.global_.afi_safis.AfiSafi()
-    afi_safi.afi_safi_name = oc_bgp_types.Ipv6UnicastIdentity()
-    afi_safi.config.afi_safi_name = oc_bgp_types.Ipv6UnicastIdentity()
+    afi_safi.afi_safi_name = oc_bgp_types.Ipv6Unicast()
+    afi_safi.config.afi_safi_name = oc_bgp_types.Ipv6Unicast()
     afi_safi.config.enabled = True
     bgp.global_.afi_safis.afi_safi.append(afi_safi)
 
@@ -56,8 +56,8 @@ def config_bgp(bgp):
     peer_group.config.peer_as = 65001
     peer_group.transport.config.local_address = "Loopback0"
     afi_safi = peer_group.afi_safis.AfiSafi()
-    afi_safi.afi_safi_name = oc_bgp_types.Ipv6UnicastIdentity()
-    afi_safi.config.afi_safi_name = oc_bgp_types.Ipv6UnicastIdentity()
+    afi_safi.afi_safi_name = oc_bgp_types.Ipv6Unicast()
+    afi_safi.config.afi_safi_name = oc_bgp_types.Ipv6Unicast()
     afi_safi.config.enabled = True
     afi_safi.apply_policy.config.export_policy.append("POLICY2")
     peer_group.afi_safis.afi_safi.append(afi_safi)

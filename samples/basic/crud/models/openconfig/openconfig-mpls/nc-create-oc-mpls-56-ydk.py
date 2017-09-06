@@ -47,13 +47,13 @@ def config_mpls(mpls):
     tunnel.config.name = "LER1-LER2-t56"
     tunnel.config.setup_priority = 5
     tunnel.config.hold_priority = 5
-    tunnel.config.type = oc_mpls_types.P2PIdentity()
-    tunnel.type = oc_mpls_types.P2PIdentity()
+    tunnel.config.type = oc_mpls_types.P2P()
+    tunnel.type = oc_mpls_types.P2P()
     p2p_primary_paths = tunnel.p2p_tunnel_attributes.P2PPrimaryPaths()
     p2p_primary_paths.name = "DYNAMIC"
     p2p_primary_paths.config.name = "DYNAMIC"
     p2p_primary_paths.config.preference = 10
-    path_computation_method = oc_mpls.LocallyComputedIdentity()
+    path_computation_method = oc_mpls.LocallyComputed()
     p2p_primary_paths.config.path_computation_method = path_computation_method
     p2p_primary_paths.admin_groups.config.exclude_group.append("RED")
     tunnel.p2p_tunnel_attributes.p2p_primary_paths.append(p2p_primary_paths)
