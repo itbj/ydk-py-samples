@@ -44,16 +44,16 @@ def config_arpgmp(arpgmp):
     entry = vrf.entries.Entry()
     entry.address = "172.16.0.1"
     entry.mac_address = "52:54:00:28:89:88"
-    entry.encapsulation = xr_ipv4_arp_cfg.ArpEncapEnum.arpa
-    entry.entry_type = xr_ipv4_arp_cfg.ArpEntryEnum.static
+    entry.encapsulation = xr_ipv4_arp_cfg.ArpEncap.arpa
+    entry.entry_type = xr_ipv4_arp_cfg.ArpEntry.static
     vrf.entries.entry.append(entry)
 
     # arp entry for 172.16.0.4
     entry = vrf.entries.Entry()
     entry.address = "172.16.0.4"
     entry.mac_address = "52:54:00:7d:8f:8f"
-    entry.encapsulation = xr_ipv4_arp_cfg.ArpEncapEnum.arpa
-    entry.entry_type = xr_ipv4_arp_cfg.ArpEntryEnum.static
+    entry.encapsulation = xr_ipv4_arp_cfg.ArpEncap.arpa
+    entry.entry_type = xr_ipv4_arp_cfg.ArpEntry.static
     vrf.entries.entry.append(entry)
     arpgmp.vrf.append(vrf)
 

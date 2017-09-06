@@ -55,42 +55,42 @@ def config_ipv4_acl_and_prefix_list(ipv4_acl_and_prefix_list):
     # access-list with sequence number 20
     access_list_entry = access.access_list_entries.AccessListEntry()
     access_list_entry.sequence_number = 20
-    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnumEnum.deny
+    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnum.deny
     access_list_entry.source_network.source_address = "173.31.1.0"
     access_list_entry.source_network.source_prefix_length = 24
     access_list_entry.destination_network.destination_address = "172.16.0.0"
     access_list_entry.destination_network.destination_prefix_length = 16
-    access_list_entry.log_option = xr_ipv4_acl_datatypes.Ipv4AclLoggingEnumEnum.log_input
+    access_list_entry.log_option = xr_ipv4_acl_datatypes.Ipv4AclLoggingEnum.log_input
     access.access_list_entries.access_list_entry.append(access_list_entry)
     
     # access-list with sequence number 30
     access_list_entry = access.access_list_entries.AccessListEntry()
     access_list_entry.sequence_number = 30
-    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnumEnum.deny
+    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnum.deny
     access_list_entry.source_network.source_address = "172.31.2.0"
     access_list_entry.source_network.source_prefix_length = 24
     access_list_entry.destination_network.destination_address= "172.16.0.0"
     access_list_entry.destination_network.destination_prefix_length = 16
-    access_list_entry.log_option = xr_ipv4_acl_datatypes.Ipv4AclLoggingEnumEnum.log_input
-    access_list_entry.dscp.dscp_min = xr_ipv4_acl_datatypes.Ipv4AclDscpNumberEnum.ef
+    access_list_entry.log_option = xr_ipv4_acl_datatypes.Ipv4AclLoggingEnum.log_input
+    access_list_entry.dscp.dscp_min = xr_ipv4_acl_datatypes.Ipv4AclDscpNumber.ef
     access.access_list_entries.access_list_entry.append(access_list_entry)
 
     # access-list with sequence number 40
     access_list_entry = access.access_list_entries.AccessListEntry()
     access_list_entry.sequence_number = 40
-    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnumEnum.deny
+    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnum.deny
     access_list_entry.source_network.source_address = "172.31.3.0"
     access_list_entry.source_network.source_prefix_length = 24
     access_list_entry.destination_network.destination_address = "172.16.0.0"
     access_list_entry.destination_network.destination_prefix_length = 16
-    access_list_entry.log_option = xr_ipv4_acl_datatypes.Ipv4AclLoggingEnumEnum.log_input
+    access_list_entry.log_option = xr_ipv4_acl_datatypes.Ipv4AclLoggingEnum.log_input
     access_list_entry.counter_name = "ACL3-COUNTER"
     access.access_list_entries.access_list_entry.append(access_list_entry)
 
     # access-list with sequence number 50
     access_list_entry = access.access_list_entries.AccessListEntry()
     access_list_entry.sequence_number = 50
-    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnumEnum.permit
+    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnum.permit
     access.access_list_entries.access_list_entry.append(access_list_entry)
     ipv4_acl_and_prefix_list.accesses.access.append(access) 
 

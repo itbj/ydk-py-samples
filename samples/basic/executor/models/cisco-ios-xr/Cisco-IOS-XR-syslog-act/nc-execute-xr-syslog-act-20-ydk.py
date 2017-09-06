@@ -42,7 +42,7 @@ import logging
 def prepare_logmsg_rpc(logmsg_rpc):
     """Add RPC input data to logmsg_rpc object."""
     logmsg_rpc.input.message = "A custom informational message"
-    logmsg_rpc.input.severity = ietf_syslog_types.SeverityEnum.info
+    logmsg_rpc.input.severity = ietf_syslog_types.Severity.info
 
 if __name__ == "__main__":
     """Execute main program."""

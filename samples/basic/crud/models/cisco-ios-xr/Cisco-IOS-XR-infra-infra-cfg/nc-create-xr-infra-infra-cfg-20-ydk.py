@@ -41,7 +41,7 @@ import logging
 def config_banners(banners):
     """Add config data to banners object."""
     banner = banners.Banner()
-    banner.banner_name = xr_infra_infra_cfg.BannerEnum.exec_
+    banner.banner_name = xr_infra_infra_cfg.Banner.exec_
     banner.banner_text = ";\n" \
                          "----------------------\n" \
                          " EXEC process created\n" \

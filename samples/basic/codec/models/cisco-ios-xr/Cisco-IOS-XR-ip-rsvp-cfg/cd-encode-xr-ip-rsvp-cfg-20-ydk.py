@@ -43,9 +43,9 @@ def config_rsvp(rsvp):
     interface.name = "GigabitEthernet0/0/0/0"
     interface.enable = Empty()
     interface.bandwidth.rdm.bc0_bandwidth = 100
-    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdmEnum.not_specified
-    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0Enum.not_specified
-    interface.bandwidth.rdm.bandwidth_mode = xr_ip_rsvp_cfg.RsvpBwCfgEnum.percentage
+    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdm.not_specified
+    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0.not_specified
+    interface.bandwidth.rdm.bandwidth_mode = xr_ip_rsvp_cfg.RsvpBwCfg.percentage
     rsvp.interfaces.interface.append(interface)
 
     # RSVP interface gig0/0/0/1
@@ -53,9 +53,9 @@ def config_rsvp(rsvp):
     interface.name = "GigabitEthernet0/0/0/1"
     interface.enable = Empty()
     interface.bandwidth.rdm.bc0_bandwidth = 100
-    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdmEnum.not_specified
-    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0Enum.not_specified
-    interface.bandwidth.rdm.bandwidth_mode = xr_ip_rsvp_cfg.RsvpBwCfgEnum.percentage
+    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdm.not_specified
+    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0.not_specified
+    interface.bandwidth.rdm.bandwidth_mode = xr_ip_rsvp_cfg.RsvpBwCfg.percentage
     rsvp.interfaces.interface.append(interface)
 
 

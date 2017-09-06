@@ -42,11 +42,11 @@ import logging
 def config_syslog(syslog):
     """Add config data to syslog object."""
     #ipv4 TOS bit
-    syslog.ipv4.tos.type = xr_infra_syslog_cfg.LoggingTosEnum.dscp
-    syslog.ipv4.tos.dscp = xr_infra_syslog_cfg.LoggingDscpValueEnum.cs2
+    syslog.ipv4.tos.type = xr_infra_syslog_cfg.LoggingTos.dscp
+    syslog.ipv4.tos.dscp = xr_infra_syslog_cfg.LoggingDscpValue.cs2
 
     #Facility
-    syslog.logging_facilities.facility_level = xr_infra_syslog_cfg.FacilityEnum.local0
+    syslog.logging_facilities.facility_level = xr_infra_syslog_cfg.Facility.local0
 
     #Hostserver
     vrf = syslog.host_server.vrfs.Vrf()

@@ -43,7 +43,7 @@ def config_ntp(ntp):
     peer_ipv6 = peer_vrf.peer_ipv6s.PeerIpv6()
     peer_ipv6.address_ipv6 = "2001:db8::a:1"
     peer_type_ipv6 = peer_ipv6.PeerTypeIpv6()
-    peer_type_ipv6.peer_type = xr_ip_ntp_cfg.NtpPeerEnum.server
+    peer_type_ipv6.peer_type = xr_ip_ntp_cfg.NtpPeer.server
     peer_type_ipv6.source_interface = "Loopback0"
     peer_ipv6.peer_type_ipv6.append(peer_type_ipv6)
     peer_vrf.peer_ipv6s.peer_ipv6.append(peer_ipv6)

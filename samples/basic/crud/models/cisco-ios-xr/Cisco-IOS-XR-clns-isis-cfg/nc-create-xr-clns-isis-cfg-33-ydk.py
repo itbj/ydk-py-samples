@@ -53,18 +53,18 @@ def config_isis(isis):
     isis.instances.instance.append(instance)
     # global address family
     af = instance.afs.Af()
-    af.af_name = xr_clns_isis_datatypes.IsisAddressFamilyEnum.ipv6
-    af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamilyEnum.unicast
+    af.af_name = xr_clns_isis_datatypes.IsisAddressFamily.ipv6
+    af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamily.unicast
     af.af_data = af.AfData()
     metric_style = af.af_data.metric_styles.MetricStyle()
-    metric_style.style = xr_clns_isis_cfg.IsisMetricStyleEnum.new_metric_style
-    metric_style.level = xr_clns_isis_datatypes.IsisInternalLevelEnum.not_set
-    transition_state = xr_clns_isis_cfg.IsisMetricStyleTransitionEnum.disabled
+    metric_style.style = xr_clns_isis_cfg.IsisMetricStyle.new_metric_style
+    metric_style.level = xr_clns_isis_datatypes.IsisInternalLevel.not_set
+    transition_state = xr_clns_isis_cfg.IsisMetricStyleTransition.disabled
     metric_style.transition_state = transition_state
     af.af_data.metric_styles.metric_style.append(metric_style)
     propagation = af.af_data.propagations.Propagation()
-    propagation.source_level = xr_clns_isis_datatypes.IsisInternalLevelEnum.level2
-    propagation.destination_level = xr_clns_isis_datatypes.IsisInternalLevelEnum.level1
+    propagation.source_level = xr_clns_isis_datatypes.IsisInternalLevel.level2
+    propagation.destination_level = xr_clns_isis_datatypes.IsisInternalLevel.level1
     propagation.route_policy_name = "LOOPBACKS"
     af.af_data.propagations.propagation.append(propagation)
     instance.afs.af.append(af)
@@ -73,11 +73,11 @@ def config_isis(isis):
     interface = instance.interfaces.Interface()
     interface.interface_name = "Loopback0"
     interface.running = Empty()
-    interface.state = xr_clns_isis_cfg.IsisInterfaceStateEnum.passive
+    interface.state = xr_clns_isis_cfg.IsisInterfaceState.passive
     # interface address family
     interface_af = interface.interface_afs.InterfaceAf()
-    interface_af.af_name = xr_clns_isis_datatypes.IsisAddressFamilyEnum.ipv6
-    interface_af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamilyEnum.unicast
+    interface_af.af_name = xr_clns_isis_datatypes.IsisAddressFamily.ipv6
+    interface_af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamily.unicast
     interface_af.interface_af_data.running = Empty()
     interface.interface_afs.interface_af.append(interface_af)
     instance.interfaces.interface.append(interface)
@@ -89,8 +89,8 @@ def config_isis(isis):
     interface.point_to_point = Empty()
     # interface address familiy
     interface_af = interface.interface_afs.InterfaceAf()
-    interface_af.af_name = xr_clns_isis_datatypes.IsisAddressFamilyEnum.ipv6
-    interface_af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamilyEnum.unicast
+    interface_af.af_name = xr_clns_isis_datatypes.IsisAddressFamily.ipv6
+    interface_af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamily.unicast
     interface_af.interface_af_data.running = Empty()
     interface.interface_afs.interface_af.append(interface_af)
     instance.interfaces.interface.append(interface)

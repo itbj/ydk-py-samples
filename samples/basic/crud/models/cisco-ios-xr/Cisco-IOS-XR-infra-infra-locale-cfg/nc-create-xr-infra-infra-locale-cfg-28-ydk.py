@@ -41,8 +41,8 @@ import logging
 def config_locale(locale):
     """Add config data to locale object."""
     # country and language configuration
-    locale.country = xr_infra_infra_locale_cfg.LocaleCountryEnum.ng
-    locale.language = xr_infra_infra_locale_cfg.LocaleLanguageEnum.en
+    locale.country = xr_infra_infra_locale_cfg.LocaleCountry.ng
+    locale.language = xr_infra_infra_locale_cfg.LocaleLanguage.en
 
 
 if __name__ == "__main__":

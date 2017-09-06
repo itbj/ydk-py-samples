@@ -50,7 +50,7 @@ def config_mpls(mpls):
     explicit_route_objects.index = 10
     explicit_route_objects.config.index = 10
     explicit_route_objects.config.address = "172.16.1.1"
-    explicit_route_objects.config.hop_type = oc_mpls.MplsHopTypeEnum.STRICT
+    explicit_route_objects.config.hop_type = oc_mpls.MplsHopType.STRICT
     named_explicit_paths.explicit_route_objects.append(explicit_route_objects)
 
     # strict hop
@@ -58,7 +58,7 @@ def config_mpls(mpls):
     explicit_route_objects.index = 20
     explicit_route_objects.config.index = 20
     explicit_route_objects.config.address = "172.16.1.5"
-    explicit_route_objects.config.hop_type = oc_mpls.MplsHopTypeEnum.STRICT
+    explicit_route_objects.config.hop_type = oc_mpls.MplsHopType.STRICT
     named_explicit_paths.explicit_route_objects.append(explicit_route_objects)
 
     mpls.lsps.constrained_path.named_explicit_paths.append(named_explicit_paths)

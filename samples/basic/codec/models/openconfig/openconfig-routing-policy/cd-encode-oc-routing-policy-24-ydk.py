@@ -64,7 +64,7 @@ def config_routing_policy(routing_policy):
     bgp_conditions = statement.conditions.bgp_conditions
     match_community_set = bgp_conditions.MatchCommunitySet()
     match_community_set.community_set = "COMMUNITY-SET1"
-    match_set_options = oc_policy_types.MatchSetOptionsTypeEnum.ALL
+    match_set_options = oc_policy_types.MatchSetOptionsType.ALL
     match_community_set.match_set_options = match_set_options
     bgp_conditions.match_community_set = match_community_set
     statement.actions.accept_route = Empty()
@@ -75,7 +75,7 @@ def config_routing_policy(routing_policy):
     bgp_conditions = statement.conditions.bgp_conditions
     match_as_path_set = bgp_conditions.MatchAsPathSet()
     match_as_path_set.as_path_set = "AS-PATH-SET1"
-    match_set_options = oc_policy_types.MatchSetOptionsTypeEnum.ANY
+    match_set_options = oc_policy_types.MatchSetOptionsType.ANY
     match_as_path_set.match_set_options = match_set_options
     bgp_conditions.match_as_path_set = match_as_path_set
     statement.actions.bgp_actions.set_local_pref = 50

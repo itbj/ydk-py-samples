@@ -40,7 +40,7 @@ import logging
 
 def config_syslog_service(syslog_service):
     """Add config data to syslog_service object."""
-    syslog_service.timestamps.log.log_datetime.log_datetime_value.time_stamp_value = xr_infra_syslog_cfg.TimeInfoEnum.enable
+    syslog_service.timestamps.log.log_datetime.log_datetime_value.time_stamp_value = xr_infra_syslog_cfg.TimeInfo.enable
     
 
 if __name__ == "__main__":

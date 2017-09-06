@@ -38,7 +38,7 @@ import logging
 def config_global_interface_configuration(global_interface_configuration):
     """Add config data to global_interface_configuration object."""
     # disable link status messages
-    global_interface_configuration.link_status = xr_ifmgr_cfg.LinkStatusEnumEnum.disable
+    global_interface_configuration.link_status = xr_ifmgr_cfg.LinkStatusEnum.disable
 
 
 if __name__ == "__main__":

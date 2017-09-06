@@ -38,7 +38,7 @@ import logging
 def config_syslog(syslog):
     """Add config data to syslog_service object."""
     syslog.archive.device = '/harddisk:'
-    syslog.archive.severity = xr_infra_syslog_cfg.LogMessageSeverityEnum.informational
+    syslog.archive.severity = xr_infra_syslog_cfg.LogMessageSeverity.informational
     syslog.archive.file_size = 10
     syslog.archive.size = 100
     syslog.archive.length = 52

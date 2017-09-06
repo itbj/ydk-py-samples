@@ -41,7 +41,7 @@ import logging
 def config_banners(banners):
     """Add config data to banners object."""
     banner = banners.Banner()
-    banner.banner_name = xr_infra_infra_cfg.BannerEnum.slip_ppp
+    banner.banner_name = xr_infra_infra_cfg.Banner.slip_ppp
     banner.banner_text = ";\n" \
                          "----------------------------------\n" \
                          " Message for SLIP/PPP connections\n" \

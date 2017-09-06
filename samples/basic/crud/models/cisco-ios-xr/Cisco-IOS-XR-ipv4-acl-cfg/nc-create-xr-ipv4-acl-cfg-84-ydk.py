@@ -56,7 +56,7 @@ def config_ipv4_acl_and_prefix_list(ipv4_acl_and_prefix_list):
     # prefix list with sequence number 20
     prefix_list_entry = prefix.prefix_list_entries.PrefixListEntry()
     prefix_list_entry.sequence_number = 20
-    prefix_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnumEnum.deny
+    prefix_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnum.deny
     prefix_list_entry.netmask = "255.255.255.0"
     prefix_list_entry.prefix = "172.31.0.0"
     prefix.prefix_list_entries.prefix_list_entry.append(prefix_list_entry)
@@ -64,7 +64,7 @@ def config_ipv4_acl_and_prefix_list(ipv4_acl_and_prefix_list):
     # prefix list with sequence number 30
     prefix_list_entry = prefix.prefix_list_entries.PrefixListEntry()
     prefix_list_entry.sequence_number = 30
-    prefix_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnumEnum.permit
+    prefix_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnum.permit
     prefix_list_entry.netmask = "0.0.0.0"
     prefix_list_entry.prefix = "0.0.0.0"
     prefix_list_entry.max_prefix_length = 32

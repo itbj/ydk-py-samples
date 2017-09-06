@@ -46,7 +46,7 @@ def config_ntp(ntp):
     peer_ipv6 = peer_vrf.peer_ipv6s.PeerIpv6()
     peer_ipv6.address_ipv6 = "2001:db8::a:1"
     peer_type_ipv6 = peer_ipv6.PeerTypeIpv6()
-    peer_type_ipv6.peer_type = xr_ip_ntp_cfg.NtpPeerEnum.server
+    peer_type_ipv6.peer_type = xr_ip_ntp_cfg.NtpPeer.server
     peer_type_ipv6.ntp_version = 4
     peer_type_ipv6.iburst = Empty()
     peer_type_ipv6.preferred_peer = Empty()

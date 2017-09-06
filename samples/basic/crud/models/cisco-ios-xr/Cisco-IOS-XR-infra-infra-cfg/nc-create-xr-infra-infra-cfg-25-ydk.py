@@ -41,7 +41,7 @@ import logging
 def config_banners(banners):
     """Add config data to banners object."""
     banner = banners.Banner()
-    banner.banner_name = xr_infra_infra_cfg.BannerEnum.prompt_timeout
+    banner.banner_name = xr_infra_infra_cfg.Banner.prompt_timeout
     banner.banner_text = ";\n" \
                          "------------------------------------------\n" \
                          " Message for login authentication timeout\n" \

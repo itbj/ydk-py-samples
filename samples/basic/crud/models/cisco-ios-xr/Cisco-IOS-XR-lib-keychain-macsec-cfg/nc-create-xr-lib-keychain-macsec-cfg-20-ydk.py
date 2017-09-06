@@ -46,12 +46,12 @@ def config_mac_sec_keychains(mac_sec_keychains):
     key.key_id = "10"
     key.key_string = key.KeyString()
     key.key_string.string = "101E584B5643475D5B547B79777C6663754356445055030F0F03055C504C430F0F"
-    key.key_string.cryptographic_algorithm = xr_lib_keychain_macsec_cfg.MacSecCryptoAlgEnum.aes_128_cmac
+    key.key_string.cryptographic_algorithm = xr_lib_keychain_macsec_cfg.MacSecCryptoAlg.aes_128_cmac
     key.lifetime.start_hour = 0
     key.lifetime.start_minutes = 0
     key.lifetime.start_seconds = 0
     key.lifetime.start_date = 1
-    key.lifetime.start_month = xr_lib_keychain_macsec_cfg.MacSecKeyChainMonthEnum.jan
+    key.lifetime.start_month = xr_lib_keychain_macsec_cfg.MacSecKeyChainMonth.jan
     key.lifetime.start_year = 2017
     key.lifetime.infinite_flag = True
     mac_sec_keychain.keies.key.append(key)

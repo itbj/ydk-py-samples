@@ -43,7 +43,7 @@ def config_ntp(ntp):
     peer_ipv4 = peer_vrf.peer_ipv4s.PeerIpv4()
     peer_ipv4.address_ipv4 = "10.0.0.1"
     peer_type_ipv4 = peer_ipv4.PeerTypeIpv4()
-    peer_type_ipv4.peer_type = xr_ip_ntp_cfg.NtpPeerEnum.server
+    peer_type_ipv4.peer_type = xr_ip_ntp_cfg.NtpPeer.server
     peer_type_ipv4.ntp_version = 4
     peer_type_ipv4.iburst = Empty()
     peer_type_ipv4.preferred_peer = Empty()

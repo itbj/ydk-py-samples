@@ -50,14 +50,14 @@ def config_vrfs(vrfs):
 
     # ipv6 unicast address family
     af = vrf.afs.Af()
-    af.af_name = xr_infra_rsi_cfg.VrfAddressFamilyEnum.ipv6
-    af.saf_name = xr_infra_rsi_cfg.VrfSubAddressFamilyEnum.unicast
+    af.af_name = xr_infra_rsi_cfg.VrfAddressFamily.ipv6
+    af.saf_name = xr_infra_rsi_cfg.VrfSubAddressFamily.unicast
     af.topology_name = "default"
     af.create = Empty()
 
     # import route targets
     route_target = af.bgp.import_route_targets.route_targets.RouteTarget()
-    route_target.type = xr_ipv4_bgp_cfg.BgpVrfRouteTargetEnum.as_
+    route_target.type = xr_ipv4_bgp_cfg.BgpVrfRouteTarget.as_
     as_or_four_byte_as = route_target.AsOrFourByteAs()
     as_or_four_byte_as.as_xx = 0
     as_or_four_byte_as.as_ = 65172
@@ -68,7 +68,7 @@ def config_vrfs(vrfs):
 
     # export route targets
     route_target = af.bgp.export_route_targets.route_targets.RouteTarget()
-    route_target.type = xr_ipv4_bgp_cfg.BgpVrfRouteTargetEnum.as_
+    route_target.type = xr_ipv4_bgp_cfg.BgpVrfRouteTarget.as_
     as_or_four_byte_as = route_target.AsOrFourByteAs()
     as_or_four_byte_as.as_xx = 0
     as_or_four_byte_as.as_ = 65172

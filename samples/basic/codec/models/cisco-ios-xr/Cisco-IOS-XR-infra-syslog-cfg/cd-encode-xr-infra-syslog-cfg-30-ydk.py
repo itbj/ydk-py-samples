@@ -37,7 +37,7 @@ import logging
 
 def config_syslog(syslog):
     """Add config data to syslog_service object."""
-    syslog.console_logging.logging_level=xr_infra_syslog_cfg.LoggingLevelsEnum.disable
+    syslog.console_logging.logging_level=xr_infra_syslog_cfg.LoggingLevels.disable
     
 
 if __name__ == "__main__":

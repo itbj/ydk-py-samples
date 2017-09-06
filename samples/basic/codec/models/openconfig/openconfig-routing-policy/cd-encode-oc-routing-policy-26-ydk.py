@@ -68,7 +68,7 @@ def config_routing_policy(routing_policy):
     statement.name = "prefix-set1"
     match_prefix_set = statement.conditions.MatchPrefixSet()
     match_prefix_set.prefix_set = "PREFIX-SET1"
-    match_set_options = oc_policy_types.MatchSetOptionsRestrictedTypeEnum.ANY
+    match_set_options = oc_policy_types.MatchSetOptionsRestrictedType.ANY
     match_prefix_set.match_set_options = match_set_options
     statement.conditions.match_prefix_set = match_prefix_set
     statement.actions.bgp_actions.set_local_pref = 1000

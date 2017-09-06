@@ -41,7 +41,7 @@ import logging
 def config_banners(banners):
     """Add config data to banners object."""
     banner = banners.Banner()
-    banner.banner_name = xr_infra_infra_cfg.BannerEnum.incoming
+    banner.banner_name = xr_infra_infra_cfg.Banner.incoming
     banner.banner_text = ";\n" \
                          "----------------------------------------------" \
                          "---------------------\n" \
