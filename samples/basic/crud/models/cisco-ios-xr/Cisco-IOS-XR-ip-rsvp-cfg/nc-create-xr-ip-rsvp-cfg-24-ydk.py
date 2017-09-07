@@ -47,10 +47,10 @@ def config_rsvp(rsvp):
     interface.enable = Empty()
     interface.bandwidth.rdm.bc0_bandwidth = 100
     interface.bandwidth.rdm.bc1_bandwidth = 25
-    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdmEnum.rdm
-    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0Enum.not_specified
-    interface.bandwidth.rdm.bc1_keyword = xr_ip_rsvp_cfg.RsvpBc1Enum.sub_pool
-    interface.bandwidth.rdm.bandwidth_mode = xr_ip_rsvp_cfg.RsvpBwCfgEnum.percentage
+    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdm.rdm
+    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0.not_specified
+    interface.bandwidth.rdm.bc1_keyword = xr_ip_rsvp_cfg.RsvpBc1.sub_pool
+    interface.bandwidth.rdm.bandwidth_mode = xr_ip_rsvp_cfg.RsvpBwCfg.percentage
     rsvp.interfaces.interface.append(interface)
 
     # RSVP interface gig0/0/0/1
@@ -59,10 +59,10 @@ def config_rsvp(rsvp):
     interface.enable = Empty()
     interface.bandwidth.rdm.bc0_bandwidth = 100
     interface.bandwidth.rdm.bc1_bandwidth = 25
-    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdmEnum.rdm
-    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0Enum.not_specified
-    interface.bandwidth.rdm.bc1_keyword = xr_ip_rsvp_cfg.RsvpBc1Enum.sub_pool
-    interface.bandwidth.rdm.bandwidth_mode = xr_ip_rsvp_cfg.RsvpBwCfgEnum.percentage
+    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdm.rdm
+    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0.not_specified
+    interface.bandwidth.rdm.bc1_keyword = xr_ip_rsvp_cfg.RsvpBc1.sub_pool
+    interface.bandwidth.rdm.bandwidth_mode = xr_ip_rsvp_cfg.RsvpBwCfg.percentage
     rsvp.interfaces.interface.append(interface)
 
 
@@ -101,6 +101,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, rsvp)
 
-    provider.close()
     exit()
 # End of script

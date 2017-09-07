@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # mac_sec_keychains = crud.read(provider, mac_sec_keychains)
     process_mac_sec_keychains(mac_sec_keychains)  # process object data
 
-    provider.close()
     exit()
 # End of script

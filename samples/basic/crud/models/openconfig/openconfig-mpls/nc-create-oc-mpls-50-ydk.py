@@ -45,13 +45,13 @@ def config_mpls(mpls):
     tunnel = mpls.lsps.constrained_path.Tunnel()
     tunnel.name = "LER1-LER2-t50"
     tunnel.config.name = "LER1-LER2-t50"
-    tunnel.config.type = oc_mpls_types.P2PIdentity()
-    tunnel.type = oc_mpls_types.P2PIdentity()
+    tunnel.config.type = oc_mpls_types.P2P()
+    tunnel.type = oc_mpls_types.P2P()
     p2p_primary_paths = tunnel.p2p_tunnel_attributes.P2PPrimaryPaths()
     p2p_primary_paths.name = "DYNAMIC"
     p2p_primary_paths.config.name = "DYNAMIC"
     p2p_primary_paths.config.preference = 10
-    path_computation_method = oc_mpls.LocallyComputedIdentity()
+    path_computation_method = oc_mpls.LocallyComputed()
     p2p_primary_paths.config.path_computation_method = path_computation_method
     tunnel.p2p_tunnel_attributes.p2p_primary_paths.append(p2p_primary_paths)
     tunnel.p2p_tunnel_attributes.config.destination = "172.16.255.2"
@@ -95,6 +95,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, mpls)
 
-    provider.close()
     exit()
 # End of script

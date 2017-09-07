@@ -47,9 +47,9 @@ def config_telemetry_model_driven(telemetry_model_driven):
     ipv4_destination = destination_group.ipv4_destinations.Ipv4Destination()
     ipv4_destination.destination_port = 5432
     ipv4_destination.ipv4_address = "172.30.8.4"
-    ipv4_destination.encoding = xr_telemetry_model_driven_cfg.EncodeTypeEnum.self_describing_gpb
+    ipv4_destination.encoding = xr_telemetry_model_driven_cfg.EncodeType.self_describing_gpb
     protocol = ipv4_destination.Protocol()
-    protocol.protocol = xr_telemetry_model_driven_cfg.ProtoTypeEnum.grpc
+    protocol.protocol = xr_telemetry_model_driven_cfg.ProtoType.grpc
     protocol.tls_hostname = "TLS_HOSTNAME"
     ipv4_destination.protocol = protocol
     destination_group.ipv4_destinations.ipv4_destination.append(ipv4_destination)
@@ -59,9 +59,9 @@ def config_telemetry_model_driven(telemetry_model_driven):
     ipv4_destination = destination_group.ipv4_destinations.Ipv4Destination()
     ipv4_destination.destination_port = 9876
     ipv4_destination.ipv4_address = "172.30.8.11"
-    ipv4_destination.encoding = xr_telemetry_model_driven_cfg.EncodeTypeEnum.self_describing_gpb
+    ipv4_destination.encoding = xr_telemetry_model_driven_cfg.EncodeType.self_describing_gpb
     protocol = ipv4_destination.Protocol()
-    protocol.protocol = xr_telemetry_model_driven_cfg.ProtoTypeEnum.grpc
+    protocol.protocol = xr_telemetry_model_driven_cfg.ProtoType.grpc
     protocol.tls_hostname = "TLS_HOSTNAME"
     ipv4_destination.protocol = protocol
     destination_group.ipv4_destinations.ipv4_destination.append(ipv4_destination)
@@ -143,6 +143,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, telemetry_model_driven)
 
-    provider.close()
     exit()
 # End of script

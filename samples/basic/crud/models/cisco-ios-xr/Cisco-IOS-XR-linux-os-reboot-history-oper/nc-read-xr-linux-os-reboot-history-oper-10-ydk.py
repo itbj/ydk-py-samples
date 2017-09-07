@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # reboot_history = crud.read(provider, reboot_history)
     process_reboot_history(reboot_history)  # process object data
 
-    provider.close()
     exit()
 # End of script

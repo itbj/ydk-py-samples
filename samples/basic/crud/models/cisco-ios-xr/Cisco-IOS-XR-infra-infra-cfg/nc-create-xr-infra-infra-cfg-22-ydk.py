@@ -41,7 +41,7 @@ import logging
 def config_banners(banners):
     """Add config data to banners object."""
     banner = banners.Banner()
-    banner.banner_name = xr_infra_infra_cfg.BannerEnum.motd
+    banner.banner_name = xr_infra_infra_cfg.Banner.motd
     banner.banner_text = ";\n" \
                          "--------------------\n" \
                          " Message of the day\n" \
@@ -85,6 +85,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, banners)
 
-    provider.close()
     exit()
 # End of script

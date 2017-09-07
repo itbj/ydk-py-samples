@@ -38,8 +38,8 @@ import logging
 def config_syslog(syslog):
     """Add config data to syslog_service object."""
     syslog.archive.device = '/disk1:'
-    syslog.archive.severity = xr_infra_syslog_cfg.LogMessageSeverityEnum.debug
-    syslog.archive.frequency = xr_infra_syslog_cfg.LogCollectFrequencyEnum.daily
+    syslog.archive.severity = xr_infra_syslog_cfg.LogMessageSeverity.debug
+    syslog.archive.frequency = xr_infra_syslog_cfg.LogCollectFrequency.daily
     syslog.archive.size = 32
     
 
@@ -72,6 +72,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, syslog))
 
-    provider.close()
     exit()
 # End of script

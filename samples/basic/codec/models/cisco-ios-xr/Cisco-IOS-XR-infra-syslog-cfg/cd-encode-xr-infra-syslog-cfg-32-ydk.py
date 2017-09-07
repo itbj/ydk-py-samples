@@ -37,10 +37,10 @@ import logging
 
 def config_syslog(syslog):
     """Add config data to syslog_service object."""
-    syslog.console_logging.logging_level = xr_infra_syslog_cfg.LoggingLevelsEnum.disable
-    syslog.monitor_logging.logging_level = xr_infra_syslog_cfg.LoggingLevelsEnum.disable
+    syslog.console_logging.logging_level = xr_infra_syslog_cfg.LoggingLevels.disable
+    syslog.monitor_logging.logging_level = xr_infra_syslog_cfg.LoggingLevels.disable
     syslog.buffered_logging.buffer_size = 125000000
-    syslog.buffered_logging.logging_level = xr_infra_syslog_cfg.LoggingLevelsEnum.info
+    syslog.buffered_logging.logging_level = xr_infra_syslog_cfg.LoggingLevels.info
     
 
 if __name__ == "__main__":
@@ -72,6 +72,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, syslog))
 
-    provider.close()
     exit()
 # End of script

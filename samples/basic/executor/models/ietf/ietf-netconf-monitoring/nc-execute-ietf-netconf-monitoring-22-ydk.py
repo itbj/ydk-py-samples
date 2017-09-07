@@ -79,6 +79,5 @@ if __name__ == "__main__":
     # execute RPC on NETCONF device
     print(executor.execute_rpc(provider, get_schema_rpc))
 
-    provider.close()
     exit()
 # End of script

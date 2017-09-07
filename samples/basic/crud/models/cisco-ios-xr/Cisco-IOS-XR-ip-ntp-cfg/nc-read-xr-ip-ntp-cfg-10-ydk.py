@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # ntp = crud.read(provider, ntp)
     process_ntp(ntp)  # process object data
 
-    provider.close()
     exit()
 # End of script

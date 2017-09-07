@@ -55,7 +55,7 @@ def config_ipv4_acl_and_prefix_list(ipv4_acl_and_prefix_list):
     # access-list with sequence number 20
     access_list_entry = access.access_list_entries.AccessListEntry()
     access_list_entry.sequence_number = 20
-    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnumEnum.permit
+    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnum.permit
     access_list_entry.source_network.source_address = "172.31.255.1"
     access_list_entry.source_network.source_wild_card_bits = "0.0.0.0" 
     access.access_list_entries.access_list_entry.append(access_list_entry)
@@ -63,7 +63,7 @@ def config_ipv4_acl_and_prefix_list(ipv4_acl_and_prefix_list):
     # access-list with sequence number 30
     access_list_entry = access.access_list_entries.AccessListEntry()
     access_list_entry.sequence_number = 30
-    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnumEnum.deny
+    access_list_entry.grant = xr_ipv4_acl_datatypes.Ipv4AclGrantEnum.deny
     access.access_list_entries.access_list_entry.append(access_list_entry)
     ipv4_acl_and_prefix_list.accesses.access.append(access) 
 
@@ -103,6 +103,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, ipv4_acl_and_prefix_list)
 
-    provider.close()
     exit()
 # End of script

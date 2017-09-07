@@ -41,7 +41,7 @@ import logging
 def config_global_interface_configuration(global_interface_configuration):
     """Add config data to global_interface_configuration object."""
     # disable link status messages
-    global_interface_configuration.link_status = xr_ifmgr_cfg.LinkStatusEnumEnum.disable
+    global_interface_configuration.link_status = xr_ifmgr_cfg.LinkStatusEnum.disable
 
 
 if __name__ == "__main__":
@@ -79,6 +79,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, global_interface_configuration)
 
-    provider.close()
     exit()
 # End of script

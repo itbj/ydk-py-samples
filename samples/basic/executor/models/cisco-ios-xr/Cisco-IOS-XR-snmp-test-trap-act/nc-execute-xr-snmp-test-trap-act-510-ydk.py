@@ -72,6 +72,5 @@ if __name__ == "__main__":
     # execute RPC on NETCONF device
     executor.execute_rpc(provider, routing_ospf_neighbor_state_change_rpc)
 
-    provider.close()
     exit()
 # End of script

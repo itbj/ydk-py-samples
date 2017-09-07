@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # sr = crud.read(provider, sr)
     process_sr(sr)  # process object data
 
-    provider.close()
     exit()
 # End of script

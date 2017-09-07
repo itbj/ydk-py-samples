@@ -47,7 +47,7 @@ def config_routing_policy(routing_policy):
     policy_definition.name = "POLICY4"
     statement = policy_definition.statements.Statement()
     statement.name = "next-hop-self"
-    set_next_hop = oc_bgp_policy.BgpNextHopTypeEnum.SELF
+    set_next_hop = oc_bgp_policy.BgpNextHopType.SELF
     statement.actions.bgp_actions.set_next_hop = set_next_hop
     statement.actions.accept_route = Empty()
     policy_definition.statements.statement.append(statement)
@@ -89,6 +89,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, routing_policy)
 
-    provider.close()
     exit()
 # End of script

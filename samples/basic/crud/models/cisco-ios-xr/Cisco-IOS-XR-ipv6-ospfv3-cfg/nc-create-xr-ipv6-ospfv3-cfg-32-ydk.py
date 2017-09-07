@@ -63,7 +63,7 @@ def config_ospfv3(ospfv3):
     interface = area_area_id.interfaces.Interface()
     interface.interface_name = "GigabitEthernet0/0/0/0"
     interface.enable = Empty()
-    interface.network = xr_ipv6_ospfv3_cfg.Ospfv3NetworkEnum.point_to_point
+    interface.network = xr_ipv6_ospfv3_cfg.Ospfv3Network.point_to_point
     area_area_id.interfaces.interface.append(interface)
     process.default_vrf.area_addresses.area_area_id.append(area_area_id)
 
@@ -77,7 +77,7 @@ def config_ospfv3(ospfv3):
     interface = area_area_id.interfaces.Interface()
     interface.interface_name = "GigabitEthernet0/0/0/1"
     interface.enable = Empty()
-    interface.network = xr_ipv6_ospfv3_cfg.Ospfv3NetworkEnum.point_to_point
+    interface.network = xr_ipv6_ospfv3_cfg.Ospfv3Network.point_to_point
     area_area_id.interfaces.interface.append(interface)
     process.default_vrf.area_addresses.area_area_id.append(area_area_id)
 
@@ -120,6 +120,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, ospfv3)
 
-    provider.close()
     exit()
 # End of script

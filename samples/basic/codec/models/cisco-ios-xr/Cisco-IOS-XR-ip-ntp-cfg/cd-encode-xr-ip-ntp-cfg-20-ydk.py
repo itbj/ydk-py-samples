@@ -42,7 +42,7 @@ def config_ntp(ntp):
     peer_ipv4 = peer_vrf.peer_ipv4s.PeerIpv4()
     peer_ipv4.address_ipv4 = "10.0.0.1"
     peer_type_ipv4 = peer_ipv4.PeerTypeIpv4()
-    peer_type_ipv4.peer_type = xr_ip_ntp_cfg.NtpPeerEnum.server
+    peer_type_ipv4.peer_type = xr_ip_ntp_cfg.NtpPeer.server
     peer_ipv4.peer_type_ipv4.append(peer_type_ipv4)
     peer_vrf.peer_ipv4s.peer_ipv4.append(peer_ipv4)
     ntp.peer_vrfs.peer_vrf.append(peer_vrf)
@@ -77,6 +77,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, ntp))
 
-    provider.close()
     exit()
 # End of script

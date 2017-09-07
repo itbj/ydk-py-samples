@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # bgp = crud.read(provider, bgp)
     process_bgp(bgp)  # process object data
 
-    provider.close()
     exit()
 # End of script

@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # ip_domain = crud.read(provider, ip_domain)
     process_ip_domain(ip_domain)  # process object data
 
-    provider.close()
     exit()
 # End of script

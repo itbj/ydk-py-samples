@@ -46,18 +46,18 @@ def config_mac_sec_keychains(mac_sec_keychains):
     key.key_id = "10"
     key.key_string = key.KeyString()
     key.key_string.string = "01435756085F5359761C1F5B4A5142445C5C557878707D6562724255455754000E0802065D574D400E0806010101015D0C56560A04504650530B5A545C7519185E"
-    key.key_string.cryptographic_algorithm = xr_lib_keychain_macsec_cfg.MacSecCryptoAlgEnum.aes_256_cmac
+    key.key_string.cryptographic_algorithm = xr_lib_keychain_macsec_cfg.MacSecCryptoAlg.aes_256_cmac
     key.lifetime.start_hour = 0
     key.lifetime.start_minutes = 0
     key.lifetime.start_seconds = 0
     key.lifetime.start_date = 1
-    key.lifetime.start_month = xr_lib_keychain_macsec_cfg.MacSecKeyChainMonthEnum.jan
+    key.lifetime.start_month = xr_lib_keychain_macsec_cfg.MacSecKeyChainMonth.jan
     key.lifetime.start_year = 2017
     key.lifetime.end_hour = 23
     key.lifetime.end_minutes = 59
     key.lifetime.end_seconds = 59
     key.lifetime.end_date = 7
-    key.lifetime.end_month = xr_lib_keychain_macsec_cfg.MacSecKeyChainMonthEnum.jan
+    key.lifetime.end_month = xr_lib_keychain_macsec_cfg.MacSecKeyChainMonth.jan
     key.lifetime.end_year = 2017
     key.lifetime.infinite_flag = False
     mac_sec_keychain.keies.key.append(key)
@@ -67,18 +67,18 @@ def config_mac_sec_keychains(mac_sec_keychains):
     key.key_id = "20"
     key.key_string = key.KeyString()
     key.key_string.string = "04035C505A751F1C58415241475F5F567B73737E66617141564E5457030D0B010556544E430D0B05020A02025E0F5555090F5345535008595757761A1B5D4A5746"
-    key.key_string.cryptographic_algorithm = xr_lib_keychain_macsec_cfg.MacSecCryptoAlgEnum.aes_256_cmac
+    key.key_string.cryptographic_algorithm = xr_lib_keychain_macsec_cfg.MacSecCryptoAlg.aes_256_cmac
     key.lifetime.start_hour = 23
     key.lifetime.start_minutes = 0
     key.lifetime.start_seconds = 0
     key.lifetime.start_date = 7
-    key.lifetime.start_month = xr_lib_keychain_macsec_cfg.MacSecKeyChainMonthEnum.jan
+    key.lifetime.start_month = xr_lib_keychain_macsec_cfg.MacSecKeyChainMonth.jan
     key.lifetime.start_year = 2017
     key.lifetime.end_hour = 23
     key.lifetime.end_minutes = 59
     key.lifetime.end_seconds = 59
     key.lifetime.end_date = 13
-    key.lifetime.end_month = xr_lib_keychain_macsec_cfg.MacSecKeyChainMonthEnum.jan
+    key.lifetime.end_month = xr_lib_keychain_macsec_cfg.MacSecKeyChainMonth.jan
     key.lifetime.end_year = 2017
     key.lifetime.infinite_flag = False
     mac_sec_keychain.keies.key.append(key)
@@ -120,6 +120,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, mac_sec_keychains)
 
-    provider.close()
     exit()
 # End of script

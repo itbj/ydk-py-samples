@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # grpc = crud.read(provider, grpc)
     process_grpc(grpc)  # process object data
 
-    provider.close()
     exit()
 # End of script

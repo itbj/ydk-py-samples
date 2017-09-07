@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # host_names = crud.read(provider, host_names)
     process_host_names(host_names)  # process object data
 
-    provider.close()
     exit()
 # End of script

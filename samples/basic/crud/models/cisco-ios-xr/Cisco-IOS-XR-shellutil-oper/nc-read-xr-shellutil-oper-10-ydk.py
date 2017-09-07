@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # system_time = crud.read(provider, system_time)
     process_system_time(system_time)  # process object data
 
-    provider.close()
     exit()
 # End of script

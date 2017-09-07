@@ -40,7 +40,7 @@ import logging
 
 def config_syslog(syslog):
     """Add config data to syslog object."""
-    syslog.console_logging.logging_level = xr_infra_syslog_cfg.LoggingLevelsEnum.disable
+    syslog.console_logging.logging_level = xr_infra_syslog_cfg.LoggingLevels.disable
     
 
 if __name__ == "__main__":
@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, syslog)
 
-    provider.close()
     exit()
 # End of script

@@ -41,7 +41,7 @@ import logging
 def config_syslog(syslog):
     """Add config data to syslog object."""
     #Facility
-    syslog.logging_facilities.facility_level = xr_infra_syslog_cfg.FacilityEnum.local0
+    syslog.logging_facilities.facility_level = xr_infra_syslog_cfg.Facility.local0
 
     #Hostserver
     vrf = syslog.host_server.vrfs.Vrf()
@@ -95,6 +95,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, syslog)
 
-    provider.close()
     exit()
 # End of script

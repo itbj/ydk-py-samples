@@ -33,7 +33,7 @@ from ydk.providers import CodecServiceProvider
 from ydk.models.cisco_ios_xr import Cisco_IOS_XR_ipv4_bgp_cfg \
     as xr_ipv4_bgp_cfg
 from ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_bgp_datatypes \
-    import BgpAddressFamilyEnum
+    import BgpAddressFamily
 from ydk.types import Empty
 import logging
 
@@ -50,7 +50,7 @@ def config_bgp(bgp):
     four_byte_as.bgp_running = Empty()
     # global address family
     global_af = four_byte_as.default_vrf.global_.global_afs.GlobalAf()
-    global_af.af_name = BgpAddressFamilyEnum.ipv6_unicast
+    global_af.af_name = BgpAddressFamily.ipv6_unicast
     global_af.enable = Empty()
     four_byte_as.default_vrf.global_.global_afs.global_af.append(global_af)
     instance_as.four_byte_as.append(four_byte_as)
@@ -69,7 +69,7 @@ def config_bgp(bgp):
     neighbor_groups.neighbor_group.append(neighbor_group)
     # ipv4 unicast
     neighbor_group_af = neighbor_group.neighbor_group_afs.NeighborGroupAf()
-    neighbor_group_af.af_name = BgpAddressFamilyEnum.ipv6_unicast
+    neighbor_group_af.af_name = BgpAddressFamily.ipv6_unicast
     neighbor_group_af.activate = Empty()
     neighbor_group_afs = neighbor_group.neighbor_group_afs
     neighbor_group_afs.neighbor_group_af.append(neighbor_group_af)
@@ -110,6 +110,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, bgp))
 
-    provider.close()
     exit()
 # End of script

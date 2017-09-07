@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # ip_explicit_paths = crud.read(provider, ip_explicit_paths)
     process_ip_explicit_paths(ip_explicit_paths)  # process object data
 
-    provider.close()
     exit()
 # End of script

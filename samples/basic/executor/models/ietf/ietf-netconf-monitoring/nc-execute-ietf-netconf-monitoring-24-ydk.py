@@ -42,7 +42,7 @@ def prepare_get_schema_rpc(get_schema_rpc):
     """Add RPC input data to get_schema_rpc object."""
     get_schema_rpc.input.identifier = "openconfig-mpls"
     get_schema_rpc.input.version = "2015-11-05"
-    get_schema_rpc.input.format = ietf_netconf_monitoring.YangIdentity()
+    get_schema_rpc.input.format = ietf_netconf_monitoring.Yang()
 
 
 if __name__ == "__main__":
@@ -80,6 +80,5 @@ if __name__ == "__main__":
     # execute RPC on NETCONF device
     print(executor.execute_rpc(provider, get_schema_rpc))
 
-    provider.close()
     exit()
 # End of script

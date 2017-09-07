@@ -50,6 +50,5 @@ if __name__ == "__main__":
           str(timedelta(seconds=system_time.uptime.uptime)))
 
     # close NETCONF session and exit
-    provider.close()
     exit()
 # End of script

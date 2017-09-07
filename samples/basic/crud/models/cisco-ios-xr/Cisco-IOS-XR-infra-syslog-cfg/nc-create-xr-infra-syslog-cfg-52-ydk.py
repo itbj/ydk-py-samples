@@ -41,20 +41,20 @@ import logging
 def config_syslog(syslog):
     """Add config data to syslog object."""
     #ipv4 TOS bit
-    syslog.ipv4.tos.dscp = xr_infra_syslog_cfg.LoggingDscpValueEnum.cs2
+    syslog.ipv4.tos.dscp = xr_infra_syslog_cfg.LoggingDscpValue.cs2
 
     #Facility
-    syslog.logging_facilities.facility_level = xr_infra_syslog_cfg.FacilityEnum.local0
+    syslog.logging_facilities.facility_level = xr_infra_syslog_cfg.Facility.local0
 
     #Hostserver
     vrf = syslog.host_server.vrfs.Vrf()
     vrf.vrf_name = "default"
     ipv4_1 = vrf.ipv4s.Ipv4()
     ipv4_1.address = "10.0.0.1"
-    ipv4_1.ipv4_severity_port.severity = 6#xr_infra_syslog_cfg.LogSeverityEnum.informational
+    ipv4_1.ipv4_severity_port.severity = 6#xr_infra_syslog_cfg.LogSeverity.informational
     ipv4_2 = vrf.ipv4s.Ipv4()
     ipv4_2.address = "10.0.0.2"
-    ipv4_2.ipv4_severity_port.severity = 6#xr_infra_syslog_cfg.LogSeverityEnum.informational
+    ipv4_2.ipv4_severity_port.severity = 6#xr_infra_syslog_cfg.LogSeverity.informational
     vrf.ipv4s.ipv4.append(ipv4_1)
     vrf.ipv4s.ipv4.append(ipv4_2)
     syslog.host_server.vrfs.vrf.append(vrf)
@@ -112,6 +112,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, syslog)
 
-    provider.close()
     exit()
 # End of script

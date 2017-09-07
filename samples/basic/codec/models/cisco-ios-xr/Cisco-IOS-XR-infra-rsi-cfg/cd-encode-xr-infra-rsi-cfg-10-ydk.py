@@ -69,6 +69,5 @@ if __name__ == "__main__":
     # encode and print object
     # print(codec.encode(provider, vrfs))
 
-    provider.close()
     exit()
 # End of script

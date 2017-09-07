@@ -38,7 +38,7 @@ import logging
 def config_global_interface_configuration(global_interface_configuration):
     """Add config data to global_interface_configuration object."""
     # display link status messages for all interfaces
-    global_interface_configuration.link_status = xr_ifmgr_cfg.LinkStatusEnumEnum.software_interfaces
+    global_interface_configuration.link_status = xr_ifmgr_cfg.LinkStatusEnum.software_interfaces
 
 
 if __name__ == "__main__":
@@ -70,6 +70,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, global_interface_configuration))
 
-    provider.close()
     exit()
 # End of script

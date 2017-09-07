@@ -46,8 +46,8 @@ def config_rsvp(rsvp):
     interface.name = "GigabitEthernet0/0/0/0"
     interface.enable = Empty()
     interface.bandwidth.rdm.bc0_bandwidth = 1000000
-    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdmEnum.not_specified
-    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0Enum.not_specified
+    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdm.not_specified
+    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0.not_specified
     rsvp.interfaces.interface.append(interface)
 
     # RSVP interface gig0/0/0/1
@@ -55,8 +55,8 @@ def config_rsvp(rsvp):
     interface.name = "GigabitEthernet0/0/0/1"
     interface.enable = Empty()
     interface.bandwidth.rdm.bc0_bandwidth = 1000000
-    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdmEnum.not_specified
-    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0Enum.not_specified
+    interface.bandwidth.rdm.rdm_keyword = xr_ip_rsvp_cfg.RsvpRdm.not_specified
+    interface.bandwidth.rdm.bc0_keyword = xr_ip_rsvp_cfg.RsvpBc0.not_specified
     rsvp.interfaces.interface.append(interface)
 
 
@@ -95,6 +95,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, rsvp)
 
-    provider.close()
     exit()
 # End of script

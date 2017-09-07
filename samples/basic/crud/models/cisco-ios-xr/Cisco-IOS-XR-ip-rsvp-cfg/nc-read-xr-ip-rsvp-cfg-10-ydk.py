@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # rsvp = crud.read(provider, rsvp)
     process_rsvp(rsvp)  # process object data
 
-    provider.close()
     exit()
 # End of script

@@ -44,9 +44,9 @@ def config_telemetry_model_driven(telemetry_model_driven):
     ipv4_destination = destination_group.ipv4_destinations.Ipv4Destination()
     ipv4_destination.destination_port = 5432
     ipv4_destination.ipv4_address = "172.30.8.4"
-    ipv4_destination.encoding = xr_telemetry_model_driven_cfg.EncodeTypeEnum.self_describing_gpb
+    ipv4_destination.encoding = xr_telemetry_model_driven_cfg.EncodeType.self_describing_gpb
     protocol = ipv4_destination.Protocol()
-    protocol.protocol = xr_telemetry_model_driven_cfg.ProtoTypeEnum.tcp
+    protocol.protocol = xr_telemetry_model_driven_cfg.ProtoType.tcp
     ipv4_destination.protocol = protocol
     destination_group.ipv4_destinations.ipv4_destination.append(ipv4_destination)
     telemetry_model_driven.destination_groups.destination_group.append(destination_group)
@@ -103,6 +103,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, telemetry_model_driven))
 
-    provider.close()
     exit()
 # End of script

@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # syslog = crud.read(provider, syslog)
     process_syslog(syslog)  # process object data
 
-    provider.close()
     exit()
 # End of script

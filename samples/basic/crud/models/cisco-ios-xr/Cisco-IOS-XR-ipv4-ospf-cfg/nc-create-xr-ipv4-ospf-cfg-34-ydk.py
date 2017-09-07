@@ -63,7 +63,7 @@ def config_ospf(ospf):
     name_scope = area_area_id.name_scopes.NameScope()
     name_scope.interface_name = "GigabitEthernet0/0/0/0"
     name_scope.running = Empty()
-    name_scope.network_type = xr_ipv4_ospf_cfg.OspfNetworkEnum.point_to_point
+    name_scope.network_type = xr_ipv4_ospf_cfg.OspfNetwork.point_to_point
     area_area_id.name_scopes.name_scope.append(name_scope)
     process.default_vrf.area_addresses.area_area_id.append(area_area_id)
 
@@ -77,7 +77,7 @@ def config_ospf(ospf):
     name_scope = area_area_id.name_scopes.NameScope()
     name_scope.interface_name = "GigabitEthernet0/0/0/1"
     name_scope.running = Empty()
-    name_scope.network_type = xr_ipv4_ospf_cfg.OspfNetworkEnum.point_to_point
+    name_scope.network_type = xr_ipv4_ospf_cfg.OspfNetwork.point_to_point
     area_area_id.name_scopes.name_scope.append(name_scope)
     process.default_vrf.area_addresses.area_area_id.append(area_area_id)
 
@@ -120,6 +120,5 @@ if __name__ == "__main__":
     # create configuration on NETCONF device
     crud.create(provider, ospf)
 
-    provider.close()
     exit()
 # End of script

@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # arpgmp = crud.read(provider, arpgmp)
     process_arpgmp(arpgmp)  # process object data
 
-    provider.close()
     exit()
 # End of script

@@ -72,6 +72,5 @@ if __name__ == "__main__":
     # delete configuration on NETCONF device
     crud.delete(provider, ipv4_acl_and_prefix_list)
 
-    provider.close()
     exit()
 # End of script

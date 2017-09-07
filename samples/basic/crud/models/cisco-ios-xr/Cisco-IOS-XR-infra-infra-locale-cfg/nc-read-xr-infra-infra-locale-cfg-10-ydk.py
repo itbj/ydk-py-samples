@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # locale = crud.read(provider, locale)
     process_locale(locale)  # process object data
 
-    provider.close()
     exit()
 # End of script

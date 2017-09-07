@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # telemetry_system = crud.read(provider, telemetry_system)
     process_telemetry_system(telemetry_system)  # process object data
 
-    provider.close()
     exit()
 # End of script

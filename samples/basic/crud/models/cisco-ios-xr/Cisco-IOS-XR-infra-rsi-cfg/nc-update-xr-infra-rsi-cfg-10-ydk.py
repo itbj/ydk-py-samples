@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # update configuration on NETCONF device
     # crud.update(provider, vrfs)
 
-    provider.close()
     exit()
 # End of script

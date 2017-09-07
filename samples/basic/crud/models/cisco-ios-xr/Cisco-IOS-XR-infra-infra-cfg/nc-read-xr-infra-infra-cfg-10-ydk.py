@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # banners = crud.read(provider, banners)
     process_banners(banners)  # process object data
 
-    provider.close()
     exit()
 # End of script

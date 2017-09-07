@@ -44,23 +44,23 @@ def config_isis(isis):
     instance = isis.instances.Instance()
     instance.instance_name = "DEFAULT"
     instance.running = Empty()
-    instance.is_type = xr_clns_isis_cfg.IsisConfigurableLevelsEnum.level2
+    instance.is_type = xr_clns_isis_cfg.IsisConfigurableLevels.level2
     net = instance.nets.Net()
     net.net_name = "49.0000.1720.1625.5001.00"
     instance.nets.net.append(net)
     isis.instances.instance.append(instance)
     # global address family
     af = instance.afs.Af()
-    af.af_name = xr_clns_isis_datatypes.IsisAddressFamilyEnum.ipv4
-    af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamilyEnum.unicast
+    af.af_name = xr_clns_isis_datatypes.IsisAddressFamily.ipv4
+    af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamily.unicast
     af.af_data = af.AfData()
     metric_style = af.af_data.metric_styles.MetricStyle()
-    metric_style.style = xr_clns_isis_cfg.IsisMetricStyleEnum.new_metric_style
-    metric_style.level = xr_clns_isis_datatypes.IsisInternalLevelEnum.not_set
-    transition_state = xr_clns_isis_cfg.IsisMetricStyleTransitionEnum.disabled
+    metric_style.style = xr_clns_isis_cfg.IsisMetricStyle.new_metric_style
+    metric_style.level = xr_clns_isis_datatypes.IsisInternalLevel.not_set
+    transition_state = xr_clns_isis_cfg.IsisMetricStyleTransition.disabled
     metric_style.transition_state = transition_state
     # segment routing
-    mpls = xr_clns_isis_cfg.IsisLabelPreferenceEnum.ldp
+    mpls = xr_clns_isis_cfg.IsisLabelPreference.ldp
     af.af_data.segment_routing.mpls = mpls
     af.af_data.metric_styles.metric_style.append(metric_style)
     instance.afs.af.append(af)
@@ -69,20 +69,20 @@ def config_isis(isis):
     interface = instance.interfaces.Interface()
     interface.interface_name = "Loopback0"
     interface.running = Empty()
-    interface.state = xr_clns_isis_cfg.IsisInterfaceStateEnum.passive
+    interface.state = xr_clns_isis_cfg.IsisInterfaceState.passive
     # interface address family
     interface_af = interface.interface_afs.InterfaceAf()
-    interface_af.af_name = xr_clns_isis_datatypes.IsisAddressFamilyEnum.ipv4
-    interface_af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamilyEnum.unicast
+    interface_af.af_name = xr_clns_isis_datatypes.IsisAddressFamily.ipv4
+    interface_af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamily.unicast
     interface_af.interface_af_data.running = Empty()
     # segment routing
     prefix_sid = interface_af.interface_af_data.PrefixSid()
-    prefix_sid.type = xr_clns_isis_cfg.IsissidEnum.absolute
+    prefix_sid.type = xr_clns_isis_cfg.Isissid.absolute
     prefix_sid.value = 16041
-    prefix_sid.php = xr_clns_isis_cfg.IsisphpFlagEnum.enable
-    explicit_null = xr_clns_isis_cfg.IsisexplicitNullFlagEnum.disable
+    prefix_sid.php = xr_clns_isis_cfg.IsisphpFlag.enable
+    explicit_null = xr_clns_isis_cfg.IsisexplicitNullFlag.disable
     prefix_sid.explicit_null = explicit_null
-    prefix_sid.nflag_clear = xr_clns_isis_cfg.NflagClearEnum.disable
+    prefix_sid.nflag_clear = xr_clns_isis_cfg.NflagClear.disable
     interface_af.interface_af_data.prefix_sid = prefix_sid
     interface.interface_afs.interface_af.append(interface_af)
     instance.interfaces.interface.append(interface)
@@ -94,8 +94,8 @@ def config_isis(isis):
     interface.point_to_point = Empty()
     # interface address familiy
     interface_af = interface.interface_afs.InterfaceAf()
-    interface_af.af_name = xr_clns_isis_datatypes.IsisAddressFamilyEnum.ipv4
-    interface_af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamilyEnum.unicast
+    interface_af.af_name = xr_clns_isis_datatypes.IsisAddressFamily.ipv4
+    interface_af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamily.unicast
     interface_af.interface_af_data.running = Empty()
     interface.interface_afs.interface_af.append(interface_af)
     instance.interfaces.interface.append(interface)
@@ -130,6 +130,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, isis))
 
-    provider.close()
     exit()
 # End of script

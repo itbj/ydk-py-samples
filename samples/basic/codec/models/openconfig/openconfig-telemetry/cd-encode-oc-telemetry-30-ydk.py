@@ -83,6 +83,5 @@ if __name__ == "__main__":
     # encode and print object
     print(codec.encode(provider, telemetry_system))
 
-    provider.close()
     exit()
 # End of script

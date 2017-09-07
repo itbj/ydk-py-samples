@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # interface_configurations = crud.read(provider, interface_configurations)
     process_interface_configurations(interface_configurations)  # process object data
 
-    provider.close()
     exit()
 # End of script

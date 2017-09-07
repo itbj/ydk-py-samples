@@ -78,6 +78,5 @@ if __name__ == "__main__":
     # lldp = crud.read(provider, lldp)
     process_lldp(lldp)  # process object data
 
-    provider.close()
     exit()
 # End of script
