@@ -78,7 +78,7 @@ $
 
 If you don't have YDK-Py installed, verify [your system requirements](https://github.com/CiscoDevNet/ydk-py#system-requirements) and then follow the [YDK-Py installation instructions](https://github.com/CiscoDevNet/ydk-py#quick-install).
 
-The [release versions of this repository](releases) match the [release versions of YDK-Py](https://github.com/CiscoDevNet/ydk-py/releases) used to test the sample apps.  Note that using a different YDK-Py version may break some of the sample apps.  For Cisco IOS XR models, you will need a device running at least Cisco IOS XR 6.0.0.  For Cisco IOS XE models, you will need a Cisco IOS XE device running at least 16.5.1.  
+The [release versions of this repository](https://github.com/CiscoDevNet/ydk-py-samples/releases) match the [release versions of YDK-Py](https://github.com/CiscoDevNet/ydk-py/releases) used to test the sample apps.  Note that using a different YDK-Py version may break some of the sample apps.  For Cisco IOS XR models, you will need a device running at least Cisco IOS XR 6.0.0.  For Cisco IOS XE models, you will need a Cisco IOS XE device running at least 16.5.1.  
 
 ## Vagrant Sandbox
 You can instantiate a YDK-Py sandbox on your computer using Vagrant.  The sandbox will provide an Ubuntu VM with YDK-Py pre-installed.  Make sure you have these prerequisites installed on your computer:
