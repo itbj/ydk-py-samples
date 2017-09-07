@@ -49,6 +49,5 @@ if __name__ == "__main__":
     print("System uptime is " +
           str(timedelta(seconds=system_time.uptime.uptime)))
 
-    # close NETCONF session and exit
     exit()
 # End of script
