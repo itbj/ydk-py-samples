@@ -55,7 +55,7 @@ $ git clone https://github.com/CiscoDevNet/ydk-py-samples.git
 ```
 
 ## Running an App
-Instructions for running the basic apps can be found in their [README](https://github.com/CiscoDevNet/ydk-py-samples/tree/master/samples/basic) file.  Before you attempt to run any app, verify that your system supports Python 2.7 / 3.4 (or later):
+Instructions for running the basic apps can be found in their [README](samples/basic/README.md) file.  Before you attempt to run any app, verify that your system supports Python 2.7 / 3.4 (or later):
 ```
 $ python --version
 Python 2.7.6
