@@ -40,7 +40,7 @@ import logging
 
 def config_interface_configurations(interface_configurations):
     """Add config data to interface_configurations object."""
-    # configure IPv4 loopback
+    # configure IPv4 interface
     interface_configuration = interface_configurations.InterfaceConfiguration()
     interface_configuration.active = "act"
     interface_configuration.interface_name = "GigabitEthernet0/0/0/0"
