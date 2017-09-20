@@ -40,7 +40,13 @@ import logging
 
 def config_native(native):
     """Add config data to native object."""
-    pass
+    loopback = native.interface.Loopback()
+    loopback.name = 0
+    loopback.description = "PRIMARY ROUTER LOOPBACK"
+    prefix_list = loopback.ipv6.address.PrefixList()
+    prefix_list.prefix = "2001:db8::ff:1/128"
+    loopback.ipv6.address.prefix_list.append(prefix_list)
+    native.interface.loopback.append(loopback) 
 
 
 if __name__ == "__main__":
@@ -77,7 +83,7 @@ if __name__ == "__main__":
 
     # edit configuration on NETCONF device
     # netconf.lock(provider, Datastore.running)
-    # netconf.edit_config(provider, Datastore.running, native)
+    netconf.edit_config(provider, Datastore.running, native)
     # netconf.unlock(provider, Datastore.running)
 
     exit()

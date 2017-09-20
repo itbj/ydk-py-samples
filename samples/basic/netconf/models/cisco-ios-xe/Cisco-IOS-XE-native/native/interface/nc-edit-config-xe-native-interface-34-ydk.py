@@ -40,7 +40,15 @@ import logging
 
 def config_native(native):
     """Add config data to native object."""
-    pass
+    # configure IPv4 interface
+    gigabitethernet = native.interface.Gigabitethernet()
+    gigabitethernet.name = 2
+    gigabitethernet.description = "CONNECTS TO R1 (gigabitethernet3)"
+    gigabitethernet.mtu = 9192
+    gigabitethernet.ip.address.primary.address = "172.16.1.0"
+    gigabitethernet.ip.address.primary.mask = "255.255.255.254"
+    gigabitethernet.load_interval = 30
+    native.interface.gigabitethernet.append(gigabitethernet) 
 
 
 if __name__ == "__main__":
@@ -77,7 +85,7 @@ if __name__ == "__main__":
 
     # edit configuration on NETCONF device
     # netconf.lock(provider, Datastore.running)
-    # netconf.edit_config(provider, Datastore.running, native)
+    netconf.edit_config(provider, Datastore.running, native)
     # netconf.unlock(provider, Datastore.running)
 
     exit()

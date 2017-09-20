@@ -1,0 +1,18 @@
+<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+  <interface>
+    <GigabitEthernet>
+      <name>2</name>
+      <description>CONNECTS TO R1 (gigabitethernet3)</description>
+      <ip>
+        <address>
+          <primary>
+            <address>172.16.1.0</address>
+            <mask>255.255.255.254</mask>
+          </primary>
+        </address>
+      </ip>
+      <load-interval>30</load-interval>
+      <mtu>9192</mtu>
+    </GigabitEthernet>
+  </interface>
+</native>
