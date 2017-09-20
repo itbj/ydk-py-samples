@@ -16,9 +16,9 @@
 #
 
 """
-Create configuration for model Cisco-IOS-XR-ifmgr-cfg.
+Get all data for model Cisco-IOS-XE-native.
 
-usage: nc-create-xr-ifmgr-cfg-34-ydk.py [-h] [-v] device
+usage: nc-get-xe-native-10-ydk.py [-h] [-v] device
 
 positional arguments:
   device         NETCONF device (ssh://user:password@host:port)
@@ -31,30 +31,16 @@ optional arguments:
 from argparse import ArgumentParser
 from urlparse import urlparse
 
-from ydk.services import CRUDService
+from ydk.services import NetconfService, Datastore
 from ydk.providers import NetconfServiceProvider
-from ydk.models.cisco_ios_xr import Cisco_IOS_XR_ifmgr_cfg \
-    as xr_ifmgr_cfg
+from ydk.models.cisco_ios_xe import Cisco_IOS_XE_native \
+    as xe_native
 import logging
 
 
-def config_interface_configurations(interface_configurations):
-    """Add config data to interface_configurations object."""
-    # configure IPv4 interface
-    interface_configuration = interface_configurations.InterfaceConfiguration()
-    interface_configuration.active = "act"
-    interface_configuration.interface_name = "GigabitEthernet0/0/0/0"
-    interface_configuration.description = "CONNECTS TO LSR1 (g0/0/0/1)"
-    mtu = interface_configuration.mtus.Mtu()
-    mtu.owner = "GigabitEthernet"
-    mtu.mtu = 9192
-    interface_configuration.mtus.mtu.append(mtu)
-    primary = interface_configuration.ipv4_network.addresses.Primary()
-    primary.address = "172.16.1.0"
-    primary.netmask = "255.255.255.254"
-    interface_configuration.ipv4_network.addresses.primary = primary
-    interface_configuration.statistics.load_interval = 30
-    interface_configurations.interface_configuration.append(interface_configuration)
+def process_native(native):
+    """Process data in native object."""
+    pass
 
 
 if __name__ == "__main__":
@@ -83,14 +69,14 @@ if __name__ == "__main__":
                                       username=device.username,
                                       password=device.password,
                                       protocol=device.scheme)
-    # create CRUD service
-    crud = CRUDService()
+    # create NETCONF service
+    netconf = NetconfService()
 
-    interface_configurations = xr_ifmgr_cfg.InterfaceConfigurations()  # create object
-    config_interface_configurations(interface_configurations)  # add object configuration
+    native = xe_native.Native()  # create object
 
-    # create configuration on NETCONF device
-    crud.create(provider, interface_configurations)
+    # get data from NETCONF device
+    # native = netconf.get(provider, native)
+    process_native(native)  # process object data
 
     exit()
 # End of script
