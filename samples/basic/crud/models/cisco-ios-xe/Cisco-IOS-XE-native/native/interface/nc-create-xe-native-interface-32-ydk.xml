@@ -1,0 +1,16 @@
+<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+  <interface>
+    <Loopback>
+      <name>0</name>
+      <description>PRIMARY ROUTER LOOPBACK</description>
+      <ipv6>
+        <address>
+          <prefix-list>
+            <prefix>2001:db8::ff:1/128</prefix>
+          </prefix-list>
+        </address>
+      </ipv6>
+    </Loopback>
+  </interface>
+</native>
+
