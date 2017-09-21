@@ -16,9 +16,9 @@
 #
 
 """
-Encode configuration for model Cisco-IOS-XR-ifmgr-cfg.
+Encode configuration for model Cisco-IOS-XE-native.
 
-usage: cd-encode-xr-ifmgr-cfg-36-ydk.py [-h] [-v]
+usage: cd-encode-xe-native-10-ydk.py [-h] [-v]
 
 optional arguments:
   -h, --help     show this help message and exit
@@ -30,29 +30,14 @@ from urlparse import urlparse
 
 from ydk.services import CodecService
 from ydk.providers import CodecServiceProvider
-from ydk.models.cisco_ios_xr import Cisco_IOS_XR_ifmgr_cfg \
-    as xr_ifmgr_cfg
+from ydk.models.cisco_ios_xe import Cisco_IOS_XE_native \
+    as xe_native
 import logging
 
 
-def config_interface_configurations(interface_configurations):
-    """Add config data to interface_configurations object."""
-    # configure IPv6 interface
-    interface_configuration = interface_configurations.InterfaceConfiguration()
-    interface_configuration.active = "act"
-    interface_configuration.interface_name = "GigabitEthernet0/0/0/0"
-    interface_configuration.description = "CONNECTS TO LSR1 (g0/0/0/1)"
-    mtu = interface_configuration.mtus.Mtu()
-    mtu.owner = "GigabitEthernet"
-    mtu.mtu = 9192
-    interface_configuration.mtus.mtu.append(mtu)
-    addresses = interface_configuration.ipv6_network.addresses
-    regular_address = addresses.regular_addresses.RegularAddress()
-    regular_address.address = "2001:db8::1:0"
-    regular_address.prefix_length = 127
-    addresses.regular_addresses.regular_address.append(regular_address)
-    interface_configuration.statistics.load_interval = 30
-    interface_configurations.interface_configuration.append(interface_configuration)
+def config_native(native):
+    """Add config data to native object."""
+    pass
 
 
 if __name__ == "__main__":
@@ -78,11 +63,11 @@ if __name__ == "__main__":
     # create codec service
     codec = CodecService()
 
-    interface_configurations = xr_ifmgr_cfg.InterfaceConfigurations()  # create object
-    config_interface_configurations(interface_configurations)  # add object configuration
+    native = xe_native.Native()  # create object
+    config_native(native)  # add object configuration
 
     # encode and print object
-    print(codec.encode(provider, interface_configurations))
+    # print(codec.encode(provider, native))
 
     exit()
 # End of script
