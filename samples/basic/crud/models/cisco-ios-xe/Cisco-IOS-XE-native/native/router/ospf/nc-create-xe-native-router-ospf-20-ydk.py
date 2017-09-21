@@ -35,13 +35,26 @@ from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
 from ydk.models.cisco_ios_xe import Cisco_IOS_XE_native \
     as xe_native
+from ydk.types import Empty
 import logging
 
 
 def config_native(native):
     """Add config data to native object."""
-    pass
+    # OSPF process
+    ospf = native.router.Ospf()
+    ospf.id = 172
+    ospf.router_id = "172.16.255.1"
 
+    ospf.passive_interface.interface = "Loopback0"
+
+    network = ospf.Network()
+    network.ip = "172.16.0.0"
+    network.mask = "0.0.255.255"
+    network.area = 0
+
+    ospf.network.append(network)
+    native.router.ospf.append(ospf)
 
 if __name__ == "__main__":
     """Execute main program."""
