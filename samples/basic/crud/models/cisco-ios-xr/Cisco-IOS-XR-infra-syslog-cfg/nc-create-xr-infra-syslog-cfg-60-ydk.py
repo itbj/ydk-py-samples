@@ -72,7 +72,7 @@ if __name__ == "__main__":
     # log debug messages if verbose argument specified
     if args.verbose:
         logger = logging.getLogger("ydk")
-        logger.setLevel(logging.DEBUG)
+        logger.setLevel(logging.INFO)
         handler = logging.StreamHandler()
         formatter = logging.Formatter(("%(asctime)s - %(name)s - "
                                       "%(levelname)s - %(message)s"))
