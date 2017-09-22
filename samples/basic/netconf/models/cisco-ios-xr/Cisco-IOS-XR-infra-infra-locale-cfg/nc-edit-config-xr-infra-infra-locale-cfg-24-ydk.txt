@@ -1,0 +1,3 @@
+locale country DE
+locale language de
+end
