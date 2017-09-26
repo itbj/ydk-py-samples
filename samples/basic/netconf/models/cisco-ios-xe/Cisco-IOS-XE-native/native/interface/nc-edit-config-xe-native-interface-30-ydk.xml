@@ -1,0 +1,16 @@
+<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+  <interface>
+    <Loopback>
+      <name>0</name>
+      <description>PRIMARY ROUTER LOOPBACK</description>
+      <ip>
+        <address>
+          <primary>
+            <address>172.16.255.1</address>
+            <mask>255.255.255.255</mask>
+          </primary>
+        </address>
+      </ip>
+    </Loopback>
+  </interface>
+</native>
