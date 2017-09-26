@@ -1,0 +1,130 @@
+<interfaces xmlns="http://openconfig.net/yang/interfaces">
+        <interface>
+          <name>Optics0/0/0/5</name>
+          <config>
+            <enabled>true</enabled>
+            <name>Optics0/0/0/5</name>
+            <type xmlns:idx="urn:ietf:params:xml:ns:yang:iana-if-type">idx:opticalChannel</type>
+          </config>
+        </interface>
+        <interface>
+          <name>Optics0/0/0/6</name>
+          <config>
+            <enabled>true</enabled>
+            <name>Optics0/0/0/6</name>
+            <type xmlns:idx="urn:ietf:params:xml:ns:yang:iana-if-type">idx:opticalChannel</type>
+          </config>
+        </interface>
+      </interfaces>
+
+      <terminal-device xmlns="http://openconfig.net/yang/terminal-device">
+        <logical-channels>
+          <channel>
+            <index>100</index>
+            <config>
+              <admin-state>ENABLED</admin-state>
+              <logical-channel-type xmlns:idx="http://openconfig.net/yang/transport-types">idx:PROT_ETHERNET</logical-channel-type>
+              <rate-class xmlns:idx="http://openconfig.net/yang/transport-types">idx:TRIB_RATE_100G</rate-class>
+              <trib-protocol xmlns:idx="http://openconfig.net/yang/transport-types">idx:PROT_100G_MLG</trib-protocol>
+            </config>
+            <ingress>
+              <config>
+                <transceiver>0/0-Optics0/0/0/0</transceiver>
+              </config>
+            </ingress>
+            <logical-channel-assignments>
+              <assignment>
+                <index>1</index>
+                <config>
+                  <allocation>100</allocation>
+                  <assignment-type>LOGICAL_CHANNEL</assignment-type>
+                  <logical-channel>200</logical-channel>
+                </config>
+              </assignment>
+            </logical-channel-assignments>
+          </channel>
+          <channel>
+            <index>101</index>
+            <config>
+              <admin-state>ENABLED</admin-state>
+              <logical-channel-type xmlns:idx="http://openconfig.net/yang/transport-types">idx:PROT_ETHERNET</logical-channel-type>
+              <rate-class xmlns:idx="http://openconfig.net/yang/transport-types">idx:TRIB_RATE_100G</rate-class>
+              <trib-protocol xmlns:idx="http://openconfig.net/yang/transport-types">idx:PROT_100G_MLG</trib-protocol>
+            </config>
+            <ingress>
+              <config>
+                <transceiver>0/0-Optics0/0/0/4</transceiver>
+              </config>
+            </ingress>
+            <logical-channel-assignments>
+              <assignment>
+                <index>1</index>
+                <config>
+                  <allocation>100</allocation>
+                  <assignment-type>LOGICAL_CHANNEL</assignment-type>
+                  <logical-channel>201</logical-channel>
+                </config>
+              </assignment>
+            </logical-channel-assignments>
+          </channel>
+          <channel>
+            <index>200</index>
+            <config>
+              <admin-state>ENABLED</admin-state>
+              <logical-channel-type xmlns:idx="http://openconfig.net/yang/transport-types">idx:PROT_OTN</logical-channel-type>
+            </config>
+            <logical-channel-assignments>
+              <assignment>
+                <index>1</index>
+                <config>
+                  <allocation>100</allocation>
+                  <assignment-type>OPTICAL_CHANNEL</assignment-type>
+                  <optical-channel>0/0-OpticalChannel0/0/0/5</optical-channel>
+                </config>
+              </assignment>
+            </logical-channel-assignments>
+          </channel>
+          <channel>
+            <index>201</index>
+            <config>
+              <admin-state>ENABLED</admin-state>
+              <logical-channel-type xmlns:idx="http://openconfig.net/yang/transport-types">idx:PROT_OTN</logical-channel-type>
+            </config>
+            <logical-channel-assignments>
+              <assignment>
+                <index>1</index>
+                <config>
+                  <allocation>100</allocation>
+                  <assignment-type>OPTICAL_CHANNEL</assignment-type>
+                  <optical-channel>0/0-OpticalChannel0/0/0/6</optical-channel>
+                </config>
+              </assignment>
+            </logical-channel-assignments>
+          </channel>
+        </logical-channels>
+      </terminal-device>
+
+      <components xmlns="http://openconfig.net/yang/platform">
+        <component>
+          <name>0/0-OpticalChannel0/0/0/5</name>
+          <optical-channel xmlns="http://openconfig.net/yang/terminal-device">
+            <config>
+              <frequency>191300000</frequency>
+              <line-port>0/0-Optics0/0/0/5</line-port>
+              <operational-mode>2</operational-mode>
+              <target-output-power>0</target-output-power>
+            </config>
+          </optical-channel>
+        </component>
+        <component>
+          <name>0/0-OpticalChannel0/0/0/6</name>
+          <optical-channel xmlns="http://openconfig.net/yang/terminal-device">
+            <config>
+              <frequency>196100000</frequency>
+              <line-port>0/0-Optics0/0/0/6</line-port>
+              <operational-mode>2</operational-mode>
+              <target-output-power>0</target-output-power>
+            </config>
+          </optical-channel>
+        </component>
+      </components>

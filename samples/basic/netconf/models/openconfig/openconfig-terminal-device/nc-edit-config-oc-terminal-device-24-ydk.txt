@@ -1,0 +1,103 @@
+!
+controller Optics0/0/0/5
+ transmit-power 0
+ dwdm-carrier 100MHz-grid frequency 1913000
+!
+controller Optics0/0/0/6
+ transmit-power 0
+ dwdm-carrier 100MHz-grid frequency 1961000
+!
+terminal-device
+ logical-channel 100
+  rate-class 100G
+  admin-state enable
+  ingress-client-port Optics0/0/0/0
+  trib-protocol 100G-MLG
+  logical-channel-type Ethernet
+  assignment-id 1
+   allocation 100
+   assignment-type logical
+   assigned-logical-channel 200
+  !
+ !
+ logical-channel 110
+  rate-class 100G
+  admin-state enable
+  ingress-client-port Optics0/0/0/1
+  trib-protocol 100G-MLG
+  logical-channel-type Ethernet
+  assignment-id 1
+   allocation 100
+   assignment-type logical
+   assigned-logical-channel 200
+  !
+ !
+ logical-channel 120
+  rate-class 100G
+  admin-state enable
+  ingress-client-port Optics0/0/0/2
+  trib-protocol 100G-MLG
+  logical-channel-type Ethernet
+  assignment-id 1
+   allocation 50
+   assignment-type logical
+   assigned-logical-channel 200
+  !
+  assignment-id 2
+   allocation 50
+   assignment-type logical
+   assigned-logical-channel 201
+  !
+ !
+ logical-channel 130
+  rate-class 100G
+  admin-state enable
+  ingress-client-port Optics0/0/0/3
+  trib-protocol 100G-MLG
+  logical-channel-type Ethernet
+  assignment-id 1
+   allocation 100
+   assignment-type logical
+   assigned-logical-channel 201
+  !
+ !
+ logical-channel 140
+  rate-class 100G
+  admin-state enable
+  ingress-client-port Optics0/0/0/4
+  trib-protocol 100G-MLG
+  logical-channel-type Ethernet
+  assignment-id 1
+   allocation 100
+   assignment-type logical
+   assigned-logical-channel 201
+  !
+ !
+ logical-channel 200
+  admin-state enable
+  logical-channel-type Otn
+  assignment-id 1
+   allocation 250
+   assignment-type optical
+   assigned-optical-channel 0_0-OpticalChannel0_0_0_5
+  !
+ !
+ logical-channel 201
+  admin-state enable
+  logical-channel-type Otn
+  assignment-id 1
+   allocation 250
+   assignment-type optical
+   assigned-optical-channel 0_0-OpticalChannel0_0_0_6
+  !
+ !
+ optical-channel 0_0-OpticalChannel0_0_0_5
+  line-port Optics0/0/0/5
+  operational-mode 2
+ !
+ optical-channel 0_0-OpticalChannel0_0_0_6
+  line-port Optics0/0/0/6
+  operational-mode 2
+ !
+!
+end
