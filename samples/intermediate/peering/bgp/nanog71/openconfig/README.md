@@ -18,7 +18,7 @@ vagrant@nanog71-oc:demo$
 
 3. Configure the routing policy on ASBR1
 ```
-vagrant@nanog71-oc:demo$ ./config_routing_policy.py ssh://user:password@host:port
+vagrant@nanog71-oc:demo$ ./config_routing_policy.py ssh://user:password@device:port
 vagrant@nanog71-oc:demo$
 ```
 
@@ -29,11 +29,12 @@ vagrant@nanog71-oc:~$ demo/consume_telemetry.py
 ```
 
 5. On your initial shell, configure telemetry on ASBR1
+Identify the `collector` address on your host computer and reference it when you send your telemetry configuration to the network device
 ```
-vagrant@nanog71-oc:demo$ ./config_telemetry.py ssh://user:password@host:port
+vagrant@nanog71-oc:demo$ ./config_telemetry.py collector ssh://user:password@device:port
 vagrant@nanog71-oc:demo$
 ```
-Depending on your network latency, your consumer script should start printing telemetry records between 20-40s later.
+Note that the address must be reachable from the device that will stream the data.  Depending on your network latency, your consumer script should start printing telemetry records between 20-40s later.
 
 6. Deploy peer configuration as defined in `peer.json`
 ```
