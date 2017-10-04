@@ -1,7 +1,13 @@
 test
-samples/intermediate
 projects/*
 !projects/README.md
 .vagrant/
 TODO*
 .DS_Store
+
+# python
+*.pyc
+
+# telemetry pipeline
+dump.txt
+*.log

@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+# Copyright 2016 Cisco Systems, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+Vagrant.configure(2) do |config|
+  config.vm.define "nanog71-openconfig", primary: true do |nanog71_openconfig|
+    nanog71_openconfig.vm.box = "nanog71-openconfig"
+    nanog71_openconfig.vm.box_url = "http://ydk.cisco.com/vagrant/nanog71-openconfig/"
+    nanog71_openconfig.vm.synced_folder "demo", "/home/vagrant/demo"
+    nanog71_openconfig.vm.network "forwarded_port", guest: 5432, host: 5432
+    nanog71_openconfig.vm.network "forwarded_port", guest: 2181, host: 2181
+    nanog71_openconfig.vm.network "forwarded_port", guest: 9092, host: 9092
+  end
+end
