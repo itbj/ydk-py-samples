@@ -38,9 +38,9 @@ from ydk.models.ietf import ietf_netconf_monitoring \
 import logging
 
 
-def prepare_get_schema_rpc(get_schema_rpc):
-    """Add RPC input data to get_schema_rpc object."""
-    get_schema_rpc.input.identifier = "openconfig-bgp"
+def prepare_get_schema(get_schema):
+    """Add RPC input data to get_schema object."""
+    get_schema.input.identifier = "openconfig-bgp"
 
 
 if __name__ == "__main__":
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    get_schema_rpc = ietf_netconf_monitoring.GetSchemaRpc()  # create object
-    prepare_get_schema_rpc(get_schema_rpc)  # add RPC input
+    get_schema = ietf_netconf_monitoring.GetSchema()  # create object
+    prepare_get_schema(get_schema)  # add RPC input
 
     # execute RPC on NETCONF device
-    print(executor.execute_rpc(provider, get_schema_rpc))
+    print(executor.execute_rpc(provider, get_schema))
 
     exit()
 # End of script
