@@ -38,13 +38,13 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_cfgmgr_rollback_act \
 import logging
 
 
-def prepare_roll_back_configuration_to_rpc(roll_back_configuration_to_rpc):
-    """Add RPC input data to roll_back_configuration_to_rpc object."""
+def prepare_roll_back_configuration_to(roll_back_configuration_to):
+    """Add RPC input data to roll_back_configuration_to object."""
     # roll back to specific commit id
-    roll_back_configuration_to_rpc.input.comment = "Forced programmatic rollback"
-    roll_back_configuration_to_rpc.input.commit_id = "1000000010"
-    roll_back_configuration_to_rpc.input.force = True
-    roll_back_configuration_to_rpc.input.label = "PRB-005"
+    roll_back_configuration_to.input.comment = "Forced programmatic rollback"
+    roll_back_configuration_to.input.commit_id = "1000000010"
+    roll_back_configuration_to.input.force = True
+    roll_back_configuration_to.input.label = "PRB-005"
 
 
 if __name__ == "__main__":
@@ -76,11 +76,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    roll_back_configuration_to_rpc = xr_cfgmgr_rollback_act.RollBackConfigurationToRpc()  # create object
-    prepare_roll_back_configuration_to_rpc(roll_back_configuration_to_rpc)  # add RPC input
+    roll_back_configuration_to = xr_cfgmgr_rollback_act.RollBackConfigurationTo()  # create object
+    prepare_roll_back_configuration_to(roll_back_configuration_to)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, roll_back_configuration_to_rpc)
+    executor.execute_rpc(provider, roll_back_configuration_to)
 
     exit()
 # End of script

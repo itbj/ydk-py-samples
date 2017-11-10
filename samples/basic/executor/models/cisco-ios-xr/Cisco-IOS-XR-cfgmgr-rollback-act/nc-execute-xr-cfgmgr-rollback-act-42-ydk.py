@@ -38,11 +38,11 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_cfgmgr_rollback_act \
 import logging
 
 
-def prepare_roll_back_configuration_to_exclude_rpc(roll_back_configuration_to_exclude_rpc):
-    """Add RPC input data to roll_back_configuration_to_exclude_rpc object."""
+def prepare_roll_back_configuration_to_exclude(roll_back_configuration_to_exclude):
+    """Add RPC input data to roll_back_configuration_to_exclude object."""
     # roll back to (but excluding) specific commit id
-    roll_back_configuration_to_exclude_rpc.input.comment = "Simple programmatic rollback"
-    roll_back_configuration_to_exclude_rpc.input.commit_id = "1000000010"
+    roll_back_configuration_to_exclude.input.comment = "Simple programmatic rollback"
+    roll_back_configuration_to_exclude.input.commit_id = "1000000010"
 
 
 if __name__ == "__main__":
@@ -74,11 +74,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    roll_back_configuration_to_exclude_rpc = xr_cfgmgr_rollback_act.RollBackConfigurationToExcludeRpc()  # create object
-    prepare_roll_back_configuration_to_exclude_rpc(roll_back_configuration_to_exclude_rpc)  # add RPC input
+    roll_back_configuration_to_exclude = xr_cfgmgr_rollback_act.RollBackConfigurationToExclude()  # create object
+    prepare_roll_back_configuration_to_exclude(roll_back_configuration_to_exclude)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, roll_back_configuration_to_exclude_rpc)
+    executor.execute_rpc(provider, roll_back_configuration_to_exclude)
 
     exit()
 # End of script
