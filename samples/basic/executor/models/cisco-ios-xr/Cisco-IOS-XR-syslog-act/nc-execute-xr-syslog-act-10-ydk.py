@@ -38,8 +38,8 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_syslog_act \
 import logging
 
 
-def prepare_logmsg_rpc(logmsg_rpc):
-    """Add RPC input data to logmsg_rpc object."""
+def prepare_logmsg(logmsg):
+    """Add RPC input data to logmsg object."""
     pass
 
 
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    logmsg_rpc = xr_syslog_act.LogmsgRpc()  # create object
-    prepare_logmsg_rpc(logmsg_rpc)  # add RPC input
+    logmsg = xr_syslog_act.Logmsg()  # create object
+    prepare_logmsg(logmsg)  # add RPC input
 
     # execute RPC on NETCONF device
-    # executor.execute_rpc(provider, logmsg_rpc)
+    # executor.execute_rpc(provider, logmsg)
 
     exit()
 # End of script
