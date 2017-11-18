@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    interface_link_down_rpc = xr_snmp_test_trap_act.InterfaceLinkDownRpc()  # create object
+    interface_link_down = xr_snmp_test_trap_act.InterfaceLinkDown()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, interface_link_down_rpc)
+    executor.execute_rpc(provider, interface_link_down)
 
     exit()
 # End of script

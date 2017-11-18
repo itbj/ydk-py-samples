@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    sonet_line_status_rpc = xr_snmp_test_trap_act.SonetLineStatusRpc()  # create object
+    sonet_line_status = xr_snmp_test_trap_act.SonetLineStatus()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, sonet_line_status_rpc)
+    executor.execute_rpc(provider, sonet_line_status)
 
     exit()
 # End of script

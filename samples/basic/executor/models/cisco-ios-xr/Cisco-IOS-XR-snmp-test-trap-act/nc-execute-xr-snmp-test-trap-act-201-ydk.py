@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    snmp_warm_start_rpc = xr_snmp_test_trap_act.SnmpWarmStartRpc()  # create object
+    snmp_warm_start = xr_snmp_test_trap_act.SnmpWarmStart()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, snmp_warm_start_rpc)
+    executor.execute_rpc(provider, snmp_warm_start)
 
     exit()
 # End of script

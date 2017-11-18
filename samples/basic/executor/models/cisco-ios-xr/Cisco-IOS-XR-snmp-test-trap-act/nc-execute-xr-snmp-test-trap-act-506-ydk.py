@@ -38,9 +38,9 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_routing_bgp_state_change_remote_peer_rpc(routing_bgp_state_change_remote_peer_rpc):
-    """Add RPC input data to routing_bgp_state_change_remote_peer_rpc object."""
-    routing_bgp_state_change_remote_peer_rpc.input.address = "172.16.255.2"
+def prepare_routing_bgp_state_change_remote_peer(routing_bgp_state_change_remote_peer):
+    """Add RPC input data to routing_bgp_state_change_remote_peer object."""
+    routing_bgp_state_change_remote_peer.input.address = "172.16.255.2"
 
 
 if __name__ == "__main__":
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    routing_bgp_state_change_remote_peer_rpc = xr_snmp_test_trap_act.RoutingBgpStateChangeRemotePeerRpc()  # create object
-    prepare_routing_bgp_state_change_remote_peer_rpc(routing_bgp_state_change_remote_peer_rpc)  # add RPC input
+    routing_bgp_state_change_remote_peer = xr_snmp_test_trap_act.RoutingBgpStateChangeRemotePeer()  # create object
+    prepare_routing_bgp_state_change_remote_peer(routing_bgp_state_change_remote_peer)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, routing_bgp_state_change_remote_peer_rpc)
+    executor.execute_rpc(provider, routing_bgp_state_change_remote_peer)
 
     exit()
 # End of script

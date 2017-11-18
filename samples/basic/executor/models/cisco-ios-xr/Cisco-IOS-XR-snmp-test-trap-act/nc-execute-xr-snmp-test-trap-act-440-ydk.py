@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    platform_hfr_bundle_downed_link_rpc = xr_snmp_test_trap_act.PlatformHfrBundleDownedLinkRpc()  # create object
+    platform_hfr_bundle_downed_link = xr_snmp_test_trap_act.PlatformHfrBundleDownedLink()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, platform_hfr_bundle_downed_link_rpc)
+    executor.execute_rpc(provider, platform_hfr_bundle_downed_link)
 
     exit()
 # End of script

@@ -38,12 +38,12 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_routing_mpls_tunnel_re_routed_rpc(routing_mpls_tunnel_re_routed_rpc):
-    """Add RPC input data to routing_mpls_tunnel_re_routed_rpc object."""
-    routing_mpls_tunnel_re_routed_rpc.input.destination = "172.16.255.2"
-    routing_mpls_tunnel_re_routed_rpc.input.index = 1
-    routing_mpls_tunnel_re_routed_rpc.input.instance = 0
-    routing_mpls_tunnel_re_routed_rpc.input.source = "172.16.255.1"
+def prepare_routing_mpls_tunnel_re_routed(routing_mpls_tunnel_re_routed):
+    """Add RPC input data to routing_mpls_tunnel_re_routed object."""
+    routing_mpls_tunnel_re_routed.input.destination = "172.16.255.2"
+    routing_mpls_tunnel_re_routed.input.index = 1
+    routing_mpls_tunnel_re_routed.input.instance = 0
+    routing_mpls_tunnel_re_routed.input.source = "172.16.255.1"
 
 
 if __name__ == "__main__":
@@ -75,11 +75,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    routing_mpls_tunnel_re_routed_rpc = xr_snmp_test_trap_act.RoutingMplsTunnelReRoutedRpc()  # create object
-    prepare_routing_mpls_tunnel_re_routed_rpc(routing_mpls_tunnel_re_routed_rpc)  # add RPC input
+    routing_mpls_tunnel_re_routed = xr_snmp_test_trap_act.RoutingMplsTunnelReRouted()  # create object
+    prepare_routing_mpls_tunnel_re_routed(routing_mpls_tunnel_re_routed)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, routing_mpls_tunnel_re_routed_rpc)
+    executor.execute_rpc(provider, routing_mpls_tunnel_re_routed)
 
     exit()
 # End of script

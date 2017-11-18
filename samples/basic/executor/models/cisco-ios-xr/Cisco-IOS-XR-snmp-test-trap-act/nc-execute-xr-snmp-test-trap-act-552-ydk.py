@@ -38,12 +38,12 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_routing_mpls_tunnel_down_rpc(routing_mpls_tunnel_down_rpc):
-    """Add RPC input data to routing_mpls_tunnel_down_rpc object."""
-    routing_mpls_tunnel_down_rpc.input.destination = "172.16.255.2"
-    routing_mpls_tunnel_down_rpc.input.index = 1
-    routing_mpls_tunnel_down_rpc.input.instance = 0
-    routing_mpls_tunnel_down_rpc.input.source = "172.16.255.1"
+def prepare_routing_mpls_tunnel_down(routing_mpls_tunnel_down):
+    """Add RPC input data to routing_mpls_tunnel_down object."""
+    routing_mpls_tunnel_down.input.destination = "172.16.255.2"
+    routing_mpls_tunnel_down.input.index = 1
+    routing_mpls_tunnel_down.input.instance = 0
+    routing_mpls_tunnel_down.input.source = "172.16.255.1"
 
 
 if __name__ == "__main__":
@@ -75,11 +75,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    routing_mpls_tunnel_down_rpc = xr_snmp_test_trap_act.RoutingMplsTunnelDownRpc()  # create object
-    prepare_routing_mpls_tunnel_down_rpc(routing_mpls_tunnel_down_rpc)  # add RPC input
+    routing_mpls_tunnel_down = xr_snmp_test_trap_act.RoutingMplsTunnelDown()  # create object
+    prepare_routing_mpls_tunnel_down(routing_mpls_tunnel_down)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, routing_mpls_tunnel_down_rpc)
+    executor.execute_rpc(provider, routing_mpls_tunnel_down)
 
     exit()
 # End of script

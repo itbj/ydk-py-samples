@@ -38,9 +38,9 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_entity_sensor_threshold_notification_rpc(entity_sensor_threshold_notification_rpc):
-    """Add RPC input data to entity_sensor_threshold_notification_rpc object."""
-    entity_sensor_threshold_notification_rpc.input.entindex = 5
+def prepare_entity_sensor_threshold_notification(entity_sensor_threshold_notification):
+    """Add RPC input data to entity_sensor_threshold_notification object."""
+    entity_sensor_threshold_notification.input.entindex = 5
 
 
 if __name__ == "__main__":
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    entity_sensor_threshold_notification_rpc = xr_snmp_test_trap_act.EntitySensorThresholdNotificationRpc()  # create object
-    prepare_entity_sensor_threshold_notification_rpc(entity_sensor_threshold_notification_rpc)  # add RPC input
+    entity_sensor_threshold_notification = xr_snmp_test_trap_act.EntitySensorThresholdNotification()  # create object
+    prepare_entity_sensor_threshold_notification(entity_sensor_threshold_notification)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, entity_sensor_threshold_notification_rpc)
+    executor.execute_rpc(provider, entity_sensor_threshold_notification)
 
     exit()
 # End of script

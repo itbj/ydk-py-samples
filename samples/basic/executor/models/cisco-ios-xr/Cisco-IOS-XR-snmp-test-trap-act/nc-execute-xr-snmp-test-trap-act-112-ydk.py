@@ -38,8 +38,8 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_interface_link_up_rpc(interface_link_up_rpc):
-    """Add RPC input data to interface_link_up_rpc object."""
+def prepare_interface_link_up(interface_link_up):
+    """Add RPC input data to interface_link_up object."""
     pass
 
 
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    interface_link_up_rpc = xr_snmp_test_trap_act.InterfaceLinkUpRpc()  # create object
-    prepare_interface_link_up_rpc(interface_link_up_rpc)  # add RPC input
+    interface_link_up = xr_snmp_test_trap_act.InterfaceLinkUp()  # create object
+    prepare_interface_link_up(interface_link_up)  # add RPC input
 
     # execute RPC on NETCONF device
-    # executor.execute_rpc(provider, interface_link_up_rpc)
+    # executor.execute_rpc(provider, interface_link_up)
 
     exit()
 # End of script

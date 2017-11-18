@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    infra_bridge_topology_change_rpc = xr_snmp_test_trap_act.InfraBridgeTopologyChangeRpc()  # create object
+    infra_bridge_topology_change = xr_snmp_test_trap_act.InfraBridgeTopologyChange()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, infra_bridge_topology_change_rpc)
+    executor.execute_rpc(provider, infra_bridge_topology_change)
 
     exit()
 # End of script

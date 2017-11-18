@@ -38,8 +38,8 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_entity_fru_module_status_change_up_rpc(entity_fru_module_status_change_up_rpc):
-    """Add RPC input data to entity_fru_module_status_change_up_rpc object."""
+def prepare_entity_fru_module_status_change_up(entity_fru_module_status_change_up):
+    """Add RPC input data to entity_fru_module_status_change_up object."""
     pass
 
 
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    entity_fru_module_status_change_up_rpc = xr_snmp_test_trap_act.EntityFruModuleStatusChangeUpRpc()  # create object
-    prepare_entity_fru_module_status_change_up_rpc(entity_fru_module_status_change_up_rpc)  # add RPC input
+    entity_fru_module_status_change_up = xr_snmp_test_trap_act.EntityFruModuleStatusChangeUp()  # create object
+    prepare_entity_fru_module_status_change_up(entity_fru_module_status_change_up)  # add RPC input
 
     # execute RPC on NETCONF device
-    # executor.execute_rpc(provider, entity_fru_module_status_change_up_rpc)
+    # executor.execute_rpc(provider, entity_fru_module_status_change_up)
 
     exit()
 # End of script

@@ -38,8 +38,8 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_platform_hfr_bundle_downed_link_rpc(platform_hfr_bundle_downed_link_rpc):
-    """Add RPC input data to platform_hfr_bundle_downed_link_rpc object."""
+def prepare_platform_hfr_bundle_downed_link(platform_hfr_bundle_downed_link):
+    """Add RPC input data to platform_hfr_bundle_downed_link object."""
     pass
 
 
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    platform_hfr_bundle_downed_link_rpc = xr_snmp_test_trap_act.PlatformHfrBundleDownedLinkRpc()  # create object
-    prepare_platform_hfr_bundle_downed_link_rpc(platform_hfr_bundle_downed_link_rpc)  # add RPC input
+    platform_hfr_bundle_downed_link = xr_snmp_test_trap_act.PlatformHfrBundleDownedLink()  # create object
+    prepare_platform_hfr_bundle_downed_link(platform_hfr_bundle_downed_link)  # add RPC input
 
     # execute RPC on NETCONF device
-    # executor.execute_rpc(provider, platform_hfr_bundle_downed_link_rpc)
+    # executor.execute_rpc(provider, platform_hfr_bundle_downed_link)
 
     exit()
 # End of script

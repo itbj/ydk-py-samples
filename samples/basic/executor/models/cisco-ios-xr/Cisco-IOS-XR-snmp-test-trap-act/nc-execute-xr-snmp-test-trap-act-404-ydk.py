@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    entity_fru_power_status_change_failed_rpc = xr_snmp_test_trap_act.EntityFruPowerStatusChangeFailedRpc()  # create object
+    entity_fru_power_status_change_failed = xr_snmp_test_trap_act.EntityFruPowerStatusChangeFailed()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, entity_fru_power_status_change_failed_rpc)
+    executor.execute_rpc(provider, entity_fru_power_status_change_failed)
 
     exit()
 # End of script
