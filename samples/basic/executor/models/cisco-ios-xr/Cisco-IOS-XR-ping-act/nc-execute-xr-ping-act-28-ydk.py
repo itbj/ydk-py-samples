@@ -38,13 +38,13 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_ping_act \
 import logging
 
 
-def prepare_ping_rpc(ping_rpc):
-    """Add RPC input data to ping_rpc object."""
-    ping_rpc.input.destination.destination = '10.0.0.1'
-    ping_rpc.input.destination.vrf_name = 'RED'
+def prepare_ping(ping):
+    """Add RPC input data to ping object."""
+    ping.input.destination.destination = '10.0.0.1'
+    ping.input.destination.vrf_name = 'RED'
 
 
-def process_ping_rpc(ping_rpc):
+def process_ping(ping):
     """Process data in RPC output object."""
     # format string for reply header
     ping_reply_header = ('Sending 5, 100-byte ICMP Echos to {destination}, '
@@ -54,7 +54,7 @@ def process_ping_rpc(ping_rpc):
                           '({hits}/{total}), '
                           'round-trip min/avg/max = {rtt_min}/{rtt_avg}/{rtt_max} ms')
 
-    ping_response = ping_rpc.output.ping_response
+    ping_response = ping.output.ping_response
 
     ping_reply = ping_reply_header.format(destination=ping_response.ipv4[0].destination)
 
@@ -103,12 +103,12 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    ping_rpc = xr_ping_act.PingRpc()  # create object
-    prepare_ping_rpc(ping_rpc)  # add RPC input
+    ping = xr_ping_act.Ping()  # create object
+    prepare_ping(ping)  # add RPC input
 
     # execute RPC on NETCONF device
-    ping_rpc.output = executor.execute_rpc(provider, ping_rpc)
-    print(process_ping_rpc(ping_rpc))
+    ping.output = executor.execute_rpc(provider, ping)
+    print(process_ping(ping))
 
     exit()
 # End of script

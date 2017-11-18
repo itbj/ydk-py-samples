@@ -38,8 +38,8 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_ping_act \
 import logging
 
 
-def prepare_ping_rpc(ping_rpc):
-    """Add RPC input data to ping_rpc object."""
+def prepare_ping(ping):
+    """Add RPC input data to ping object."""
     pass
 
 
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    ping_rpc = xr_ping_act.PingRpc()  # create object
-    prepare_ping_rpc(ping_rpc)  # add RPC input
+    ping = xr_ping_act.Ping()  # create object
+    prepare_ping(ping)  # add RPC input
 
     # execute RPC on NETCONF device
-    # executor.execute_rpc(provider, ping_rpc)
+    # executor.execute_rpc(provider, ping)
 
     exit()
 # End of script

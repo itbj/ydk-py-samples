@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    entity_sensor_threshold_notification_rpc = xr_snmp_test_trap_act.EntitySensorThresholdNotificationRpc()  # create object
+    entity_sensor_threshold_notification = xr_snmp_test_trap_act.EntitySensorThresholdNotification()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, entity_sensor_threshold_notification_rpc)
+    executor.execute_rpc(provider, entity_sensor_threshold_notification)
 
     exit()
 # End of script

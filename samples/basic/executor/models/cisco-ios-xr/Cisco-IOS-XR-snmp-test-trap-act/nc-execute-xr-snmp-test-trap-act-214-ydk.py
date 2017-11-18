@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    infra_redundancy_switch_rpc = xr_snmp_test_trap_act.InfraRedundancySwitchRpc()  # create object
+    infra_redundancy_switch = xr_snmp_test_trap_act.InfraRedundancySwitch()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, infra_redundancy_switch_rpc)
+    executor.execute_rpc(provider, infra_redundancy_switch)
 
     exit()
 # End of script

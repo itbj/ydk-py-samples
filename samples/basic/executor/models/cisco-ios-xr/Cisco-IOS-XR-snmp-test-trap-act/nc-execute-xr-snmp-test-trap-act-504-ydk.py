@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    routing_bgp_state_change_remote_peer_rpc = xr_snmp_test_trap_act.RoutingBgpStateChangeRemotePeerRpc()  # create object
+    routing_bgp_state_change_remote_peer = xr_snmp_test_trap_act.RoutingBgpStateChangeRemotePeer()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, routing_bgp_state_change_remote_peer_rpc)
+    executor.execute_rpc(provider, routing_bgp_state_change_remote_peer)
 
     exit()
 # End of script

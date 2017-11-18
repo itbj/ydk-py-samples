@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    routing_mpls_tunnel_re_routed_rpc = xr_snmp_test_trap_act.RoutingMplsTunnelReRoutedRpc()  # create object
+    routing_mpls_tunnel_re_routed = xr_snmp_test_trap_act.RoutingMplsTunnelReRouted()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, routing_mpls_tunnel_re_routed_rpc)
+    executor.execute_rpc(provider, routing_mpls_tunnel_re_routed)
 
     exit()
 # End of script

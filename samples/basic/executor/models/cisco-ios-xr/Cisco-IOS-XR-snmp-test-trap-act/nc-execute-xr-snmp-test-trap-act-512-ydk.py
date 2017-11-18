@@ -38,9 +38,9 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_routing_ospf_neighbor_state_change_rpc(routing_ospf_neighbor_state_change_rpc):
-    """Add RPC input data to routing_ospf_neighbor_state_change_rpc object."""
-    routing_ospf_neighbor_state_change_rpc.input.address = "172.16.0.1"
+def prepare_routing_ospf_neighbor_state_change(routing_ospf_neighbor_state_change):
+    """Add RPC input data to routing_ospf_neighbor_state_change object."""
+    routing_ospf_neighbor_state_change.input.address = "172.16.0.1"
 
 
 if __name__ == "__main__":
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    routing_ospf_neighbor_state_change_rpc = xr_snmp_test_trap_act.RoutingOspfNeighborStateChangeRpc()  # create object
-    prepare_routing_ospf_neighbor_state_change_rpc(routing_ospf_neighbor_state_change_rpc)  # add RPC input
+    routing_ospf_neighbor_state_change = xr_snmp_test_trap_act.RoutingOspfNeighborStateChange()  # create object
+    prepare_routing_ospf_neighbor_state_change(routing_ospf_neighbor_state_change)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, routing_ospf_neighbor_state_change_rpc)
+    executor.execute_rpc(provider, routing_ospf_neighbor_state_change)
 
     exit()
 # End of script

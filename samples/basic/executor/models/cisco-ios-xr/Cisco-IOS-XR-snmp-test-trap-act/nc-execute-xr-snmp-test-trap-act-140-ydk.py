@@ -38,8 +38,8 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_routing_mpls_tunnel_re_optimized_rpc(routing_mpls_tunnel_re_optimized_rpc):
-    """Add RPC input data to routing_mpls_tunnel_re_optimized_rpc object."""
+def prepare_routing_mpls_tunnel_re_optimized(routing_mpls_tunnel_re_optimized):
+    """Add RPC input data to routing_mpls_tunnel_re_optimized object."""
     pass
 
 
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    routing_mpls_tunnel_re_optimized_rpc = xr_snmp_test_trap_act.RoutingMplsTunnelReOptimizedRpc()  # create object
-    prepare_routing_mpls_tunnel_re_optimized_rpc(routing_mpls_tunnel_re_optimized_rpc)  # add RPC input
+    routing_mpls_tunnel_re_optimized = xr_snmp_test_trap_act.RoutingMplsTunnelReOptimized()  # create object
+    prepare_routing_mpls_tunnel_re_optimized(routing_mpls_tunnel_re_optimized)  # add RPC input
 
     # execute RPC on NETCONF device
-    # executor.execute_rpc(provider, routing_mpls_tunnel_re_optimized_rpc)
+    # executor.execute_rpc(provider, routing_mpls_tunnel_re_optimized)
 
     exit()
 # End of script

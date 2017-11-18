@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    infra_flash_device_removed_rpc = xr_snmp_test_trap_act.InfraFlashDeviceRemovedRpc()  # create object
+    infra_flash_device_removed = xr_snmp_test_trap_act.InfraFlashDeviceRemoved()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, infra_flash_device_removed_rpc)
+    executor.execute_rpc(provider, infra_flash_device_removed)
 
     exit()
 # End of script

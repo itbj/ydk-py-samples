@@ -38,8 +38,8 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_routing_mpls_ldp_session_down_rpc(routing_mpls_ldp_session_down_rpc):
-    """Add RPC input data to routing_mpls_ldp_session_down_rpc object."""
+def prepare_routing_mpls_ldp_session_down(routing_mpls_ldp_session_down):
+    """Add RPC input data to routing_mpls_ldp_session_down object."""
     pass
 
 
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    routing_mpls_ldp_session_down_rpc = xr_snmp_test_trap_act.RoutingMplsLdpSessionDownRpc()  # create object
-    prepare_routing_mpls_ldp_session_down_rpc(routing_mpls_ldp_session_down_rpc)  # add RPC input
+    routing_mpls_ldp_session_down = xr_snmp_test_trap_act.RoutingMplsLdpSessionDown()  # create object
+    prepare_routing_mpls_ldp_session_down(routing_mpls_ldp_session_down)  # add RPC input
 
     # execute RPC on NETCONF device
-    # executor.execute_rpc(provider, routing_mpls_ldp_session_down_rpc)
+    # executor.execute_rpc(provider, routing_mpls_ldp_session_down)
 
     exit()
 # End of script

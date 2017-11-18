@@ -38,9 +38,9 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_platform_hfr_plane_state_rpc(platform_hfr_plane_state_rpc):
-    """Add RPC input data to platform_hfr_plane_state_rpc object."""
-    platform_hfr_plane_state_rpc.input.plane_id = 5
+def prepare_platform_hfr_plane_state(platform_hfr_plane_state):
+    """Add RPC input data to platform_hfr_plane_state object."""
+    platform_hfr_plane_state.input.plane_id = 5
 
 
 if __name__ == "__main__":
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    platform_hfr_plane_state_rpc = xr_snmp_test_trap_act.PlatformHfrPlaneStateRpc()  # create object
-    prepare_platform_hfr_plane_state_rpc(platform_hfr_plane_state_rpc)  # add RPC input
+    platform_hfr_plane_state = xr_snmp_test_trap_act.PlatformHfrPlaneState()  # create object
+    prepare_platform_hfr_plane_state(platform_hfr_plane_state)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, platform_hfr_plane_state_rpc)
+    executor.execute_rpc(provider, platform_hfr_plane_state)
 
     exit()
 # End of script

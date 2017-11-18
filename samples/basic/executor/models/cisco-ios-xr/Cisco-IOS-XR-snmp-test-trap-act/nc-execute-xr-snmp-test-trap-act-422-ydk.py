@@ -38,9 +38,9 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_entity_fru_fan_tray_inserted_rpc(entity_fru_fan_tray_inserted_rpc):
-    """Add RPC input data to entity_fru_fan_tray_inserted_rpc object."""
-    entity_fru_fan_tray_inserted_rpc.input.entindex = 5
+def prepare_entity_fru_fan_tray_inserted(entity_fru_fan_tray_inserted):
+    """Add RPC input data to entity_fru_fan_tray_inserted object."""
+    entity_fru_fan_tray_inserted.input.entindex = 5
 
 
 if __name__ == "__main__":
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    entity_fru_fan_tray_inserted_rpc = xr_snmp_test_trap_act.EntityFruFanTrayInsertedRpc()  # create object
-    prepare_entity_fru_fan_tray_inserted_rpc(entity_fru_fan_tray_inserted_rpc)  # add RPC input
+    entity_fru_fan_tray_inserted = xr_snmp_test_trap_act.EntityFruFanTrayInserted()  # create object
+    prepare_entity_fru_fan_tray_inserted(entity_fru_fan_tray_inserted)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, entity_fru_fan_tray_inserted_rpc)
+    executor.execute_rpc(provider, entity_fru_fan_tray_inserted)
 
     exit()
 # End of script

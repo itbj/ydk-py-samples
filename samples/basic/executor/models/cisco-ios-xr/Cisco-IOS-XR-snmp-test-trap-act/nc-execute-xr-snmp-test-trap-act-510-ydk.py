@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    routing_ospf_neighbor_state_change_rpc = xr_snmp_test_trap_act.RoutingOspfNeighborStateChangeRpc()  # create object
+    routing_ospf_neighbor_state_change = xr_snmp_test_trap_act.RoutingOspfNeighborStateChange()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, routing_ospf_neighbor_state_change_rpc)
+    executor.execute_rpc(provider, routing_ospf_neighbor_state_change)
 
     exit()
 # End of script

@@ -38,9 +38,9 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_snmp_test_trap_act \
 import logging
 
 
-def prepare_sonet_path_status_rpc(sonet_path_status_rpc):
-    """Add RPC input data to sonet_path_status_rpc object."""
-    sonet_path_status_rpc.input.ifindex = 5
+def prepare_sonet_path_status(sonet_path_status):
+    """Add RPC input data to sonet_path_status object."""
+    sonet_path_status.input.ifindex = 5
 
 
 if __name__ == "__main__":
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    sonet_path_status_rpc = xr_snmp_test_trap_act.SonetPathStatusRpc()  # create object
-    prepare_sonet_path_status_rpc(sonet_path_status_rpc)  # add RPC input
+    sonet_path_status = xr_snmp_test_trap_act.SonetPathStatus()  # create object
+    prepare_sonet_path_status(sonet_path_status)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, sonet_path_status_rpc)
+    executor.execute_rpc(provider, sonet_path_status)
 
     exit()
 # End of script

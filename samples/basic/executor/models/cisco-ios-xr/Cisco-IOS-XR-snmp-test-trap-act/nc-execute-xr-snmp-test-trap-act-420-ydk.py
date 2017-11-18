@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    entity_fru_fan_tray_inserted_rpc = xr_snmp_test_trap_act.EntityFruFanTrayInsertedRpc()  # create object
+    entity_fru_fan_tray_inserted = xr_snmp_test_trap_act.EntityFruFanTrayInserted()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, entity_fru_fan_tray_inserted_rpc)
+    executor.execute_rpc(provider, entity_fru_fan_tray_inserted)
 
     exit()
 # End of script

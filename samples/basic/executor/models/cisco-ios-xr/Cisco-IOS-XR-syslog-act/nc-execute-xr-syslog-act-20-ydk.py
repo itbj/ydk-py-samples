@@ -39,10 +39,10 @@ from ydk.models.ietf import ietf_syslog_types
 import logging
 
 
-def prepare_logmsg_rpc(logmsg_rpc):
-    """Add RPC input data to logmsg_rpc object."""
-    logmsg_rpc.input.message = "A custom informational message"
-    logmsg_rpc.input.severity = ietf_syslog_types.Severity.info
+def prepare_logmsg(logmsg):
+    """Add RPC input data to logmsg object."""
+    logmsg.input.message = "A custom informational message"
+    logmsg.input.severity = ietf_syslog_types.Severity.info
 
 if __name__ == "__main__":
     """Execute main program."""
@@ -73,11 +73,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    logmsg_rpc = xr_syslog_act.LogmsgRpc()  # create object
-    prepare_logmsg_rpc(logmsg_rpc)  # add RPC input
+    logmsg = xr_syslog_act.Logmsg()  # create object
+    prepare_logmsg(logmsg)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, logmsg_rpc)
+    executor.execute_rpc(provider, logmsg)
 
     exit()
 # End of script

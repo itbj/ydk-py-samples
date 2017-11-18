@@ -38,10 +38,10 @@ from ydk.models.cisco_ios_xr import Cisco_IOS_XR_cfgmgr_rollback_act \
 import logging
 
 
-def prepare_roll_back_configuration_last_rpc(roll_back_configuration_last_rpc):
-    """Add RPC input data to roll_back_configuration_last_rpc object."""
+def prepare_roll_back_configuration_to(roll_back_configuration_to):
+    """Add RPC input data to roll_back_configuration_to object."""
     # roll back most recent change
-    roll_back_configuration_last_rpc.input.count = 1
+    roll_back_configuration_to.input.count = 1
 
 
 if __name__ == "__main__":
@@ -73,11 +73,11 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    roll_back_configuration_last_rpc = xr_cfgmgr_rollback_act.RollBackConfigurationLastRpc()  # create object
-    prepare_roll_back_configuration_last_rpc(roll_back_configuration_last_rpc)  # add RPC input
+    roll_back_configuration_to = xr_cfgmgr_rollback_act.RollBackConfigurationLast()  # create object
+    prepare_roll_back_configuration_to(roll_back_configuration_to)  # add RPC input
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, roll_back_configuration_last_rpc)
+    executor.execute_rpc(provider, roll_back_configuration_to)
 
     exit()
 # End of script

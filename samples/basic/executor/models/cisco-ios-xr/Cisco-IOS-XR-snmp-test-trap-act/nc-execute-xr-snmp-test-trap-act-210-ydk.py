@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create executor service
     executor = ExecutorService()
 
-    infra_syslog_message_generated_rpc = xr_snmp_test_trap_act.InfraSyslogMessageGeneratedRpc()  # create object
+    infra_syslog_message_generated = xr_snmp_test_trap_act.InfraSyslogMessageGenerated()  # create object
 
     # execute RPC on NETCONF device
-    executor.execute_rpc(provider, infra_syslog_message_generated_rpc)
+    executor.execute_rpc(provider, infra_syslog_message_generated)
 
     exit()
 # End of script
