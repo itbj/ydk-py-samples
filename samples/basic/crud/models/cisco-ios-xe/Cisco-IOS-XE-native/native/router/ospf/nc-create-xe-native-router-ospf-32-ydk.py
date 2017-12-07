@@ -65,10 +65,11 @@ def config_native(native):
     # OSPF stub Area
     area = ospf.Area()
     area.id = 1
-    stub = area.Stub()
+    area.stub = area.Stub()
     ospf.area.append(area)
 
     native.router.ospf.append(ospf)
+
 
 if __name__ == "__main__":
     """Execute main program."""
