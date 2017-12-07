@@ -38,7 +38,7 @@ import logging
 def config_native(native):
     """Add config data to native object."""
     # configure IPv4 interface
-    gigabitethernet = native.interface.Gigabitethernet()
+    gigabitethernet = native.interface.GigabitEthernet()
     gigabitethernet.name = "2"
     gigabitethernet.description = "CONNECTS TO R1 (gigabitethernet3)"
     gigabitethernet.mtu = 9192
