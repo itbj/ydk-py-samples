@@ -1,0 +1,19 @@
+      <vrf>
+        <definition>
+          <name>VRF1</name>
+          <description>IPv4 VRF with Route Target</description>
+          <rd>65000:1</rd>
+          <address-family>
+            <ipv4>
+              <route-target>
+                <export>
+                  <asn-ip>65000:1</asn-ip>
+                </export>
+                <import>
+                  <asn-ip>65000:1</asn-ip>
+                </import>
+              </route-target>
+            </ipv4>
+          </address-family>
+        </definition>
+      <vrf>

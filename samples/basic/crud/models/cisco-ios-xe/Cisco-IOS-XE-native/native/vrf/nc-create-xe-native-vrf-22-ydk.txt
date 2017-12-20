@@ -1,0 +1,10 @@
+!
+vrf definition VRF2
+ description IPv6 VRF with Route Target
+ rd 65000:2
+ !
+ address-family ipv6
+  route-target export 65000:2
+  route-target import 65000:2
+ exit-address-family
+!
