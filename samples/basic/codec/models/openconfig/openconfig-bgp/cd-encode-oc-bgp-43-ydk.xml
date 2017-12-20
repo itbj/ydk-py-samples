@@ -2,10 +2,10 @@
   <global>
     <afi-safis>
       <afi-safi>
-        <afi-safi-name xmlns:idx="http://openconfig.net/yang/bgp-types">idx:IPV6-UNICAST</afi-safi-name>
+        <afi-safi-name xmlns:oc-bgp-types="http://openconfig.net/yang/bgp-types">oc-bgp-types:IPV6_UNICAST</afi-safi-name>
         <config>
-          <afi-safi-name xmlns:idx="http://openconfig.net/yang/bgp-types">idx:IPV6-UNICAST</afi-safi-name>
           <enabled>true</enabled>
+          <afi-safi-name xmlns:oc-bgp-types="http://openconfig.net/yang/bgp-types">oc-bgp-types:IPV6_UNICAST</afi-safi-name>
         </config>
       </afi-safi>
     </afi-safis>
@@ -27,21 +27,21 @@
       <peer-group-name>IBGP</peer-group-name>
       <afi-safis>
         <afi-safi>
-          <afi-safi-name xmlns:idx="http://openconfig.net/yang/bgp-types">idx:IPV6-UNICAST</afi-safi-name>
+          <afi-safi-name xmlns:oc-bgp-types="http://openconfig.net/yang/bgp-types">oc-bgp-types:IPV6_UNICAST</afi-safi-name>
           <apply-policy>
             <config>
               <export-policy>POLICY2</export-policy>
             </config>
           </apply-policy>
           <config>
-            <afi-safi-name xmlns:idx="http://openconfig.net/yang/bgp-types">idx:IPV6-UNICAST</afi-safi-name>
             <enabled>true</enabled>
+            <afi-safi-name xmlns:oc-bgp-types="http://openconfig.net/yang/bgp-types">oc-bgp-types:IPV6_UNICAST</afi-safi-name>
           </config>
         </afi-safi>
       </afi-safis>
       <config>
-        <peer-as>65001</peer-as>
         <peer-group-name>IBGP</peer-group-name>
+        <peer-as>65001</peer-as>
       </config>
       <transport>
         <config>
