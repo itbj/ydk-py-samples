@@ -1,0 +1,3 @@
+<mpls-lsd xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-mpls-lsd-cfg" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="merge">
+  <mpls-ip-ttl-propagate-disable>all</mpls-ip-ttl-propagate-disable>
+</mpls-lsd>
