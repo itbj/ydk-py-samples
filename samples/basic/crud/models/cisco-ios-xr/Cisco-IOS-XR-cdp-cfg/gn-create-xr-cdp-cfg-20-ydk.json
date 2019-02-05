@@ -1,0 +1,5 @@
+{
+  "Cisco-IOS-XR-cdp-cfg:cdp": {
+    "enable": true
+  }
+}

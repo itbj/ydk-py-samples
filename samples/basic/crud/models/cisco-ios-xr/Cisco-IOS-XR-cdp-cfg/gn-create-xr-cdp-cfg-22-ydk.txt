@@ -1,0 +1,3 @@
+cdp timer 15
+cdp holdtime 60
+end
