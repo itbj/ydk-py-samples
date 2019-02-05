@@ -1,0 +1,4 @@
+Host: ios
+System time: 01:31:21 PDT 2016-03-25
+Time source: NTP
+System uptime: 14 days, 20:59:39
