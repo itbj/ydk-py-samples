@@ -16,12 +16,9 @@
 #
 
 """
-Create configuration for model Cisco-IOS-XE-native.
+Encode configuration for model Cisco-IOS-XE-native.
 
-usage: nc-create-xe-native-router-ospf-30-ydk.py [-h] [-v] device
-
-positional arguments:
-  device         NETCONF device (ssh://user:password@host:port)
+usage: cd-encode-xe-native-router-ospf-20-ydk.py [-h] [-v]
 
 optional arguments:
   -h, --help     show this help message and exit
@@ -31,11 +28,10 @@ optional arguments:
 from argparse import ArgumentParser
 from urlparse import urlparse
 
-from ydk.services import CRUDService
-from ydk.providers import NetconfServiceProvider
+from ydk.services import CodecService
+from ydk.providers import CodecServiceProvider
 from ydk.models.cisco_ios_xe import Cisco_IOS_XE_native \
     as xe_native
-from ydk.types import Empty
 import logging
 
 
@@ -50,15 +46,8 @@ def config_native(native):
 
     network = ospf.Network()
     network.ip = "172.16.0.0"
-    network.mask = "0.0.0.255"
+    network.mask = "0.0.255.255"
     network.area = 0
-
-    ospf.network.append(network)
-
-    network = ospf.Network()
-    network.ip = "172.16.1.0"
-    network.mask = "0.0.0.255"
-    network.area = 1
 
     ospf.network.append(network)
     native.router.ospf.append(ospf)
@@ -69,10 +58,7 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("-v", "--verbose", help="print debugging messages",
                         action="store_true")
-    parser.add_argument("device",
-                        help="NETCONF device (ssh://user:password@host:port)")
     args = parser.parse_args()
-    device = urlparse(args.device)
 
     # log debug messages if verbose argument specified
     if args.verbose:
@@ -84,20 +70,17 @@ if __name__ == "__main__":
         handler.setFormatter(formatter)
         logger.addHandler(handler)
 
-    # create NETCONF provider
-    provider = NetconfServiceProvider(address=device.hostname,
-                                      port=device.port,
-                                      username=device.username,
-                                      password=device.password,
-                                      protocol=device.scheme)
-    # create CRUD service
-    crud = CRUDService()
+    # create codec provider
+    provider = CodecServiceProvider(type="xml")
+
+    # create codec service
+    codec = CodecService()
 
     native = xe_native.Native()  # create object
     config_native(native)  # add object configuration
 
-    # create configuration on NETCONF device
-    crud.create(provider, native)
+    # encode and print object
+    print(codec.encode(provider, native))
 
     exit()
 # End of script
