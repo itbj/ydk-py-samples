@@ -56,6 +56,7 @@ def config_native(native):
     ospf.network.append(network)
     native.router.ospf.append(ospf)
 
+
 if __name__ == "__main__":
     """Execute main program."""
     parser = ArgumentParser()
