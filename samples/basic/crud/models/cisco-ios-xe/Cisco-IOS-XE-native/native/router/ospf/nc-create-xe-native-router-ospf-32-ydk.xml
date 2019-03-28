@@ -1,12 +1,15 @@
-<?xml version="1.0"?>
-<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="merge">
+<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
   <router>
     <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
       <id>172</id>
       <router-id>172.16.255.1</router-id>
       <area>
         <id>1</id>
+        <stub/>
       </area>
+      <passive-interface>
+        <interface>Loopback0</interface>
+      </passive-interface>
       <network>
         <ip>172.16.0.0</ip>
         <mask>0.0.0.255</mask>
@@ -17,9 +20,7 @@
         <mask>0.0.0.255</mask>
         <area>1</area>
       </network>
-      <passive-interface>
-        <interface>Loopback0</interface>
-      </passive-interface>
     </ospf>
   </router>
 </native>
+
