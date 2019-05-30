@@ -1,0 +1,6 @@
+lldp
+ timer 15
+ tlv-select
+  management-address disable
+ !
+!
