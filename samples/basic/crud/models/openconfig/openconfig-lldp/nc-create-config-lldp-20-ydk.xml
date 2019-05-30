@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<lldp xmlns="http://openconfig.net/yang/lldp">
+  <config>
+    <enabled>true</enabled>
+  </config>
+</lldp>

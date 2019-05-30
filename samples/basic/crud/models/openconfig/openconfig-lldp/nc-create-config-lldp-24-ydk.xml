@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<lldp xmlns="http://openconfig.net/yang/lldp">
+  <config>
+    <enabled>true</enabled>
+    <hello-timer>15</hello-timer>
+    <suppress-tlv-advertisement xmlns:oc-lldp-types="http://openconfig.net/yang/lldp/types">oc-lldp-types:MANAGEMENT_ADDRESS</suppress-tlv-advertisement>
+  </config>
+</lldp>
