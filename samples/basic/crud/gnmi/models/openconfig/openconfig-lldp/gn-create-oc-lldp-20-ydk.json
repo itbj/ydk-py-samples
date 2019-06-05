@@ -1,0 +1,7 @@
+{
+  "openconfig-lldp:lldp": {
+    "config": {
+      "enabled": true
+    }
+  }
+}
