@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<lldp xmlns="http://openconfig.net/yang/lldp">
+  <config>
+    <enabled>true</enabled>
+    <hello-timer>15</hello-timer>
+  </config>
+</lldp>
