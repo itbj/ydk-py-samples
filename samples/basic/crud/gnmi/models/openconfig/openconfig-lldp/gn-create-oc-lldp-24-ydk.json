@@ -1,0 +1,11 @@
+{
+  "openconfig-lldp:lldp": {
+    "config": {
+      "enabled": true,
+      "hello-timer": "15",
+      "suppress-tlv-advertisement": [
+        "openconfig-lldp-types:MANAGEMENT_ADDRESS"
+      ]
+    }
+  }
+}
