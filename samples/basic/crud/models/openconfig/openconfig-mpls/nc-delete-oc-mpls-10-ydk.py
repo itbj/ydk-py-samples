@@ -33,8 +33,8 @@ from urlparse import urlparse
 
 from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
-from ydk.models.openconfig import openconfig_mpls \
-    as oc_mpls
+from ydk.models.openconfig import openconfig_network_instance \
+    as oc_network_instance
 import logging
 
 
@@ -67,10 +67,10 @@ if __name__ == "__main__":
     # create CRUD service
     crud = CRUDService()
 
-    mpls = oc_mpls.Mpls()  # create object
+    network_instances = oc_network_instance.NetworkInstances()
 
     # delete configuration on NETCONF device
-    # crud.delete(provider, mpls)
+    # crud.delete(provider, network_instances)
 
     exit()
 # End of script

@@ -33,13 +33,13 @@ from urlparse import urlparse
 
 from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
-from ydk.models.openconfig import openconfig_mpls \
-    as oc_mpls
+from ydk.models.openconfig import openconfig_network_instance \
+    as oc_network_instance
 import logging
 
 
-def process_mpls(mpls):
-    """Process data in mpls object."""
+def process_mpls(network_instances):
+    """Add config data to mpls object."""
     pass
 
 
@@ -72,11 +72,11 @@ if __name__ == "__main__":
     # create CRUD service
     crud = CRUDService()
 
-    mpls = oc_mpls.Mpls()  # create object
+    network_instances = oc_network_instance.NetworkInstances()
 
     # read data from NETCONF device
-    # mpls = crud.read(provider, mpls)
-    process_mpls(mpls)  # process object data
+    # network_instances = crud.read(provider, network_instances)
+    process_mpls(network_instances)  # process object data
 
     exit()
 # End of script

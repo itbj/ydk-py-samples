@@ -10,4 +10,3 @@ mpls traffic-eng
  interface GigabitEthernet0/0/0/1
  !
 !
-end

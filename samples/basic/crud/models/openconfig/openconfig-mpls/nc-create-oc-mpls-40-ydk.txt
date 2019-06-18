@@ -4,5 +4,4 @@ explicit-path name LER1-LSR1-LER2
 !
 mpls traffic-eng
 !
-end
 

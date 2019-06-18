@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+710#!/usr/bin/env python
 #
 # Copyright 2016 Cisco Systems, Inc.
 #
@@ -33,13 +33,22 @@ from urlparse import urlparse
 
 from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
-from ydk.models.openconfig import openconfig_mpls \
-    as oc_mpls
+from ydk.models.openconfig import openconfig_network_instance \
+    as oc_network_instance
 import logging
+
+
+def config_mpls(network_instances):
+    """Add config data to bgp object."""
+    # configure default network instance
+    network_instance = network_instances.NetworkInstance()
+    network_instance.name = "default"
+    network_instances.network_instance.append(network_instance)
 
 
 if __name__ == "__main__":
     """Execute main program."""
+
     parser = ArgumentParser()
     parser.add_argument("-v", "--verbose", help="print debugging messages",
                         action="store_true")
@@ -67,9 +76,12 @@ if __name__ == "__main__":
     # create CRUD service
     crud = CRUDService()
 
-    mpls = oc_mpls.Mpls()  # create object
-    # delete configuration on NETCONF device
-    crud.delete(provider, mpls)
+    # BGP configuration
+    network_instances = oc_network_instance.NetworkInstances()
+    config_mpls(network_instances)  # add object configuration
+
+    # create configuration on NETCONF device
+    crud.delete(provider, network_instances.network_instance["default"].mpls)
 
     exit()
 # End of script

@@ -33,35 +33,43 @@ from urlparse import urlparse
 
 from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
+from ydk.models.openconfig import openconfig_network_instance \
+    as oc_network_instance
 from ydk.models.openconfig import openconfig_mpls \
     as oc_mpls
 import logging
 
 
-def config_mpls(mpls):
+def config_mpls(network_instances):
     """Add config data to mpls object."""
+    # configure default network instance
+    network_instance = network_instances.NetworkInstance()
+    network_instance.name = "default"
+    network_instance.config.name = "default"
+
     # constrained path
-    named_explicit_paths = mpls.lsps.constrained_path.NamedExplicitPaths()
-    named_explicit_paths.name = "LER1-LSR1-LER2"
-    named_explicit_paths.config.name = "LER1-LSR1-LER2"
+    named_explicit_path = network_instance.mpls.lsps.constrained_path.named_explicit_paths.NamedExplicitPath()
+    named_explicit_path.name = "LER1-LSR1-LER2"
+    named_explicit_path.config.name = "LER1-LSR1-LER2"
 
     # strict hop
-    explicit_route_objects = named_explicit_paths.ExplicitRouteObjects()
-    explicit_route_objects.index = 10
-    explicit_route_objects.config.index = 10
-    explicit_route_objects.config.address = "172.16.1.1"
-    explicit_route_objects.config.hop_type = oc_mpls.MplsHopType.STRICT
-    named_explicit_paths.explicit_route_objects.append(explicit_route_objects)
+    explicit_route_object = named_explicit_path.explicit_route_objects.ExplicitRouteObject()
+    explicit_route_object.index = 10
+    explicit_route_object.config.index = 10
+    explicit_route_object.config.address = "172.16.1.1"
+    explicit_route_object.config.hop_type = oc_mpls.MplsHopType.STRICT
+    named_explicit_path.explicit_route_objects.explicit_route_object.append(explicit_route_object)
 
     # strict hop
-    explicit_route_objects = named_explicit_paths.ExplicitRouteObjects()
-    explicit_route_objects.index = 20
-    explicit_route_objects.config.index = 20
-    explicit_route_objects.config.address = "172.16.1.5"
-    explicit_route_objects.config.hop_type = oc_mpls.MplsHopType.STRICT
-    named_explicit_paths.explicit_route_objects.append(explicit_route_objects)
+    explicit_route_object = named_explicit_path.explicit_route_objects.ExplicitRouteObject()
+    explicit_route_object.index = 20
+    explicit_route_object.config.index = 20
+    explicit_route_object.config.address = "172.16.1.5"
+    explicit_route_object.config.hop_type = oc_mpls.MplsHopType.STRICT
+    named_explicit_path.explicit_route_objects.explicit_route_object.append(explicit_route_object)
 
-    mpls.lsps.constrained_path.named_explicit_paths.append(named_explicit_paths)
+    network_instance.mpls.lsps.constrained_path.named_explicit_paths.named_explicit_path.append(named_explicit_path)
+    network_instances.network_instance.append(network_instance)
 
 
 if __name__ == "__main__":
@@ -93,11 +101,11 @@ if __name__ == "__main__":
     # create CRUD service
     crud = CRUDService()
 
-    mpls = oc_mpls.Mpls()  # create object
-    config_mpls(mpls)  # add object configuration
+    network_instances = oc_network_instance.NetworkInstances()
+    config_mpls(network_instances)  # add object configuration
 
     # create configuration on NETCONF device
-    crud.create(provider, mpls)
+    crud.create(provider, network_instances)
 
     exit()
 # End of script

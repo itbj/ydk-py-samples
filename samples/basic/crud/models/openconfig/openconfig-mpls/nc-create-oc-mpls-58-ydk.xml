@@ -1,0 +1,52 @@
+<network-instances xmlns="http://openconfig.net/yang/network-instance">
+  <network-instance>
+    <name>default</name>
+    <config>
+      <name>default</name>
+    </config>
+    <mpls>
+      <lsps>
+        <constrained-path>
+          <tunnels>
+            <tunnel>
+              <name>LER1-LER2-t58</name>
+              <config>
+                <name>LER1-LER2-t58</name>
+                <type xmlns:oc-mpls-types="http://openconfig.net/yang/mpls-types">oc-mpls-types:P2P</type>
+              </config>
+              <bandwidth>
+                <config>
+                  <set-bandwidth>100000</set-bandwidth>
+                </config>
+              </bandwidth>
+              <p2p-tunnel-attributes>
+                <config>
+                  <destination>172.16.255.2</destination>
+                </config>
+                <p2p-primary-path>
+                  <p2p-primary-path>
+                    <name>LER1-LSR1-LER2</name>
+                    <config>
+                      <name>LER1-LSR1-LER2</name>
+                      <path-computation-method xmlns:oc-mpls-types="http://openconfig.net/yang/mpls-types">oc-mpls-types:EXPLICITLY_DEFINED</path-computation-method>
+                      <explicit-path-name>LER1-LSR1-LER2</explicit-path-name>
+                      <preference>10</preference>
+                    </config>
+                  </p2p-primary-path>
+                  <p2p-primary-path>
+                    <name>DYNAMIC</name>
+                    <config>
+                      <name>DYNAMIC</name>
+                      <path-computation-method xmlns:oc-mpls-types="http://openconfig.net/yang/mpls-types">oc-mpls-types:LOCALLY_COMPUTED</path-computation-method>
+                      <preference>20</preference>
+                    </config>
+                  </p2p-primary-path>
+                </p2p-primary-path>
+              </p2p-tunnel-attributes>
+            </tunnel>
+          </tunnels>
+        </constrained-path>
+      </lsps>
+    </mpls>
+  </network-instance>
+</network-instances>

@@ -3,4 +3,3 @@ mpls traffic-eng
  reoptimize timers delay cleanup 20
  reoptimize timers delay installation 20
 !
-end

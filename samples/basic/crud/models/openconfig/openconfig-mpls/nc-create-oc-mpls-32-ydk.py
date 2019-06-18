@@ -33,24 +33,31 @@ from urlparse import urlparse
 
 from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
-from ydk.models.openconfig import openconfig_mpls \
-    as oc_mpls
+from ydk.models.openconfig import openconfig_network_instance \
+    as oc_network_instance
 import logging
 
 
-def config_mpls(mpls):
+def config_mpls(network_instances):
     """Add config data to mpls object."""
+    # configure default network instance
+    network_instance = network_instances.NetworkInstance()
+    network_instance.name = "default"
+    network_instance.config.name = "default"
+
     # interface attributes gi0/0/0/0
-    interface = mpls.te_interface_attributes.Interface()
-    interface.name = "GigabitEthernet0/0/0/0"
-    interface.config.name = "GigabitEthernet0/0/0/0"
-    mpls.te_interface_attributes.interface.append(interface)
+    interface = network_instance.mpls.te_interface_attributes.Interface()
+    interface.interface_id = "GigabitEthernet0/0/0/0"
+    interface.config.interface_id = "GigabitEthernet0/0/0/0"
+    network_instance.mpls.te_interface_attributes.interface.append(interface)
 
     # interface attributes gi0/0/0/1
-    interface = mpls.te_interface_attributes.Interface()
-    interface.name = "GigabitEthernet0/0/0/1"
-    interface.config.name = "GigabitEthernet0/0/0/1"
-    mpls.te_interface_attributes.interface.append(interface)
+    interface = network_instance.mpls.te_interface_attributes.Interface()
+    interface.interface_id = "GigabitEthernet0/0/0/1"
+    interface.config.interface_id = "GigabitEthernet0/0/0/1"
+    network_instance.mpls.te_interface_attributes.interface.append(interface)
+
+    network_instances.network_instance.append(network_instance)
 
 
 if __name__ == "__main__":
@@ -82,11 +89,11 @@ if __name__ == "__main__":
     # create CRUD service
     crud = CRUDService()
 
-    mpls = oc_mpls.Mpls()  # create object
-    config_mpls(mpls)  # add object configuration
+    network_instances = oc_network_instance.NetworkInstances()
+    config_mpls(network_instances)  # add object configuration
 
     # create configuration on NETCONF device
-    crud.create(provider, mpls)
+    crud.create(provider, network_instances)
 
     exit()
 # End of script

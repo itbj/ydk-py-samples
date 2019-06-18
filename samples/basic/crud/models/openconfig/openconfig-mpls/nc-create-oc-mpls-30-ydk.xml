@@ -1,0 +1,19 @@
+<network-instances xmlns="http://openconfig.net/yang/network-instance">
+  <network-instance>
+    <name>default</name>
+    <config>
+      <name>default</name>
+    </config>
+    <mpls>
+      <te-global-attributes>
+        <te-lsp-timers>
+          <config>
+            <install-delay>20</install-delay>
+            <cleanup-delay>20</cleanup-delay>
+            <reoptimize-timer>3600</reoptimize-timer>
+          </config>
+        </te-lsp-timers>
+      </te-global-attributes>
+    </mpls>
+  </network-instance>
+</network-instances>

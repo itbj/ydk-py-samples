@@ -33,17 +33,24 @@ from urlparse import urlparse
 
 from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
-from ydk.models.openconfig import openconfig_mpls \
-    as oc_mpls
+from ydk.models.openconfig import openconfig_network_instance \
+    as oc_network_instance
 import logging
 
 
-def config_mpls(mpls):
+def config_mpls(network_instances):
     """Add config data to mpls object."""
+    # configure default network instance
+    network_instance = network_instances.NetworkInstance()
+    network_instance.name = "default"
+    network_instance.config.name = "default"
+
     # LSP timers
-    mpls.te_global_attributes.te_lsp_timers.config.cleanup_delay = 20
-    mpls.te_global_attributes.te_lsp_timers.config.install_delay = 20
-    mpls.te_global_attributes.te_lsp_timers.config.reoptimize_timer = 3600
+    network_instance.mpls.te_global_attributes.te_lsp_timers.config.cleanup_delay = 20
+    network_instance.mpls.te_global_attributes.te_lsp_timers.config.install_delay = 20
+    network_instance.mpls.te_global_attributes.te_lsp_timers.config.reoptimize_timer = 3600
+
+    network_instances.network_instance.append(network_instance)
 
 
 if __name__ == "__main__":
@@ -75,11 +82,11 @@ if __name__ == "__main__":
     # create CRUD service
     crud = CRUDService()
 
-    mpls = oc_mpls.Mpls()  # create object
-    config_mpls(mpls)  # add object configuration
+    network_instances = oc_network_instance.NetworkInstances()
+    config_mpls(network_instances)  # add object configuration
 
     # create configuration on NETCONF device
-    crud.create(provider, mpls)
+    crud.create(provider, network_instances)
 
     exit()
 # End of script

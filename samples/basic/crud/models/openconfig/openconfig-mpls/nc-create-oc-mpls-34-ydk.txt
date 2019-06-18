@@ -9,4 +9,3 @@ mpls traffic-eng
  affinity-map RED bit-position 0
  affinity-map BLUE bit-position 1
 !
-end
