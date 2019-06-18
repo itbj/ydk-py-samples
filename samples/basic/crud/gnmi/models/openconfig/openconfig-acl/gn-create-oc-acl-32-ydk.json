@@ -1,0 +1,85 @@
+{
+  "openconfig-acl:acl": {
+    "acl-sets": {
+      "acl-set": [
+        {
+          "name": "ACL2",
+          "type": "ACL_IPV4",
+          "config": {
+            "name": "ACL2",
+            "type": "ACL_IPV4"
+          },
+          "acl-entries": {
+            "acl-entry": [
+              {
+                "sequence-id": 10,
+                "config": {
+                  "sequence-id": 10
+                }
+              },
+              {
+                "sequence-id": 20,
+                "config": {
+                  "sequence-id": 20
+                },
+                "ipv4": {
+                  "config": {
+                    "source-address": "172.31.255.1/32"
+                  }
+                },
+                "actions": {
+                  "config": {
+                    "forwarding-action": "ACCEPT"
+                  }
+                }
+              },
+              {
+                "sequence-id": 30,
+                "config": {
+                  "sequence-id": 30
+                },
+                "ipv4": {
+                  "config": {
+                    "source-address": "172.31.255.33/32"
+                  }
+                },
+                "actions": {
+                  "config": {
+                    "forwarding-action": "ACCEPT"
+                  }
+                }
+              },
+              {
+                "sequence-id": 40,
+                "config": {
+                  "sequence-id": 40
+                },
+                "ipv4": {
+                  "config": {
+                    "source-address": "172.31.255.65/32"
+                  }
+                },
+                "actions": {
+                  "config": {
+                    "forwarding-action": "ACCEPT"
+                  }
+                }
+              },
+              {
+                "sequence-id": 50,
+                "config": {
+                  "sequence-id": 50
+                },
+                "actions": {
+                  "config": {
+                    "forwarding-action": "REJECT"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

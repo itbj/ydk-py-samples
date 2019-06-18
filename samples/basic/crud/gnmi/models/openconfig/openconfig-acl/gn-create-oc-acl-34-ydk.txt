@@ -1,0 +1,6 @@
+ipv4 access-list ACL3
+ 20 deny ipv4 173.31.1.0/24 172.16.0.0/16
+ 30 deny ipv4 172.31.2.0/24 172.16.0.0/16 dscp ef
+ 40 deny ipv4 172.31.3.0/24 172.16.0.0/16
+ 50 permit ipv4 any any
+!

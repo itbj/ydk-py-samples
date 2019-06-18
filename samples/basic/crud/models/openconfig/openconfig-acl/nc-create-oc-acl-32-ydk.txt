@@ -1,0 +1,6 @@
+ipv4 access-list ACL2
+ 20 permit ipv4 host 172.31.255.1 any
+ 30 permit ipv4 host 172.31.255.33 any
+ 40 permit ipv4 host 172.31.255.65 any
+ 50 deny ipv4 any any
+!
