@@ -1,0 +1,60 @@
+{
+  "openconfig-network-instance:network-instances": {
+    "network-instance": [
+      {
+        "name": "default",
+        "config": {
+          "name": "default"
+        },
+        "mpls": {
+          "lsps": {
+            "constrained-path": {
+              "tunnels": {
+                "tunnel": [
+                  {
+                    "name": "LER1-LER2-t56",
+                    "config": {
+                      "name": "LER1-LER2-t56",
+                      "type": "openconfig-mpls-types:P2P",
+                      "setup-priority": 5,
+                      "hold-priority": 5
+                    },
+                    "bandwidth": {
+                      "config": {
+                        "set-bandwidth": "100000"
+                      }
+                    },
+                    "p2p-tunnel-attributes": {
+                      "config": {
+                        "destination": "172.16.255.2"
+                      },
+                      "p2p-primary-path": {
+                        "p2p-primary-path": [
+                          {
+                            "name": "DYNAMIC",
+                            "config": {
+                              "name": "DYNAMIC",
+                              "path-computation-method": "openconfig-mpls-types:LOCALLY_COMPUTED",
+                              "preference": 10
+                            },
+                            "admin-groups": {
+                              "config": {
+                                "exclude-group": [
+                                  "RED"
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

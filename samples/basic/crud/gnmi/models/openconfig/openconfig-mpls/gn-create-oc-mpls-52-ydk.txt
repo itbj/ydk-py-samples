@@ -1,0 +1,16 @@
+mpls traffic-eng
+ named-tunnels
+  tunnel-te LER1-LER2-t52
+   path-option DYNAMIC
+    preference 10
+    computation dynamic
+   !
+   auto-bw
+    bw-limit min 10000 max 500000
+    overflow threshold 15 min 10 limit 3
+    underflow threshold 15 min 10 limit 3
+   !
+   destination 172.16.255.2
+  !
+ !
+!

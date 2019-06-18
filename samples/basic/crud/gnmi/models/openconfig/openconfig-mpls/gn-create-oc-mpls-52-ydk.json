@@ -1,0 +1,67 @@
+{
+  "openconfig-network-instance:network-instances": {
+    "network-instance": [
+      {
+        "name": "default",
+        "config": {
+          "name": "default"
+        },
+        "mpls": {
+          "lsps": {
+            "constrained-path": {
+              "tunnels": {
+                "tunnel": [
+                  {
+                    "name": "LER1-LER2-t52",
+                    "config": {
+                      "name": "LER1-LER2-t52",
+                      "type": "openconfig-mpls-types:P2P"
+                    },
+                    "bandwidth": {
+                      "auto-bandwidth": {
+                        "config": {
+                          "enabled": true,
+                          "min-bw": "10000",
+                          "max-bw": "500000"
+                        },
+                        "overflow": {
+                          "config": {
+                            "overflow-threshold": 15,
+                            "trigger-event-count": 3
+                          }
+                        },
+                        "underflow": {
+                          "config": {
+                            "underflow-threshold": 15,
+                            "trigger-event-count": 3
+                          }
+                        }
+                      }
+                    },
+                    "p2p-tunnel-attributes": {
+                      "config": {
+                        "destination": "172.16.255.2"
+                      },
+                      "p2p-primary-path": {
+                        "p2p-primary-path": [
+                          {
+                            "name": "DYNAMIC",
+                            "config": {
+                              "name": "DYNAMIC",
+                              "path-computation-method": "openconfig-mpls-types:LOCALLY_COMPUTED",
+                              "preference": 10
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

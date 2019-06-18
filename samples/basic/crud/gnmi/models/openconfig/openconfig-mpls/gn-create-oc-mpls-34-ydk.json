@@ -1,0 +1,48 @@
+{
+  "openconfig-network-instance:network-instances": {
+    "network-instance": [
+      {
+        "name": "default",
+        "config": {
+          "name": "default"
+        },
+        "mpls": {
+          "te-global-attributes": {
+            "mpls-admin-groups": {
+              "admin-group": [
+                {
+                  "admin-group-name": "RED",
+                  "config": {
+                    "admin-group-name": "RED",
+                    "bit-position": 0
+                  }
+                },
+                {
+                  "admin-group-name": "BLUE",
+                  "config": {
+                    "admin-group-name": "BLUE",
+                    "bit-position": 1
+                  }
+                }
+              ]
+            }
+          },
+          "te-interface-attributes": {
+            "interface": [
+              {
+                "interface-id": "GigabitEthernet0/0/0/1",
+                "config": {
+                  "interface-id": "GigabitEthernet0/0/0/1",
+                  "admin-group": [
+                    "RED",
+                    "BLUE"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

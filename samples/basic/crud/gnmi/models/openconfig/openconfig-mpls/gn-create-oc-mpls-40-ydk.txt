@@ -1,0 +1,6 @@
+explicit-path name LER1-LSR1-LER2
+ index 10 next-address strict ipv4 unicast 172.16.1.1
+ index 20 next-address strict ipv4 unicast 172.16.1.5
+!
+mpls traffic-eng
+!

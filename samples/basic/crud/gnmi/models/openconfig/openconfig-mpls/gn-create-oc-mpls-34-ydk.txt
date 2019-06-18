@@ -1,0 +1,11 @@
+srlg
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls traffic-eng
+ interface GigabitEthernet0/0/0/1
+  attribute-names RED BLUE
+ !
+ affinity-map RED bit-position 0
+ affinity-map BLUE bit-position 1
+!

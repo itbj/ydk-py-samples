@@ -1,0 +1,14 @@
+mpls traffic-eng
+ named-tunnels
+  tunnel-te LER1-LER2-t56
+   path-option DYNAMIC
+    preference 10
+    computation dynamic
+   !
+   priority 5 5
+   signalled-bandwidth 100000
+   destination 172.16.255.2
+   affinity exclude RED
+  !
+ !
+!
