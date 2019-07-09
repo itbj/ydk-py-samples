@@ -1,0 +1,27 @@
+<keychains xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-lib-keychain-cfg">
+  <keychain>
+    <chain-name>CHAIN1</chain-name>
+    <macsec-keychain>
+      <macsec-keys>
+        <macsec-key>
+          <key-id>10</key-id>
+          <macsec-lifetime>
+            <start-hour>0</start-hour>
+            <start-minutes>0</start-minutes>
+            <start-seconds>0</start-seconds>
+            <start-date>1</start-date>
+            <start-month>jan</start-month>
+            <start-year>2017</start-year>
+            <infinite-flag>true</infinite-flag>
+          </macsec-lifetime>
+          <macsec-key-string>
+            <string>101E584B5643475D5B547B79777C6663754356445055030F0F03055C504C430F0F</string>
+            <cryptographic-algorithm>aes-128-cmac</cryptographic-algorithm>
+            <encryption-type>type7</encryption-type>
+          </macsec-key-string>
+        </macsec-key>
+      </macsec-keys>
+    </macsec-keychain>
+  </keychain>
+</keychains>
+

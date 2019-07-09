@@ -1,0 +1,9 @@
+!! IOS XR Configuration version = 6.2.1
+key chain CHAIN2
+ macsec
+  key 20
+   key-string password 0256550958525A771B1E584B5643475D5B547B79777C6663754356445055030F0F03055C504C430F0F07020006005E0D51570905574753520C5B575D72181B5F4E cryptographic-algorithm aes-256-cmac
+   lifetime 00:00:00 january 01 2017 infinite
+  !
+ !
+!
