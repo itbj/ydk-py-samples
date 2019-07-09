@@ -1,0 +1,44 @@
+{
+  "openconfig-network-instance:network-instances": {
+    "network-instance": [
+      {
+        "name": "default",
+        "config": {
+          "name": "default"
+        },
+        "mpls": {
+          "signaling-protocols": {
+            "rsvp-te": {
+              "interface-attributes": {
+                "interface": [
+                  {
+                    "interface-id": "GigabitEthernet0/0/0/0",
+                    "config": {
+                      "interface-id": "GigabitEthernet0/0/0/0"
+                    },
+                    "subscription": {
+                      "config": {
+                        "subscription": 100
+                      }
+                    }
+                  },
+                  {
+                    "interface-id": "GigabitEthernet0/0/0/1",
+                    "config": {
+                      "interface-id": "GigabitEthernet0/0/0/1"
+                    },
+                    "subscription": {
+                      "config": {
+                        "subscription": 100
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

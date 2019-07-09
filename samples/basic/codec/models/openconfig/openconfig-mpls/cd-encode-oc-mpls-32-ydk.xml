@@ -1,0 +1,24 @@
+<network-instances xmlns="http://openconfig.net/yang/network-instance">
+  <network-instance>
+    <name>default</name>
+    <config>
+      <name>default</name>
+    </config>
+    <mpls>
+      <te-interface-attributes>
+        <interface>
+          <interface-id>GigabitEthernet0/0/0/0</interface-id>
+          <config>
+            <interface-id>GigabitEthernet0/0/0/0</interface-id>
+          </config>
+        </interface>
+        <interface>
+          <interface-id>GigabitEthernet0/0/0/1</interface-id>
+          <config>
+            <interface-id>GigabitEthernet0/0/0/1</interface-id>
+          </config>
+        </interface>
+      </te-interface-attributes>
+    </mpls>
+  </network-instance>
+</network-instances>

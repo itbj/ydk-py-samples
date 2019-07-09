@@ -1,0 +1,30 @@
+{
+  "openconfig-network-instance:network-instances": {
+    "network-instance": [
+      {
+        "name": "default",
+        "config": {
+          "name": "default"
+        },
+        "mpls": {
+          "te-interface-attributes": {
+            "interface": [
+              {
+                "interface-id": "GigabitEthernet0/0/0/0",
+                "config": {
+                  "interface-id": "GigabitEthernet0/0/0/0"
+                }
+              },
+              {
+                "interface-id": "GigabitEthernet0/0/0/1",
+                "config": {
+                  "interface-id": "GigabitEthernet0/0/0/1"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "openconfig-network-instance:network-instances": {
+    "network-instance": [
+      {
+        "name": "default",
+        "config": {
+          "name": "default"
+        },
+        "mpls": {
+          "lsps": {
+            "constrained-path": {
+              "named-explicit-paths": {
+                "named-explicit-path": [
+                  {
+                    "name": "LER1-LSR1-LER2",
+                    "config": {
+                      "name": "LER1-LSR1-LER2"
+                    },
+                    "explicit-route-objects": {
+                      "explicit-route-object": [
+                        {
+                          "index": 10,
+                          "config": {
+                            "address": "172.16.1.1",
+                            "hop-type": "STRICT",
+                            "index": 10
+                          }
+                        },
+                        {
+                          "index": 20,
+                          "config": {
+                            "address": "172.16.1.5",
+                            "hop-type": "STRICT",
+                            "index": 20
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

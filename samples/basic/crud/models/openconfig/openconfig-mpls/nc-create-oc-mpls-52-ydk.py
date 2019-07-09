@@ -33,28 +33,35 @@ from urlparse import urlparse
 
 from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
-from ydk.models.openconfig import openconfig_mpls \
-    as oc_mpls
-from ydk.models.openconfig import openconfig_mpls_types as oc_mpls_types
+from ydk.models.openconfig import openconfig_network_instance \
+    as oc_network_instance
+from ydk.models.openconfig import openconfig_mpls_types \
+    as oc_mpls_types
 import logging
 
 
-def config_mpls(mpls):
+def config_mpls(network_instances):
     """Add config data to mpls object."""
+    # configure default network instance
+    network_instance = network_instances.NetworkInstance()
+    network_instance.name = "default"
+    network_instance.config.name = "default"
+
     # auto-bw tunnel
-    tunnel = mpls.lsps.constrained_path.Tunnel()
+    tunnel = network_instance.mpls.lsps.constrained_path.tunnels.Tunnel()
     tunnel.name = "LER1-LER2-t52"
     tunnel.config.name = "LER1-LER2-t52"
     tunnel.config.type = oc_mpls_types.P2P()
-    tunnel.type = oc_mpls_types.P2P()
-    p2p_primary_paths = tunnel.p2p_tunnel_attributes.P2PPrimaryPaths()
-    p2p_primary_paths.name = "DYNAMIC"
-    p2p_primary_paths.config.name = "DYNAMIC"
-    p2p_primary_paths.config.preference = 10
-    path_computation_method = oc_mpls.LocallyComputed()
-    p2p_primary_paths.config.path_computation_method = path_computation_method
-    tunnel.p2p_tunnel_attributes.p2p_primary_paths.append(p2p_primary_paths)
+
+    p2p_primary_path = tunnel.p2p_tunnel_attributes.p2p_primary_path.P2pPrimaryPath_()
+    p2p_primary_path.name = "DYNAMIC"
+    p2p_primary_path.config.name = "DYNAMIC"
+    p2p_primary_path.config.preference = 10
+    path_computation_method = oc_mpls_types.LOCALLYCOMPUTED()
+    p2p_primary_path.config.path_computation_method = path_computation_method
+    tunnel.p2p_tunnel_attributes.p2p_primary_path.p2p_primary_path.append(p2p_primary_path)
     tunnel.p2p_tunnel_attributes.config.destination = "172.16.255.2"
+
     # auto-bandwidth configuration
     tunnel.bandwidth.auto_bandwidth.config.enabled = True
     tunnel.bandwidth.auto_bandwidth.config.min_bw = 10000
@@ -64,7 +71,8 @@ def config_mpls(mpls):
     tunnel.bandwidth.auto_bandwidth.underflow.config.underflow_threshold = 15
     tunnel.bandwidth.auto_bandwidth.underflow.config.trigger_event_count = 3
 
-    mpls.lsps.constrained_path.tunnel.append(tunnel)
+    network_instance.mpls.lsps.constrained_path.tunnels.tunnel.append(tunnel)
+    network_instances.network_instance.append(network_instance)
 
 
 if __name__ == "__main__":
@@ -96,11 +104,11 @@ if __name__ == "__main__":
     # create CRUD service
     crud = CRUDService()
 
-    mpls = oc_mpls.Mpls()  # create object
-    config_mpls(mpls)  # add object configuration
+    network_instances = oc_network_instance.NetworkInstances()
+    config_mpls(network_instances)  # add object configuration
 
     # create configuration on NETCONF device
-    crud.create(provider, mpls)
+    crud.create(provider, network_instances)
 
     exit()
 # End of script
