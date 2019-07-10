@@ -1,0 +1,50 @@
+{
+  "Cisco-IOS-XR-ipv6-ospfv3-cfg:ospfv3": {
+    "processes": {
+      "process": [
+        {
+          "process-name": "DEFAULT",
+          "default-vrf": {
+            "router-id": "172.16.255.101",
+            "area-addresses": {
+              "area-area-id": [
+                {
+                  "area-id": 0,
+                  "enable": [null],
+                  "interfaces": {
+                    "interface": [
+                      {
+                        "interface-name": "Loopback0",
+                        "enable": [null],
+                        "passive": false
+                      },
+                      {
+                        "interface-name": "GigabitEthernet0/0/0/0",
+                        "enable": [null],
+                        "network": "point-to-point"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "area-id": 1,
+                  "stub": true,
+                  "enable": [null],
+                  "interfaces": {
+                    "interface": [
+                      {
+                        "interface-name": "GigabitEthernet0/0/0/1",
+                        "enable": [null],
+                        "network": "point-to-point"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
