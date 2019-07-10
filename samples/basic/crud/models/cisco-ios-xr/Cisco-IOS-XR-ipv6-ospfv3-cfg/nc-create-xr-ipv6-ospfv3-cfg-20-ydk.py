@@ -45,7 +45,6 @@ def config_ospfv3(ospfv3):
     process = ospfv3.processes.Process()
     process.process_name = "DEFAULT"
     process.default_vrf.router_id = "172.16.255.1"
-    process.enable = Empty()
 
     # Area 0
     area_area_id = process.default_vrf.area_addresses.AreaAreaId()
