@@ -1,0 +1,39 @@
+{
+  "openconfig-telemetry:telemetry-system": {
+    "sensor-groups": {
+      "sensor-group": [
+        {
+          "sensor-group-id": "SGROUP1",
+          "sensor-paths": {
+            "sensor-path": [
+              {
+                "path": "Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "subscriptions": {
+      "persistent": {
+        "subscription": [
+          {
+            "subscription-id": "1",
+            "sensor-profiles": {
+              "sensor-profile": [
+                {
+                  "sensor-group": "SGROUP1",
+                  "config": {
+                    "sensor-group": "SGROUP1",
+                    "sample-interval": "30000"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+
