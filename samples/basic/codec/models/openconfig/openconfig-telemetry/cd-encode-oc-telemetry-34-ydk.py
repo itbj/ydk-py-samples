@@ -55,10 +55,12 @@ def config_telemetry_system(telemetry_system):
     subscription = telemetry_system.subscriptions.persistent.Subscription()
     subscription.subscription_id = 1
     sensor_profile = subscription.sensor_profiles.SensorProfile()
+    sensor_profile.sensor_group = "SGROUP1"
     sensor_profile.config.sensor_group = "SGROUP1"
     sensor_profile.config.sample_interval = 30000
     subscription.sensor_profiles.sensor_profile.append(sensor_profile)
     sensor_profile = subscription.sensor_profiles.SensorProfile()
+    sensor_profile.sensor_group = "SGROUP2"
     sensor_profile.config.sensor_group = "SGROUP2"
     sensor_profile.config.sample_interval = 8000
     subscription.sensor_profiles.sensor_profile.append(sensor_profile)
