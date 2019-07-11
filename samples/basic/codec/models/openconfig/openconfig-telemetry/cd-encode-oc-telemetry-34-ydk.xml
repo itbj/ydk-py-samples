@@ -23,15 +23,17 @@
         <subscription-id>1</subscription-id>
         <sensor-profiles>
           <sensor-profile>
+            <sensor-group>SGROUP1</sensor-group>
             <config>
-              <sample-interval>30000</sample-interval>
               <sensor-group>SGROUP1</sensor-group>
+              <sample-interval>30000</sample-interval>
             </config>
           </sensor-profile>
           <sensor-profile>
+            <sensor-group>SGROUP2</sensor-group>
             <config>
-              <sample-interval>8000</sample-interval>
               <sensor-group>SGROUP2</sensor-group>
+              <sample-interval>8000</sample-interval>
             </config>
           </sensor-profile>
         </sensor-profiles>
