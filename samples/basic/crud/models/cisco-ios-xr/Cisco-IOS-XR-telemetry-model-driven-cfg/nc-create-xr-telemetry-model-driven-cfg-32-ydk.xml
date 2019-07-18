@@ -11,17 +11,6 @@
         </sensor-path>
       </sensor-paths>
     </sensor-group>
-    <sensor-group>
-      <sensor-group-identifier>SGROUP1</sensor-group-identifier>
-      <sensor-paths>
-        <sensor-path>
-          <telemetry-sensor-path>Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters</telemetry-sensor-path>
-        </sensor-path>
-        <sensor-path>
-          <telemetry-sensor-path>Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node/summary</telemetry-sensor-path>
-        </sensor-path>
-      </sensor-paths>
-    </sensor-group>
   </sensor-groups>
   <subscriptions>
     <subscription>
