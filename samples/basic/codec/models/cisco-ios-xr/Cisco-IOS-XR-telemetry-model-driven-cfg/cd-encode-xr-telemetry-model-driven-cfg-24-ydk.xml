@@ -1,20 +1,4 @@
 <telemetry-model-driven xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-telemetry-model-driven-cfg">
-  <destination-groups>
-    <destination-group>
-      <destination-id>DGROUP1</destination-id>
-      <ipv4-destinations>
-        <ipv4-destination>
-          <destination-port>5432</destination-port>
-          <ipv4-address>172.30.8.4</ipv4-address>
-          <encoding>self-describing-gpb</encoding>
-          <protocol>
-            <no-tls>1</no-tls>
-            <protocol>grpc</protocol>
-          </protocol>
-        </ipv4-destination>
-      </ipv4-destinations>
-    </destination-group>
-  </destination-groups>
   <sensor-groups>
     <sensor-group>
       <sensor-group-identifier>SGROUP1</sensor-group-identifier>
@@ -36,11 +20,6 @@
   <subscriptions>
     <subscription>
       <subscription-identifier>SUB1</subscription-identifier>
-      <destination-profiles>
-        <destination-profile>
-          <destination-id>DGROUP1</destination-id>
-        </destination-profile>
-      </destination-profiles>
       <sensor-profiles>
         <sensor-profile>
           <sensorgroupid>SGROUP1</sensorgroupid>
@@ -51,7 +30,28 @@
           <sample-interval>8000</sample-interval>
         </sensor-profile>
       </sensor-profiles>
+      <destination-profiles>
+        <destination-profile>
+          <destination-id>DGROUP1</destination-id>
+        </destination-profile>
+      </destination-profiles>
     </subscription>
   </subscriptions>
+  <destination-groups>
+    <destination-group>
+      <destination-id>DGROUP1</destination-id>
+      <ipv4-destinations>
+        <ipv4-destination>
+          <ipv4-address>172.30.8.4</ipv4-address>
+          <destination-port>5432</destination-port>
+          <encoding>self-describing-gpb</encoding>
+          <protocol>
+            <protocol>grpc</protocol>
+            <no-tls/>
+          </protocol>
+        </ipv4-destination>
+      </ipv4-destinations>
+    </destination-group>
+  </destination-groups>
 </telemetry-model-driven>
 
