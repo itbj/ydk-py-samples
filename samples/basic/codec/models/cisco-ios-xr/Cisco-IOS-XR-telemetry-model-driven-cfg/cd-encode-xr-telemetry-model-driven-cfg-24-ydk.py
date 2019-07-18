@@ -47,7 +47,7 @@ def config_telemetry_model_driven(telemetry_model_driven):
     ipv4_destination.encoding = xr_telemetry_model_driven_cfg.EncodeType.self_describing_gpb
     protocol = ipv4_destination.Protocol()
     protocol.protocol = xr_telemetry_model_driven_cfg.ProtoType.grpc
-    protocol.no_tls = 1
+    protocol.no_tls = Empty()
     ipv4_destination.protocol = protocol
     destination_group.ipv4_destinations.ipv4_destination.append(ipv4_destination)
     telemetry_model_driven.destination_groups.destination_group.append(destination_group)
@@ -55,14 +55,12 @@ def config_telemetry_model_driven(telemetry_model_driven):
     # sensor group
     sensor_group = telemetry_model_driven.sensor_groups.SensorGroup()
     sensor_group.sensor_group_identifier = "SGROUP1"
-    sensor_group.enable = Empty()
     sensor_path = sensor_group.sensor_paths.SensorPath()
     sensor_path.telemetry_sensor_path = "Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters"
     sensor_group.sensor_paths.sensor_path.append(sensor_path)
     telemetry_model_driven.sensor_groups.sensor_group.append(sensor_group)
     sensor_group = telemetry_model_driven.sensor_groups.SensorGroup()
     sensor_group.sensor_group_identifier = "SGROUP2"
-    sensor_group.enable = Empty()
     sensor_path = sensor_group.sensor_paths.SensorPath()
     sensor_path.telemetry_sensor_path = "Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node/summary"
     sensor_group.sensor_paths.sensor_path.append(sensor_path)
@@ -81,7 +79,6 @@ def config_telemetry_model_driven(telemetry_model_driven):
     subscription.sensor_profiles.sensor_profile.append(sensor_profile)
     destination_profile = subscription.destination_profiles.DestinationProfile()
     destination_profile.destination_id = "DGROUP1"
-    destination_profile.enable = Empty()
     subscription.destination_profiles.destination_profile.append(destination_profile)
     telemetry_model_driven.subscriptions.subscription.append(subscription)
 

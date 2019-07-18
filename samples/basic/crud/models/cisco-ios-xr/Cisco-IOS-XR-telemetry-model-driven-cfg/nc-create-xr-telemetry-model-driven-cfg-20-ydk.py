@@ -57,7 +57,6 @@ def config_telemetry_model_driven(telemetry_model_driven):
     # sensor group
     sensor_group = telemetry_model_driven.sensor_groups.SensorGroup()
     sensor_group.sensor_group_identifier = "SGROUP1"
-    sensor_group.enable = Empty()
     sensor_path = sensor_group.sensor_paths.SensorPath()
     sensor_path.telemetry_sensor_path = "Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters" 
     sensor_group.sensor_paths.sensor_path.append(sensor_path)
@@ -72,7 +71,6 @@ def config_telemetry_model_driven(telemetry_model_driven):
     subscription.sensor_profiles.sensor_profile.append(sensor_profile) 
     destination_profile = subscription.destination_profiles.DestinationProfile()
     destination_profile.destination_id = "DGROUP1"
-    destination_profile.enable = Empty()
     subscription.destination_profiles.destination_profile.append(destination_profile) 
     telemetry_model_driven.subscriptions.subscription.append(subscription)
 
