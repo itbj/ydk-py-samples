@@ -35,7 +35,6 @@ from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
 from ydk.models.cisco_ios_xr import Cisco_IOS_XR_ipv4_ospf_cfg \
     as xr_ipv4_ospf_cfg
-from ydk.types import Empty
 import logging
 
 
@@ -45,24 +44,20 @@ def config_ospf(ospf):
     process = ospf.processes.Process()
     process.process_name = "DEFAULT"
     process.default_vrf.router_id = "172.16.255.1"
-    process.start = Empty()
 
     # Area 0
     area_area_id = process.default_vrf.area_addresses.AreaAreaId()
     area_area_id.area_id = 0
-    area_area_id.running = Empty()
 
     # loopback interface passive
     name_scope = area_area_id.name_scopes.NameScope()
     name_scope.interface_name = "Loopback0"
-    name_scope.running = Empty()
     name_scope.passive = True
     area_area_id.name_scopes.name_scope.append(name_scope)
 
     # gi0/0/0/0 interface
     name_scope = area_area_id.name_scopes.NameScope()
     name_scope.interface_name = "GigabitEthernet0/0/0/0"
-    name_scope.running = Empty()
     name_scope.network_type = xr_ipv4_ospf_cfg.OspfNetwork.point_to_point
     area_area_id.name_scopes.name_scope.append(name_scope)
     process.default_vrf.area_addresses.area_area_id.append(area_area_id)
@@ -70,13 +65,11 @@ def config_ospf(ospf):
     # Area 1
     area_area_id = process.default_vrf.area_addresses.AreaAreaId()
     area_area_id.area_id = 1
-    area_area_id.running = Empty()
     area_area_id.stub = True
 
     # gi0/0/0/1 interface
     name_scope = area_area_id.name_scopes.NameScope()
     name_scope.interface_name = "GigabitEthernet0/0/0/1"
-    name_scope.running = Empty()
     name_scope.network_type = xr_ipv4_ospf_cfg.OspfNetwork.point_to_point
     area_area_id.name_scopes.name_scope.append(name_scope)
     process.default_vrf.area_addresses.area_area_id.append(area_area_id)
