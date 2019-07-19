@@ -3,10 +3,10 @@
     <instance>
       <instance-name>DEFAULT</instance-name>
       <running/>
-      <is-type>level1</is-type>
+      <is-type>level2</is-type>
       <afs>
         <af>
-          <af-name>ipv6</af-name>
+          <af-name>ipv4</af-name>
           <saf-name>unicast</saf-name>
           <af-data>
             <metric-styles>
@@ -15,6 +15,11 @@
                 <style>new-metric-style</style>
               </metric-style>
             </metric-styles>
+            <mpls>
+              <router-id>
+                <interface-name>Loopback0</interface-name>
+              </router-id>
+            </mpls>
           </af-data>
         </af>
       </afs>
@@ -30,7 +35,7 @@
           <state>passive</state>
           <interface-afs>
             <interface-af>
-              <af-name>ipv6</af-name>
+              <af-name>ipv4</af-name>
               <saf-name>unicast</saf-name>
               <interface-af-data>
                 <running/>
@@ -44,7 +49,7 @@
           <point-to-point/>
           <interface-afs>
             <interface-af>
-              <af-name>ipv6</af-name>
+              <af-name>ipv4</af-name>
               <saf-name>unicast</saf-name>
               <interface-af-data>
                 <running/>

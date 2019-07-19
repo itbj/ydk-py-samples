@@ -59,8 +59,6 @@ def config_isis(isis):
     metric_style = af.af_data.metric_styles.MetricStyle()
     metric_style.style = xr_clns_isis_cfg.IsisMetricStyle.new_metric_style
     metric_style.level = xr_clns_isis_datatypes.IsisInternalLevel.not_set
-    transition_state = xr_clns_isis_cfg.IsisMetricStyleTransition.disabled
-    metric_style.transition_state = transition_state
     af.af_data.metric_styles.metric_style.append(metric_style)
     propagation = af.af_data.propagations.Propagation()
     propagation.source_level = xr_clns_isis_datatypes.IsisInternalLevel.level2

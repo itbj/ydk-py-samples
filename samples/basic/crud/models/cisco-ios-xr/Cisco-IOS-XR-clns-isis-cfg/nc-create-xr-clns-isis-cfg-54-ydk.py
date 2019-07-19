@@ -60,8 +60,6 @@ def config_isis(isis):
     metric_style = af.af_data.metric_styles.MetricStyle()
     metric_style.style = xr_clns_isis_cfg.IsisMetricStyle.new_metric_style
     metric_style.level = xr_clns_isis_datatypes.IsisInternalLevel.not_set
-    transition_state = xr_clns_isis_cfg.IsisMetricStyleTransition.disabled
-    metric_style.transition_state = transition_state
     af.af_data.metric_styles.metric_style.append(metric_style)
     # segment routing
     mpls = xr_clns_isis_cfg.IsisLabelPreference.ldp
@@ -81,7 +79,7 @@ def config_isis(isis):
     interface.interface_afs.interface_af.append(interface_af)
     # segment routing
     prefix_sid = interface_af.interface_af_data.PrefixSid()
-    prefix_sid.type = xr_clns_isis_cfg.Isissid.absolute
+    prefix_sid.type = xr_clns_isis_cfg.Isissid1.absolute
     prefix_sid.value = 16041
     prefix_sid.php = xr_clns_isis_cfg.IsisphpFlag.enable
     explicit_null = xr_clns_isis_cfg.IsisexplicitNullFlag.disable
