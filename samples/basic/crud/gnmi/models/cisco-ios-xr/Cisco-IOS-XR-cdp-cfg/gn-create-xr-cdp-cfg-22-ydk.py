@@ -21,7 +21,7 @@ Create configuration for model Cisco-IOS-XR-cdp-cfg.
 usage: gn-create-xr-cdp-cfg-22-ydk.py [-h] [-v] device
 
 positional arguments:
-  device         gNMI device (ssh://user:password@host:port)
+  device         gNMI device (http://user:password@host:port)
 
 optional arguments:
   -h, --help     show this help message and exit
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     parser.add_argument("-v", "--verbose", help="print debugging messages",
                         action="store_true")
     parser.add_argument("device",
-                        help="gNMI device (ssh://user:password@host:port)")
+                        help="gNMI device (http://user:password@host:port)")
     args = parser.parse_args()
     device = urlparse(args.device)
 
