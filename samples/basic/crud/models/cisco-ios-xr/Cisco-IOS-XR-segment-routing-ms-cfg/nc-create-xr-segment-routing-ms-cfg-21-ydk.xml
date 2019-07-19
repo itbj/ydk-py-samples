@@ -4,8 +4,8 @@
       <af>ipv6</af>
       <ip>2001:db8::ff:1</ip>
       <mask>128</mask>
-      <sid-range>1</sid-range>
       <sid-start>4061</sid-start>
+      <sid-range>1</sid-range>
     </mapping>
   </mappings>
 </sr>

@@ -41,7 +41,7 @@ import logging
 def config_sr(sr):
     """Add config data to sr object."""
     mapping = sr.mappings.Mapping()
-    mapping.af = "ipv6"
+    mapping.af = xr_segment_routing_ms_cfg.SrmsAddressFamily.ipv6
     mapping.ip = "2001:db8::ff:1"
     mapping.mask = 128
     mapping.sid_start = 4061
