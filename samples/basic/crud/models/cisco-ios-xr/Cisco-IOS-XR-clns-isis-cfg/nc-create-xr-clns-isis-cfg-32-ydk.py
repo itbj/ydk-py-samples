@@ -56,17 +56,15 @@ def config_isis(isis):
     af.af_name = xr_clns_isis_datatypes.IsisAddressFamily.ipv4
     af.saf_name = xr_clns_isis_datatypes.IsisSubAddressFamily.unicast
     af.af_data = af.AfData()
+    propagation = af.af_data.propagations.Propagation()
+    propagation.route_policy_name = "LOOPBACKS"
+    propagation.source_level = xr_clns_isis_datatypes.IsisInternalLevel.level2
+    propagation.destination_level = xr_clns_isis_datatypes.IsisInternalLevel.level1
+    af.af_data.propagations.propagation.append(propagation)
     metric_style = af.af_data.metric_styles.MetricStyle()
     metric_style.style = xr_clns_isis_cfg.IsisMetricStyle.new_metric_style
     metric_style.level = xr_clns_isis_datatypes.IsisInternalLevel.not_set
-    transition_state = xr_clns_isis_cfg.IsisMetricStyleTransition.disabled
-    metric_style.transition_state = transition_state
     af.af_data.metric_styles.metric_style.append(metric_style)
-    propagation = af.af_data.propagations.Propagation()
-    propagation.source_level = xr_clns_isis_datatypes.IsisInternalLevel.level2
-    propagation.destination_level = xr_clns_isis_datatypes.IsisInternalLevel.level1
-    propagation.route_policy_name = "LOOPBACKS"
-    af.af_data.propagations.propagation.append(propagation)
     instance.afs.af.append(af)
 
     # loopback interface
