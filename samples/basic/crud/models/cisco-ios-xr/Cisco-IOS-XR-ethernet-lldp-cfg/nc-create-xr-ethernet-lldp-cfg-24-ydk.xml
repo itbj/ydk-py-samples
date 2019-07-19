@@ -1,12 +1,11 @@
 <lldp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ethernet-lldp-cfg">
-  <enable>true</enable>
-  <enable-subintf>true</enable-subintf>
   <holdtime>60</holdtime>
   <timer>15</timer>
+  <enable>true</enable>
   <tlv-select>
+    <tlv-select-enter>true</tlv-select-enter>
     <management-address>
       <disable>true</disable>
     </management-address>
   </tlv-select>
 </lldp>
-
