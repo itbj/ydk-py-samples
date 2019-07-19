@@ -4,15 +4,15 @@
       <af>ipv4</af>
       <ip>172.16.255.1</ip>
       <mask>32</mask>
-      <sid-range>1</sid-range>
       <sid-start>4041</sid-start>
+      <sid-range>1</sid-range>
     </mapping>
     <mapping>
       <af>ipv4</af>
       <ip>172.17.255.1</ip>
       <mask>32</mask>
-      <sid-range>8</sid-range>
       <sid-start>5041</sid-start>
+      <sid-range>8</sid-range>
     </mapping>
   </mappings>
 </sr>
