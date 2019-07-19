@@ -39,15 +39,15 @@ def config_sr(sr):
     """Add config data to sr object."""
     # first set of mappings
     mapping = sr.mappings.Mapping()
-    mapping.af = "ipv6"
+    mapping.af = xr_segment_routing_ms_cfg.SrmsAddressFamily.ipv6
     mapping.ip = "2001:db8::ff:1"
     mapping.mask = 128
     mapping.sid_start = 4061
-    mapping.sid_range = 2
+    mapping.sid_range = 1
     sr.mappings.mapping.append(mapping)
     # first set of mappings
     mapping = sr.mappings.Mapping()
-    mapping.af = "ipv6"
+    mapping.af = xr_segment_routing_ms_cfg.SrmsAddressFamily.ipv6
     mapping.ip = "2001:db8::1ff:1"
     mapping.mask = 128
     mapping.sid_start = 5061
