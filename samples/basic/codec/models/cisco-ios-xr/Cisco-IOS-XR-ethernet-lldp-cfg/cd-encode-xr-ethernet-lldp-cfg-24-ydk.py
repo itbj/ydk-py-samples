@@ -40,8 +40,9 @@ def config_lldp(lldp):
     lldp.enable = True
     lldp.timer = 15
     lldp.holdtime = 60
-    lldp.enable_subintf = True
     lldp.tlv_select = lldp.TlvSelect()
+    lldp.tlv_select.tlv_select_enter = True
+    lldp.tlv_select.management_address = lldp.tlv_select.ManagementAddress()
     lldp.tlv_select.management_address.disable = True
 
 
