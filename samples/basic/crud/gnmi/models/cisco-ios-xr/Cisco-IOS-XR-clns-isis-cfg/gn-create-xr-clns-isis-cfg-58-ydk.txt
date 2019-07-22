@@ -1,0 +1,23 @@
+!! IOS XR Configuration version = 6.1.2
+router isis DEFAULT
+ is-type level-2-only
+ net 49.0000.1720.1625.5002.00
+ address-family ipv4 unicast
+  metric-style wide
+  segment-routing mpls
+  segment-routing prefix-sid-map receive
+ !
+ interface Loopback0
+  passive
+  address-family ipv4 unicast
+   prefix-sid absolute 16042
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+  point-to-point
+  address-family ipv4 unicast
+  !
+ !
+!
+end
+
