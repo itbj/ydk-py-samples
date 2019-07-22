@@ -1,0 +1,9 @@
+lldp
+ timer 15
+ subinterfaces enable
+ holdtime 60
+ tlv-select
+  management-address disable
+ !
+!
+end

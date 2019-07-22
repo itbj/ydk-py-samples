@@ -1,0 +1,5 @@
+lldp
+ timer 15
+ holdtime 60
+!
+end
