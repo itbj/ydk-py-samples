@@ -1,0 +1,6 @@
+interface Loopback0
+ description PRIMARY ROUTER LOOPBACK
+ ipv4 address 172.16.255.1 255.255.255.255
+!
+end
+

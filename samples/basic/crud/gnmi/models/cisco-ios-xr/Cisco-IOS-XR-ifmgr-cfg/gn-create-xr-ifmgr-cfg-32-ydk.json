@@ -1,0 +1,25 @@
+{
+  "Cisco-IOS-XR-ifmgr-cfg:interface-configurations": {
+    "interface-configuration": [
+      {
+        "active": "act",
+        "interface-name": "Loopback0",
+        "interface-virtual": [null],
+        "description": "PRIMARY ROUTER LOOPBACK",
+        "Cisco-IOS-XR-ipv6-ma-cfg:ipv6-network": {
+          "addresses": {
+            "regular-addresses": {
+              "regular-address": [
+                {
+                  "address": "2001:db8::ff:1",
+                  "prefix-length": 128
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+
