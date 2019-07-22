@@ -1,0 +1,14 @@
+{
+  "Cisco-IOS-XR-ethernet-lldp-cfg:lldp": {
+    "holdtime": 60,
+    "enable-subintf": true,
+    "timer": 15,
+    "enable": true,
+    "tlv-select": {
+      "management-address": {
+        "disable": true
+      }
+    }
+  }
+}
+
