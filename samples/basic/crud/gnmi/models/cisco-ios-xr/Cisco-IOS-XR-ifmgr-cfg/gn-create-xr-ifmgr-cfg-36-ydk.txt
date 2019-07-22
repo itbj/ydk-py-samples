@@ -1,0 +1,8 @@
+interface GigabitEthernet0/0/0/0
+ description CONNECTS TO LSR1 (g0/0/0/1)
+ mtu 9192
+ ipv6 address 2001:db8::1:0/127
+ load-interval 30
+!
+end
+

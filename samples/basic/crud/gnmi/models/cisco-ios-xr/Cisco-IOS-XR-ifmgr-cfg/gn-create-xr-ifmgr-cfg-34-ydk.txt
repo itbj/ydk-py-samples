@@ -1,0 +1,8 @@
+interface GigabitEthernet0/0/0/0
+ description CONNECTS TO LSR1 (g0/0/0/1)
+ mtu 9192
+ ipv4 address 172.16.1.0 255.255.255.254
+ load-interval 30
+!
+end
+

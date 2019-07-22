@@ -1,0 +1,6 @@
+{
+  "Cisco-IOS-XR-ifmgr-cfg:global-interface-configuration": {
+    "link-status": "disable"
+  }
+}
+

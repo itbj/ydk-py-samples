@@ -1,0 +1,6 @@
+interface Loopback0
+ description PRIMARY ROUTER LOOPBACK
+ ipv6 address 2001:db8::ff:1/128
+!
+end
+
