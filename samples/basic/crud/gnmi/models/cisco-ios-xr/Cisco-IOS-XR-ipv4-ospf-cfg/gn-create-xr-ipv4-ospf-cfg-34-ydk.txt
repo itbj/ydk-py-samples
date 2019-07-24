@@ -1,0 +1,20 @@
+!! IOS XR Configuration version = 6.1.1
+router ospf DEFAULT
+ router-id 172.16.255.1
+ area 0
+  interface Loopback0
+   passive enable
+  !
+  interface GigabitEthernet0/0/0/0
+   network point-to-point
+  !
+ !
+ area 1
+  stub no-summary
+  interface GigabitEthernet0/0/0/1
+   network point-to-point
+  !
+ !
+!
+end
+
