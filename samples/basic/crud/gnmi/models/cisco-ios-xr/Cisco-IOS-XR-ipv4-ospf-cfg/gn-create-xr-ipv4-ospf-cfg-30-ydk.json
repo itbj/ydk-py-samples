@@ -1,0 +1,45 @@
+{
+  "Cisco-IOS-XR-ipv4-ospf-cfg:ospf": {
+    "processes": {
+      "process": [
+        {
+          "process-name": "DEFAULT",
+          "default-vrf": {
+            "router-id": "172.16.255.1",
+            "area-addresses": {
+              "area-area-id": [
+                {
+                  "area-id": 0,
+                  "name-scopes": {
+                    "name-scope": [
+                      {
+                        "interface-name": "Loopback0",
+                        "passive": true
+                      },
+                      {
+                        "interface-name": "GigabitEthernet0/0/0/0",
+                        "network-type": "point-to-point"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "area-id": 1,
+                  "name-scopes": {
+                    "name-scope": [
+                      {
+                        "interface-name": "GigabitEthernet0/0/0/1",
+                        "network-type": "point-to-point"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
