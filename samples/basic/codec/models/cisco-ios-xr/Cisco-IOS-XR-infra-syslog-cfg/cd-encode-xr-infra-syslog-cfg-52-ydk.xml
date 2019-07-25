@@ -1,5 +1,9 @@
 <syslog xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-infra-syslog-cfg">
   <host-name-prefix>router</host-name-prefix>
+  <suppress-duplicates/>
+  <logging-facilities>
+    <facility-level>local0</facility-level>
+  </logging-facilities>
   <host-server>
     <vrfs>
       <vrf>
@@ -23,12 +27,10 @@
   </host-server>
   <ipv4>
     <tos>
+      <type>dscp</type>
       <dscp>cs2</dscp>
     </tos>
   </ipv4>
-  <logging-facilities>
-    <facility-level>local0</facility-level>
-  </logging-facilities>
   <source-interface-table>
     <source-interface-values>
       <source-interface-value>
@@ -41,12 +43,5 @@
       </source-interface-value>
     </source-interface-values>
   </source-interface-table>
-  <suppression xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-infra-correlator-cfg">
-    <rules>
-      <rule>
-        <name>duplicates</name>
-      </rule>
-    </rules>
-  </suppression>
 </syslog>
 

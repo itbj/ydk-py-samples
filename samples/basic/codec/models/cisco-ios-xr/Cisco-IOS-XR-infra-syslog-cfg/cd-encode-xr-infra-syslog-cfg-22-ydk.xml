@@ -1,7 +1,7 @@
 <syslog-service xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-infra-syslog-cfg">
   <timestamps>
     <log>
-      <log-uptime></log-uptime>
+      <log-uptime/>
     </log>
   </timestamps>
 </syslog-service>

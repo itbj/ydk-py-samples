@@ -3,21 +3,21 @@
     <rules>
       <rule>
         <name>RULE1</name>
+        <applied-to>
+          <all/>
+        </applied-to>
         <alarm-causes>
           <alarm-cause>
             <category>MGBL</category>
-            <code>DB_COMMIT</code>
             <group>CONFIG</group>
+            <code>DB_COMMIT</code>
           </alarm-cause>
           <alarm-cause>
             <category>SECURITY</category>
-            <code>AUTHEN_SUCCESS</code>
             <group>LOGIN</group>
+            <code>AUTHEN_SUCCESS</code>
           </alarm-cause>
         </alarm-causes>
-        <applied-to>
-          <all></all>
-        </applied-to>
       </rule>
     </rules>
   </suppression>

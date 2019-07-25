@@ -53,11 +53,15 @@ def config_syslog(syslog):
     vrf.vrf_name = "MGMT-PLANE"
     ipv6 = vrf.ipv6s.Ipv6()
     ipv6.address = "2001:db8::a:1"
-    ipv6.ipv6_severity_port.severity = 6 #informational
+    ipv6_severity_port = ipv6.Ipv6SeverityPort()
+    ipv6_severity_port.severity = 6
+    ipv6.ipv6_severity_port = ipv6_severity_port
     vrf.ipv6s.ipv6.append(ipv6)
     ipv6 = vrf.ipv6s.Ipv6()
     ipv6.address = "2001:db8::a:2"
-    ipv6.ipv6_severity_port.severity = 6 #informational
+    ipv6_severity_port = ipv6.Ipv6SeverityPort()
+    ipv6_severity_port.severity = 6
+    ipv6.ipv6_severity_port = ipv6_severity_port
     vrf.ipv6s.ipv6.append(ipv6)
     syslog.host_server.vrfs.vrf.append(vrf)
 

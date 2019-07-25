@@ -32,6 +32,7 @@ from ydk.services import CodecService
 from ydk.providers import CodecServiceProvider
 from ydk.models.cisco_ios_xr import Cisco_IOS_XR_infra_syslog_cfg \
     as xr_infra_syslog_cfg
+from ydk.types import Empty
 import logging
 
 
@@ -44,6 +45,7 @@ def config_syslog(syslog):
     vrf = syslog.host_server.vrfs.Vrf()
     vrf.vrf_name = "default"
     ipv4 = vrf.ipv4s.Ipv4()
+    ipv4.ipv4_severity_port = ipv4.Ipv4SeverityPort()
     ipv4.address = "10.0.0.1"
     vrf.ipv4s.ipv4.append(ipv4)
     syslog.host_server.vrfs.vrf.append(vrf)

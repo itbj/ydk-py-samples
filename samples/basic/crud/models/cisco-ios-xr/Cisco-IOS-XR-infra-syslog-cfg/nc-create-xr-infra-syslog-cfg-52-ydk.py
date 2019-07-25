@@ -35,12 +35,14 @@ from ydk.services import CRUDService
 from ydk.providers import NetconfServiceProvider
 from ydk.models.cisco_ios_xr import Cisco_IOS_XR_infra_syslog_cfg \
     as xr_infra_syslog_cfg
+from ydk.types import Empty
 import logging
 
 
 def config_syslog(syslog):
     """Add config data to syslog object."""
     #ipv4 TOS bit
+    syslog.ipv4.tos.type = xr_infra_syslog_cfg.LoggingTos.dscp
     syslog.ipv4.tos.dscp = xr_infra_syslog_cfg.LoggingDscpValue.cs2
 
     #Facility
@@ -51,10 +53,14 @@ def config_syslog(syslog):
     vrf.vrf_name = "default"
     ipv4_1 = vrf.ipv4s.Ipv4()
     ipv4_1.address = "10.0.0.1"
-    ipv4_1.ipv4_severity_port.severity = 6#xr_infra_syslog_cfg.LogSeverity.informational
+    ipv4_severity_port = ipv4_1.Ipv4SeverityPort()
+    ipv4_severity_port.severity = 6
+    ipv4_1.ipv4_severity_port = ipv4_severity_port
     ipv4_2 = vrf.ipv4s.Ipv4()
     ipv4_2.address = "10.0.0.2"
-    ipv4_2.ipv4_severity_port.severity = 6#xr_infra_syslog_cfg.LogSeverity.informational
+    ipv4_severity_port = ipv4_2.Ipv4SeverityPort()
+    ipv4_severity_port.severity = 6
+    ipv4_2.ipv4_severity_port = ipv4_severity_port
     vrf.ipv4s.ipv4.append(ipv4_1)
     vrf.ipv4s.ipv4.append(ipv4_2)
     syslog.host_server.vrfs.vrf.append(vrf)
@@ -70,12 +76,9 @@ def config_syslog(syslog):
     #Host Name Prefix
     syslog.host_name_prefix = "router"
 
-    #Suppression
-    #This does not work. My guess is its same reason that the host_server stuff doesn't work
-    rule = syslog.suppression.rules.Rule()
-    rule.name = "duplicates"
-    syslog.suppression.rules.rule.append(rule)
-    
+    # Suppression
+    syslog.suppress_duplicates = Empty()
+
 
 if __name__ == "__main__":
     """Execute main program."""

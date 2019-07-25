@@ -45,7 +45,7 @@ def config_syslog(syslog):
     syslog.archive.file_size = 10
     syslog.archive.size = 100
     syslog.archive.length = 52
-    
+
 
 if __name__ == "__main__":
     """Execute main program."""

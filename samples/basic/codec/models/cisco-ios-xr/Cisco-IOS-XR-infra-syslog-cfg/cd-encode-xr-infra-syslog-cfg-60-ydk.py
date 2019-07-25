@@ -40,11 +40,13 @@ def config_syslog(syslog):
     """Add config data to syslog_service object."""
     rule = syslog.suppression.rules.Rule()
     rule.name = "RULE1"
+    #DB_COMMIT Alarm
     alarm_cause = rule.alarm_causes.AlarmCause()
     alarm_cause.category = "MGBL"
     alarm_cause.group = "CONFIG"
     alarm_cause.code = "DB_COMMIT"
     rule.alarm_causes.alarm_cause.append(alarm_cause)
+    #AUTHEN_SUCCESS alarm
     alarm_cause = rule.alarm_causes.AlarmCause()
     alarm_cause.category = "SECURITY"
     alarm_cause.group = "LOGIN"
