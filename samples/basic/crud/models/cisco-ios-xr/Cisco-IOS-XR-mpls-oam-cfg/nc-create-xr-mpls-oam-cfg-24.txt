@@ -1,0 +1,4 @@
+mpls oam
+ echo reply-mode control-channel allow-reverse-lsp
+ echo disable-vendor-extension
+!

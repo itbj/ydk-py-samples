@@ -16,12 +16,9 @@
 #
 
 """
-Delete all config data for model Cisco-IOS-XR-mpls-oam-cfg.
+Create configuration for model Cisco-IOS-XR-mpls-oam-cfg.
 
-usage: nc-delete-xr-mpls-oam-cfg-20-ydk.py [-h] [-v] device
-
-positional arguments:
-  device         NETCONF device (ssh://user:password@host:port)
+usage: cd-encode-xr-mpls-oam-cfg-24-ydk.py [-h] [-v]
 
 optional arguments:
   -h, --help     show this help message and exit
@@ -31,11 +28,19 @@ optional arguments:
 from argparse import ArgumentParser
 from urlparse import urlparse
 
-from ydk.services import CRUDService
-from ydk.providers import NetconfServiceProvider
+from ydk.services import CodecService
+from ydk.providers import CodecServiceProvider
 from ydk.models.cisco_ios_xr import Cisco_IOS_XR_mpls_oam_cfg \
     as xr_mpls_oam_cfg
+from ydk.types import Empty
 import logging
+
+
+def config_mpls_oam(mpls_oam):
+    """Add config data to mpls_oam object."""
+    mpls_oam.enable_oam = Empty()
+    mpls_oam.disable_vendor_extension = Empty()
+    mpls_oam.reply_mode.control_channel.allow_reverse_lsp = Empty()
 
 
 if __name__ == "__main__":
@@ -43,10 +48,7 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("-v", "--verbose", help="print debugging messages",
                         action="store_true")
-    parser.add_argument("device",
-                        help="NETCONF device (ssh://user:password@host:port)")
     args = parser.parse_args()
-    device = urlparse(args.device)
 
     # log debug messages if verbose argument specified
     if args.verbose:
@@ -58,19 +60,17 @@ if __name__ == "__main__":
         handler.setFormatter(formatter)
         logger.addHandler(handler)
 
-    # create NETCONF provider
-    provider = NetconfServiceProvider(address=device.hostname,
-                                      port=device.port,
-                                      username=device.username,
-                                      password=device.password,
-                                      protocol=device.scheme)
+    # create codec provider
+    provider = CodecServiceProvider(type="xml")
+
     # create CRUD service
-    crud = CRUDService()
+    codec = CodecService()
 
     mpls_oam = xr_mpls_oam_cfg.MplsOam()  # create object
+    config_mpls_oam(mpls_oam)  # add object configuration
 
-    # delete configuration on NETCONF device
-    crud.delete(provider, mpls_oam)
+    # encode and print object
+    print(codec.encode(provider, mpls_oam))
 
     exit()
 # End of script

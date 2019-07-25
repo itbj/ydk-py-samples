@@ -16,12 +16,12 @@
 #
 
 """
-Delete all config data for model Cisco-IOS-XR-mpls-oam-cfg.
+Create configuration for model Cisco-IOS-XR-mpls-oam-cfg.
 
-usage: nc-delete-xr-mpls-oam-cfg-20-ydk.py [-h] [-v] device
+usage: gn-create-xr-mpls-oam-cfg-20-ydk.py [-h] [-v] device
 
 positional arguments:
-  device         NETCONF device (ssh://user:password@host:port)
+  device         gNMI device (http://user:password@host:port)
 
 optional arguments:
   -h, --help     show this help message and exit
@@ -31,11 +31,21 @@ optional arguments:
 from argparse import ArgumentParser
 from urlparse import urlparse
 
+from ydk.path import Repository
 from ydk.services import CRUDService
-from ydk.providers import NetconfServiceProvider
+from ydk.gnmi.providers import gNMIServiceProvider
 from ydk.models.cisco_ios_xr import Cisco_IOS_XR_mpls_oam_cfg \
     as xr_mpls_oam_cfg
+from ydk.types import Empty
+import os
 import logging
+
+
+YDK_REPO_DIR = os.path.expanduser("~/.ydk/")
+
+def config_mpls_oam(mpls_oam):
+    """Add config data to mpls_oam object."""
+    mpls_oam.enable_oam = Empty()
 
 
 if __name__ == "__main__":
@@ -44,7 +54,7 @@ if __name__ == "__main__":
     parser.add_argument("-v", "--verbose", help="print debugging messages",
                         action="store_true")
     parser.add_argument("device",
-                        help="NETCONF device (ssh://user:password@host:port)")
+                        help="gNMI device (http://user:password@host:port)")
     args = parser.parse_args()
     device = urlparse(args.device)
 
@@ -58,19 +68,21 @@ if __name__ == "__main__":
         handler.setFormatter(formatter)
         logger.addHandler(handler)
 
-    # create NETCONF provider
-    provider = NetconfServiceProvider(address=device.hostname,
-                                      port=device.port,
-                                      username=device.username,
-                                      password=device.password,
-                                      protocol=device.scheme)
+    # create gNMI provider
+    repository = Repository(YDK_REPO_DIR+device.hostname)
+    provider = gNMIServiceProvider(repo=repository,
+                                   address=device.hostname,
+                                   port=device.port,
+                                   username=device.username,
+                                   password=device.password)
     # create CRUD service
     crud = CRUDService()
 
     mpls_oam = xr_mpls_oam_cfg.MplsOam()  # create object
+    config_mpls_oam(mpls_oam)  # add object configuration
 
-    # delete configuration on NETCONF device
-    crud.delete(provider, mpls_oam)
+    # create configuration on gNMI device
+    crud.create(provider, mpls_oam)
 
     exit()
 # End of script
