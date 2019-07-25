@@ -49,7 +49,7 @@ def config_native(native):
     # Route Target Creation
     export = ipv6.route_target.Export()
     export.asn_ip = "65000:2"
-    import_ = ipv6.route_target.Import_()
+    import_ = ipv6.route_target.Import()
     import_.asn_ip = "65000:2"
 
     ipv6.route_target.export.append(export)
