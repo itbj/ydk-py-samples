@@ -44,9 +44,11 @@ def config_routing_policy(routing_policy):
     # configure routing policy
     policy_definition = routing_policy.policy_definitions.PolicyDefinition()
     policy_definition.name = "POLICY1"
+    policy_definition.config.name = "POLICY1"
     statement = policy_definition.statements.Statement()
     statement.name = "accept route"
-    statement.actions.accept_route = Empty()
+    statement.config.name = "accept route"
+    statement.actions.config.accept_route = Empty()
     policy_definition.statements.statement.append(statement)
     routing_policy.policy_definitions.policy_definition.append(policy_definition)
 

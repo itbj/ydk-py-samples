@@ -1,57 +1,96 @@
 <routing-policy xmlns="http://openconfig.net/yang/routing-policy">
   <defined-sets>
+    <prefix-sets>
+      <prefix-set>
+        <prefix-set-name>PREFIX-SET1</prefix-set-name>
+        <config>
+          <prefix-set-name>PREFIX-SET1</prefix-set-name>
+        </config>
+        <prefixes>
+          <prefix>
+            <ip-prefix>10.0.0.0/16</ip-prefix>
+            <masklength-range>24..32</masklength-range>
+            <config>
+              <ip-prefix>10.0.0.0/16</ip-prefix>
+              <masklength-range>24..32</masklength-range>
+            </config>
+          </prefix>
+          <prefix>
+            <ip-prefix>172.0.0.0/8</ip-prefix>
+            <masklength-range>16..32</masklength-range>
+            <config>
+              <ip-prefix>172.0.0.0/8</ip-prefix>
+              <masklength-range>16..32</masklength-range>
+            </config>
+          </prefix>
+        </prefixes>
+      </prefix-set>
+    </prefix-sets>
     <bgp-defined-sets xmlns="http://openconfig.net/yang/bgp-policy">
       <community-sets>
         <community-set>
           <community-set-name>COMMUNITY-SET2</community-set-name>
-          <community-member>65172:17001</community-member>
+          <config>
+            <community-set-name>COMMUNITY-SET2</community-set-name>
+            <community-member>65172:17001</community-member>
+          </config>
         </community-set>
       </community-sets>
     </bgp-defined-sets>
-    <prefix-sets>
-      <prefix-set>
-        <prefix-set-name>PREFIX-SET1</prefix-set-name>
-        <prefix>
-          <ip-prefix>10.0.0.0/16</ip-prefix>
-          <masklength-range>24..32</masklength-range>
-        </prefix>
-        <prefix>
-          <ip-prefix>172.0.0.0/8</ip-prefix>
-          <masklength-range>16..32</masklength-range>
-        </prefix>
-      </prefix-set>
-    </prefix-sets>
   </defined-sets>
   <policy-definitions>
     <policy-definition>
       <name>POLICY3</name>
+      <config>
+        <name>POLICY3</name>
+      </config>
       <statements>
         <statement>
           <name>prefix-set1</name>
-          <actions>
-            <accept-route></accept-route>
-            <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
-              <set-community>
-                <community-set-ref>COMMUNITY-SET2</community-set-ref>
-              </set-community>
-              <set-local-pref>1000</set-local-pref>
-            </bgp-actions>
-          </actions>
+          <config>
+            <name>prefix-set1</name>
+          </config>
           <conditions>
             <match-prefix-set>
-              <match-set-options>ANY</match-set-options>
-              <prefix-set>PREFIX-SET1</prefix-set>
+              <config>
+                <prefix-set>PREFIX-SET1</prefix-set>
+                <match-set-options>ANY</match-set-options>
+              </config>
             </match-prefix-set>
           </conditions>
+          <actions>
+            <config>
+              <accept-route/>
+            </config>
+            <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
+              <config>
+                <set-local-pref>1000</set-local-pref>
+              </config>
+              <set-community>
+                <config>
+                  <options>REPLACE</options>
+                </config>
+                <reference>
+                  <config>
+                    <community-set-ref>COMMUNITY-SET2</community-set-ref>
+                  </config>
+                </reference>
+              </set-community>
+            </bgp-actions>
+          </actions>
         </statement>
         <statement>
-          <name>reject route</name>
+          <name>reject</name>
+          <config>
+            <name>reject</name>
+          </config>
           <actions>
-            <reject-route></reject-route>
+            <config>
+              <reject-route/>
+            </config>
           </actions>
         </statement>
       </statements>
     </policy-definition>
   </policy-definitions>
 </routing-policy>
-

@@ -47,47 +47,53 @@ def config_routing_policy(routing_policy):
     bgp_defined_sets = routing_policy.defined_sets.bgp_defined_sets
     as_path_set = bgp_defined_sets.as_path_sets.AsPathSet()
     as_path_set.as_path_set_name = "AS-PATH-SET1"
-    as_path_set.as_path_set_member.append("^65172")
+    as_path_set.config.as_path_set_name = "AS-PATH-SET1"
+    as_path_set.config.as_path_set_member.append("^65172")
     bgp_defined_sets.as_path_sets.as_path_set.append(as_path_set)
 
     # configure community set
     bgp_defined_sets = routing_policy.defined_sets.bgp_defined_sets
     community_set = bgp_defined_sets.community_sets.CommunitySet()
     community_set.community_set_name = "COMMUNITY-SET1"
-    community_set.community_member.append("ios-regex '^65172:17...$'")
-    community_set.community_member.append("65172:16001")
+    community_set.config.community_set_name = "COMMUNITY-SET1"
+    community_set.config.community_member.append("ios-regex '^65172:17...$'")
+    community_set.config.community_member.append("65172:16001")
     bgp_defined_sets.community_sets.community_set.append(community_set)
 
     # configure policy definition
     policy_definition = routing_policy.policy_definitions.PolicyDefinition()
     policy_definition.name = "POLICY2"
+    policy_definition.config.name = "POLICY2"
     # community-set statement
     statement = policy_definition.statements.Statement()
     statement.name = "community-set1"
+    statement.config.name = "community-set1"
     bgp_conditions = statement.conditions.bgp_conditions
     match_community_set = bgp_conditions.MatchCommunitySet()
-    match_community_set.community_set = "COMMUNITY-SET1"
+    match_community_set.config.community_set = "COMMUNITY-SET1"
     match_set_options = oc_policy_types.MatchSetOptionsType.ALL
-    match_community_set.match_set_options = match_set_options
+    match_community_set.config.match_set_options = match_set_options
     bgp_conditions.match_community_set = match_community_set
-    statement.actions.accept_route = Empty()
+    statement.actions.config.accept_route = Empty()
     policy_definition.statements.statement.append(statement)
     # as-path-set statement
     statement = policy_definition.statements.Statement()
     statement.name = "as-path-set1"
+    statement.config.name = "as-path-set1"
     bgp_conditions = statement.conditions.bgp_conditions
     match_as_path_set = bgp_conditions.MatchAsPathSet()
-    match_as_path_set.as_path_set = "AS-PATH-SET1"
+    match_as_path_set.config.as_path_set = "AS-PATH-SET1"
     match_set_options = oc_policy_types.MatchSetOptionsType.ANY
-    match_as_path_set.match_set_options = match_set_options
+    match_as_path_set.config.match_set_options = match_set_options
     bgp_conditions.match_as_path_set = match_as_path_set
-    statement.actions.bgp_actions.set_local_pref = 50
-    statement.actions.accept_route = Empty()
+    statement.actions.bgp_actions.config.set_local_pref = 50
+    statement.actions.config.accept_route = Empty()
     policy_definition.statements.statement.append(statement)
     # reject statement
     statement = policy_definition.statements.Statement()
     statement.name = "reject route"
-    statement.actions.reject_route = Empty()
+    statement.config.name = "reject route"
+    statement.actions.config.reject_route = Empty()
     policy_definition.statements.statement.append(statement)
 
     routing_policy.policy_definitions.policy_definition.append(policy_definition)
