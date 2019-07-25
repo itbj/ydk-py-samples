@@ -1,0 +1,21 @@
+{
+  "Cisco-IOS-XR-aaa-lib-cfg:aaa": {
+    "Cisco-IOS-XR-aaa-locald-cfg:usernames": {
+      "username": [
+        {
+          "ordering-index": 20,
+          "name": "sysadmin",
+          "secret": "$1$AQ9U$6iYrri084f6crrBmPeN0q.",
+          "usergroup-under-usernames": {
+            "usergroup-under-username": [
+              {
+                "name": "sysadmin"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

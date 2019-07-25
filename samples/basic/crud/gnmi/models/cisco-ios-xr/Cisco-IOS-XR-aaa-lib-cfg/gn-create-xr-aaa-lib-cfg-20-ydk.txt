@@ -1,0 +1,6 @@
+!! IOS XR Configuration version = 6.1.2
+username sysadmin
+ group sysadmin
+ secret 5 $1$AQ9U$6iYrri084f6crrBmPeN0q.
+!
+end
