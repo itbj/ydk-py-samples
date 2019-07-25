@@ -1,21 +1,21 @@
 <syslog-service xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-infra-syslog-cfg">
   <timestamps>
-    <debug>
-      <debug-datetime>
-        <datetime-value>
-          <msec>enable</msec>
-          <time-stamp-value>enable</time-stamp-value>
-        </datetime-value>
-      </debug-datetime>
-    </debug>
     <log>
       <log-datetime>
         <log-datetime-value>
-          <msec>enable</msec>
           <time-stamp-value>enable</time-stamp-value>
+          <msec>enable</msec>
         </log-datetime-value>
       </log-datetime>
     </log>
+    <debug>
+      <debug-datetime>
+        <datetime-value>
+          <time-stamp-value>enable</time-stamp-value>
+          <msec>enable</msec>
+        </datetime-value>
+      </debug-datetime>
+    </debug>
   </timestamps>
 </syslog-service>
 

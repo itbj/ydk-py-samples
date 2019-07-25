@@ -47,6 +47,7 @@ def config_syslog(syslog):
     vrf = syslog.host_server.vrfs.Vrf()
     vrf.vrf_name = "default"
     ipv4 = vrf.ipv4s.Ipv4()
+    ipv4.ipv4_severity_port = ipv4.Ipv4SeverityPort()
     ipv4.address = "10.0.0.1"
     vrf.ipv4s.ipv4.append(ipv4)
     syslog.host_server.vrfs.vrf.append(vrf)

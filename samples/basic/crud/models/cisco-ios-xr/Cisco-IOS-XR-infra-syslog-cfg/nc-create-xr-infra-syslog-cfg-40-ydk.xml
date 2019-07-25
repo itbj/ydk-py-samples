@@ -1,9 +1,9 @@
 <syslog xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-infra-syslog-cfg">
   <archive>
-    <device>/disk1:</device>
+    <size>32</size>
+    <device>/disk0:</device>
     <frequency>daily</frequency>
     <severity>debug</severity>
-    <size>32</size>
   </archive>
 </syslog>
 
