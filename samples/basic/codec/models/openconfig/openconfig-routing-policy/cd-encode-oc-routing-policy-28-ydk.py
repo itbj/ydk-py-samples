@@ -42,11 +42,13 @@ def config_routing_policy(routing_policy):
     # configure policy definition
     policy_definition = routing_policy.policy_definitions.PolicyDefinition()
     policy_definition.name = "POLICY4"
+    policy_definition.config.name = "POLICY4"
     statement = policy_definition.statements.Statement()
     statement.name = "next-hop-self"
+    statement.config.name = "next-hop-self"
     set_next_hop = oc_bgp_policy.BgpNextHopType.SELF
-    statement.actions.bgp_actions.set_next_hop = set_next_hop
-    statement.actions.accept_route = Empty()
+    statement.actions.bgp_actions.config.set_next_hop = set_next_hop
+    statement.actions.config.accept_route = Empty()
     policy_definition.statements.statement.append(statement)
     routing_policy.policy_definitions.policy_definition.append(policy_definition)
 
