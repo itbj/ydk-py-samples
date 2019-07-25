@@ -42,7 +42,7 @@ def config_native(native):
     """Add config data to native object."""
     # configure IPv4 interface
     gigabitethernet = native.interface.GigabitEthernet()
-    gigabitethernet.name = 2
+    gigabitethernet.name = "2"
     gigabitethernet.description = "CONNECTS TO R1 (gigabitethernet3)"
     gigabitethernet.mtu = 9192
     gigabitethernet.ip.address.primary.address = "172.16.1.0"
