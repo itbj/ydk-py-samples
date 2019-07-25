@@ -1,0 +1,7 @@
+!! IOS XR Configuration version = 6.1.2
+username netop
+ group netadmin
+ group operator
+ secret 5 $1$Z/8E$GDBQs1PtqJnwlQ9kKGpXj/
+!
+end
