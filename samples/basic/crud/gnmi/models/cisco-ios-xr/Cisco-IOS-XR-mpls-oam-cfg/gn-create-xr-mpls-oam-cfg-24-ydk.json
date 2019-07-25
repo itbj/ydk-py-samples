@@ -1,0 +1,12 @@
+{
+  "Cisco-IOS-XR-mpls-oam-cfg:mpls-oam": {
+    "enable-oam": [null],
+    "disable-vendor-extension": [null],
+    "reply-mode": {
+      "control-channel": {
+        "allow-reverse-lsp": [null]
+      }
+    }
+  }
+}
+
