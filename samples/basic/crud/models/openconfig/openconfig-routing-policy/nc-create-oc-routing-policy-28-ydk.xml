@@ -2,13 +2,23 @@
   <policy-definitions>
     <policy-definition>
       <name>POLICY4</name>
+      <config>
+        <name>POLICY4</name>
+      </config>
       <statements>
         <statement>
           <name>next-hop-self</name>
+          <config>
+            <name>next-hop-self</name>
+          </config>
           <actions>
-            <accept-route></accept-route>
+            <config>
+              <accept-route/>
+            </config>
             <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
-              <set-next-hop>SELF</set-next-hop>
+              <config>
+                <set-next-hop>SELF</set-next-hop>
+              </config>
             </bgp-actions>
           </actions>
         </statement>
@@ -16,4 +26,3 @@
     </policy-definition>
   </policy-definitions>
 </routing-policy>
-

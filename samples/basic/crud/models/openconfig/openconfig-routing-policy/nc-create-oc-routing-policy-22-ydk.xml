@@ -2,15 +2,22 @@
   <policy-definitions>
     <policy-definition>
       <name>POLICY1</name>
+      <config>
+        <name>POLICY1</name>
+      </config>
       <statements>
         <statement>
           <name>accept route</name>
+          <config>
+            <name>accept route</name>
+          </config>
           <actions>
-            <accept-route></accept-route>
+            <config>
+              <accept-route/>
+            </config>
           </actions>
         </statement>
       </statements>
     </policy-definition>
   </policy-definitions>
 </routing-policy>
-
