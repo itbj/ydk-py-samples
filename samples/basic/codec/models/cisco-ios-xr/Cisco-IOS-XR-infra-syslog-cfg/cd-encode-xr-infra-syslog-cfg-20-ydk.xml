@@ -1,7 +1,7 @@
 <syslog-service xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-infra-syslog-cfg">
   <timestamps>
     <log>
-      <log-timestamp-disable></log-timestamp-disable>
+      <log-timestamp-disable/>
     </log>
   </timestamps>
 </syslog-service>

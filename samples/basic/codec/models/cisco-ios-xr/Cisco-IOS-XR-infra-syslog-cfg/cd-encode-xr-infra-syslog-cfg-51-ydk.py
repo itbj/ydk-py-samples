@@ -44,6 +44,7 @@ def config_syslog(syslog):
     vrf = syslog.host_server.vrfs.Vrf()
     vrf.vrf_name = "default"
     ipv6 = vrf.ipv6s.Ipv6()
+    ipv6.ipv6_severity_port = ipv6.Ipv6SeverityPort()
     ipv6.address = "2001:db8::a:1"
     vrf.ipv6s.ipv6.append(ipv6)
     syslog.host_server.vrfs.vrf.append(vrf)

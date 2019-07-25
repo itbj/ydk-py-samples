@@ -1,10 +1,10 @@
 <syslog xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-infra-syslog-cfg">
   <archive>
-    <device>/harddisk:</device>
-    <file-size>10</file-size>
-    <length>52</length>
-    <severity>informational</severity>
     <size>100</size>
+    <file-size>10</file-size>
+    <device>/harddisk:</device>
+    <severity>informational</severity>
+    <length>52</length>
   </archive>
 </syslog>
 

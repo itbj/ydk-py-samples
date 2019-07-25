@@ -1,4 +1,7 @@
 <syslog xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-infra-syslog-cfg">
+  <logging-facilities>
+    <facility-level>local0</facility-level>
+  </logging-facilities>
   <host-server>
     <vrfs>
       <vrf>
@@ -6,14 +9,12 @@
         <ipv4s>
           <ipv4>
             <address>10.0.0.1</address>
+            <ipv4-severity-port/>
           </ipv4>
         </ipv4s>
       </vrf>
     </vrfs>
   </host-server>
-  <logging-facilities>
-    <facility-level>local0</facility-level>
-  </logging-facilities>
   <source-interface-table>
     <source-interface-values>
       <source-interface-value>

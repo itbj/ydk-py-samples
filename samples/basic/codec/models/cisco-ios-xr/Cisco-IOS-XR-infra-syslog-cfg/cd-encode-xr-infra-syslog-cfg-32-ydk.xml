@@ -1,13 +1,13 @@
 <syslog xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-infra-syslog-cfg">
+  <monitor-logging>
+    <logging-level>disable</logging-level>
+  </monitor-logging>
   <buffered-logging>
-    <buffer-size>125000000</buffer-size>
     <logging-level>info</logging-level>
+    <buffer-size>125000000</buffer-size>
   </buffered-logging>
   <console-logging>
     <logging-level>disable</logging-level>
   </console-logging>
-  <monitor-logging>
-    <logging-level>disable</logging-level>
-  </monitor-logging>
 </syslog>
 

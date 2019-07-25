@@ -4,10 +4,9 @@
     <rules>
       <rule>
         <name>RULE2</name>
-        <applied-to>
-          <all></all>
-        </applied-to>
         <non-stateful>
+          <timeout-root-cause>360000</timeout-root-cause>
+          <timeout>3600000</timeout>
           <non-root-causes>
             <non-root-cause>
               <category>PLATFORM</category>
@@ -25,9 +24,10 @@
             <group>ENVMON</group>
             <message-code>FAN_FAIL</message-code>
           </root-cause>
-          <timeout>3600000</timeout>
-          <timeout-root-cause>360000</timeout-root-cause>
         </non-stateful>
+        <applied-to>
+          <all/>
+        </applied-to>
       </rule>
     </rules>
   </correlator>
