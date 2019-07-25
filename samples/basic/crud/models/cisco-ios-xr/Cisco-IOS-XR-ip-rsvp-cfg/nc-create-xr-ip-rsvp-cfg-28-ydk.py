@@ -44,7 +44,6 @@ def config_rsvp(rsvp):
     # RSVP interface gig0/0/0/0
     interface = rsvp.interfaces.Interface()
     interface.name = "GigabitEthernet0/0/0/0"
-    interface.enable = Empty()
     interface.bandwidth.mam.max_resv_bandwidth = 1000000
     interface.bandwidth.mam.bc0_bandwidth = 600000
     interface.bandwidth.mam.bc1_bandwidth = 400000
@@ -53,7 +52,6 @@ def config_rsvp(rsvp):
     # RSVP interface gig0/0/0/1
     interface = rsvp.interfaces.Interface()
     interface.name = "GigabitEthernet0/0/0/1"
-    interface.enable = Empty()
     interface.bandwidth.mam.max_resv_bandwidth = 1000000
     interface.bandwidth.mam.bc0_bandwidth = 600000
     interface.bandwidth.mam.bc1_bandwidth = 400000

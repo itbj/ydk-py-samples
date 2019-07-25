@@ -4,25 +4,23 @@
       <name>GigabitEthernet0/0/0/0</name>
       <bandwidth>
         <rdm>
-          <bandwidth-mode>percentage</bandwidth-mode>
           <bc0-bandwidth>100</bc0-bandwidth>
-          <bc0-keyword>not-specified</bc0-keyword>
           <rdm-keyword>not-specified</rdm-keyword>
+          <bc0-keyword>not-specified</bc0-keyword>
+          <bandwidth-mode>percentage</bandwidth-mode>
         </rdm>
       </bandwidth>
-      <enable></enable>
     </interface>
     <interface>
       <name>GigabitEthernet0/0/0/1</name>
       <bandwidth>
         <rdm>
-          <bandwidth-mode>percentage</bandwidth-mode>
           <bc0-bandwidth>100</bc0-bandwidth>
-          <bc0-keyword>not-specified</bc0-keyword>
           <rdm-keyword>not-specified</rdm-keyword>
+          <bc0-keyword>not-specified</bc0-keyword>
+          <bandwidth-mode>percentage</bandwidth-mode>
         </rdm>
       </bandwidth>
-      <enable></enable>
     </interface>
   </interfaces>
 </rsvp>
