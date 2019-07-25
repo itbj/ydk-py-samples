@@ -1,0 +1,96 @@
+./nc-create-xr-ip-rsvp-cfg-20-ydk.py ssh://admin:admin@domingo -v > netconf.txt
+2019-07-11 16:21:05,723 - ydk - INFO - Path where models are to be downloaded: /Users/deom/.ydk/domingo
+2019-07-11 16:21:05,737 - ydk - INFO - Connected to domingo on port 830 using ssh with timeout of -1
+2019-07-11 16:21:05,745 - ydk - INFO - Executing CRUD create operation on [Cisco-IOS-XR-ip-rsvp-cfg:rsvp]
+2019-07-11 16:21:05,745 - ydk - INFO - Executing 'edit-config' RPC on [Cisco-IOS-XR-ip-rsvp-cfg:rsvp]
+2019-07-11 16:21:05,768 - ydk - INFO - ============= Sending RPC to device =============
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"><edit-config xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <target>
+    <candidate/>
+  </target>
+  <config><rsvp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ip-rsvp-cfg" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="merge">
+  <interfaces>
+    <interface>
+      <name>GigabitEthernet0/0/0/0</name>
+      <bandwidth>
+        <rdm>
+          <bc0-bandwidth>100</bc0-bandwidth>
+          <rdm-keyword>not-specified</rdm-keyword>
+          <bc0-keyword>not-specified</bc0-keyword>
+          <bandwidth-mode>percentage</bandwidth-mode>
+        </rdm>
+      </bandwidth>
+    </interface>
+    <interface>
+      <name>GigabitEthernet0/0/0/1</name>
+      <bandwidth>
+        <rdm>
+          <bc0-bandwidth>100</bc0-bandwidth>
+          <rdm-keyword>not-specified</rdm-keyword>
+          <bc0-keyword>not-specified</bc0-keyword>
+          <bandwidth-mode>percentage</bandwidth-mode>
+        </rdm>
+      </bandwidth>
+    </interface>
+  </interfaces>
+</rsvp>
+</config>
+</edit-config>
+</rpc>
+2019-07-11 16:21:05,916 - ydk - INFO - ============= Received RPC from device =============
+<?xml version="1.0"?>
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <ok/>
+</rpc-reply>
+
+2019-07-11 16:21:05,916 - ydk - INFO - Executing 'commit' RPC
+2019-07-11 16:21:05,916 - ydk - INFO - ============= Sending RPC to device =============
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"><commit xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"/>
+</rpc>
+2019-07-11 16:21:06,845 - ydk - INFO - ============= Received RPC from device =============
+<?xml version="1.0"?>
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="2">
+  <ok/>
+</rpc-reply>
+
+2019-07-11 16:21:06,845 - ydk - INFO - Operation succeeded
+2019-07-11 16:21:06,845 - ydk - INFO - Disconnected from device
+
+
+RP/0/RP0/CPU0:domingo(config)#rsvp
+RP/0/RP0/CPU0:domingo(config-rsvp)# interface GigabitEthernet0/0/0/0
+RP/0/RP0/CPU0:domingo(config-rsvp-if)#  bandwidth percentage 100
+RP/0/RP0/CPU0:domingo(config-rsvp-if)# !
+RP/0/RP0/CPU0:domingo(config-rsvp-if)# interface GigabitEthernet0/0/0/1
+RP/0/RP0/CPU0:domingo(config-rsvp-if)#  bandwidth percentage 100
+RP/0/RP0/CPU0:domingo(config-rsvp-if)# !
+RP/0/RP0/CPU0:domingo(config-rsvp-if)#!
+RP/0/RP0/CPU0:domingo(config-rsvp-if)#commit
+
+
+  <rsvp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ip-rsvp-cfg">
+   <interfaces>
+    <interface>
+     <name>GigabitEthernet0/0/0/0</name>
+     <bandwidth>
+      <rdm>
+       <bc0-bandwidth>100</bc0-bandwidth>
+       <rdm-keyword>not-specified</rdm-keyword>
+       <bc0-keyword>not-specified</bc0-keyword>
+       <bandwidth-mode>percentage</bandwidth-mode>
+      </rdm>
+     </bandwidth>
+    </interface>
+    <interface>
+     <name>GigabitEthernet0/0/0/1</name>
+     <bandwidth>
+      <rdm>
+       <bc0-bandwidth>100</bc0-bandwidth>
+       <rdm-keyword>not-specified</rdm-keyword>
+       <bc0-keyword>not-specified</bc0-keyword>
+       <bandwidth-mode>percentage</bandwidth-mode>
+      </rdm>
+     </bandwidth>
+    </interface>
+   </interfaces>
+  </rsvp>
