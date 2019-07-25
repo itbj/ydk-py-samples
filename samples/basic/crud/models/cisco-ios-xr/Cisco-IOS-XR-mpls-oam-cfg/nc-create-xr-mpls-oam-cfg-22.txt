@@ -1,0 +1,3 @@
+mpls oam
+ echo disable-vendor-extension
+!

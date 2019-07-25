@@ -1,0 +1,10 @@
+<mpls-oam xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-mpls-oam-cfg">
+  <enable-oam/>
+  <disable-vendor-extension/>
+  <reply-mode>
+    <control-channel>
+      <allow-reverse-lsp/>
+    </control-channel>
+  </reply-mode>
+</mpls-oam>
+
