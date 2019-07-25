@@ -1,0 +1,4 @@
+<mpls-lsd xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-mpls-lsd-cfg">
+  <mpls-ip-ttl-propagate-disable>all</mpls-ip-ttl-propagate-disable>
+</mpls-lsd>
+
