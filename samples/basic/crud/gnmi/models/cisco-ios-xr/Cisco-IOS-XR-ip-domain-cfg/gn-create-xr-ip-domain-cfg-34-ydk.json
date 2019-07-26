@@ -1,0 +1,44 @@
+{
+  "Cisco-IOS-XR-ip-domain-cfg:ip-domain": {
+    "vrfs": {
+      "vrf": [
+        {
+          "vrf-name": "RED",
+          "servers": {
+            "server": [
+              {
+                "order": 0,
+                "server-address": "192.168.128.1"
+              },
+              {
+                "order": 1,
+                "server-address": "192.168.128.2"
+              },
+              {
+                "order": 2,
+                "server-address": "192.168.128.3"
+              }
+            ]
+          },
+          "lists": {
+            "list": [
+              {
+                "order": 0,
+                "list-name": "rouge.example"
+              },
+              {
+                "order": 1,
+                "list-name": "vermelho.example"
+              },
+              {
+                "order": 2,
+                "list-name": "rojo.example"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

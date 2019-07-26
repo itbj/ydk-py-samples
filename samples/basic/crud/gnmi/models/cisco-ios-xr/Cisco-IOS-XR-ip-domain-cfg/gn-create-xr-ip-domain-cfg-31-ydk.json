@@ -1,0 +1,42 @@
+{
+  "Cisco-IOS-XR-ip-domain-cfg:ip-domain": {
+    "vrfs": {
+      "vrf": [
+        {
+          "vrf-name": "RED",
+          "ipv6-hosts": {
+            "ipv6-host": [
+              {
+                "host-name": "ruby",
+                "address": [
+                  "2001:db8:a::1"
+                ]
+              },
+              {
+                "host-name": "flame",
+                "address": [
+                  "2001:db8:a::2"
+                ]
+              },
+              {
+                "host-name": "crimson",
+                "address": [
+                  "2001:db8:a::3",
+                  "2001:db8:a::4"
+                ]
+              },
+              {
+                "host-name": "raspberry",
+                "address": [
+                  "2001:db8:a::5",
+                  "2001:db8:a::6"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

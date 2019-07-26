@@ -1,0 +1,42 @@
+{
+  "Cisco-IOS-XR-ip-domain-cfg:ip-domain": {
+    "vrfs": {
+      "vrf": [
+        {
+          "vrf-name": "default",
+          "ipv6-hosts": {
+            "ipv6-host": [
+              {
+                "host-name": "east",
+                "address": [
+                  "2001:db8::1"
+                ]
+              },
+              {
+                "host-name": "west",
+                "address": [
+                  "2001:db8::2"
+                ]
+              },
+              {
+                "host-name": "north",
+                "address": [
+                  "2001:db8::3",
+                  "2001:db8::4"
+                ]
+              },
+              {
+                "host-name": "south",
+                "address": [
+                  "2001:db8::5",
+                  "2001:db8::6"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

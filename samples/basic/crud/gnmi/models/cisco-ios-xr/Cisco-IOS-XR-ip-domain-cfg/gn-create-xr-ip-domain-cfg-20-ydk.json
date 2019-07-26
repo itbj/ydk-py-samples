@@ -1,0 +1,42 @@
+{
+  "Cisco-IOS-XR-ip-domain-cfg:ip-domain": {
+    "vrfs": {
+      "vrf": [
+        {
+          "vrf-name": "default",
+          "ipv4-hosts": {
+            "ipv4-host": [
+              {
+                "host-name": "east",
+                "address": [
+                  "172.16.1.1"
+                ]
+              },
+              {
+                "host-name": "west",
+                "address": [
+                  "172.16.1.2"
+                ]
+              },
+              {
+                "host-name": "north",
+                "address": [
+                  "172.16.1.3",
+                  "172.16.1.4"
+                ]
+              },
+              {
+                "host-name": "south",
+                "address": [
+                  "172.16.1.5",
+                  "172.16.1.6"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

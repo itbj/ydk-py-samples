@@ -1,0 +1,6 @@
+!! IOS XR Configuration version = 6.0.1
+domain ipv4 host east 172.16.1.1
+domain ipv4 host west 172.16.1.2
+domain ipv4 host north 172.16.1.3 172.16.1.4
+domain ipv4 host south 172.16.1.5 172.16.1.6
+end

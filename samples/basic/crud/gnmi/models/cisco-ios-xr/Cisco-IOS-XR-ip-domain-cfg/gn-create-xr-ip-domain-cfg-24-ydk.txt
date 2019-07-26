@@ -1,0 +1,8 @@
+!! IOS XR Configuration version = 6.0.1
+domain list example.com
+domain list example.net
+domain list example.org
+domain name-server 172.16.128.1
+domain name-server 172.16.128.2
+domain name-server 172.16.128.3
+end

@@ -1,0 +1,13 @@
+{
+  "Cisco-IOS-XR-ip-domain-cfg:ip-domain": {
+    "vrfs": {
+      "vrf": [
+        {
+          "vrf-name": "default",
+          "lookup": [null]
+        }
+      ]
+    }
+  }
+}
+

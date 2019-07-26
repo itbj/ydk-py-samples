@@ -1,0 +1,6 @@
+!! IOS XR Configuration version = 6.0.1
+domain vrf RED name red.example
+domain vrf RED name-server 192.168.128.1
+domain vrf RED name-server 192.168.128.2
+domain vrf RED name-server 192.168.128.3
+end

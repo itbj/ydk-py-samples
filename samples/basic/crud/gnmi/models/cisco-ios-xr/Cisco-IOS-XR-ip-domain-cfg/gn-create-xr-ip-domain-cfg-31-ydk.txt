@@ -1,0 +1,6 @@
+!! IOS XR Configuration version = 6.0.1
+domain vrf RED ipv6 host ruby 2001:db8:a::1
+domain vrf RED ipv6 host flame 2001:db8:a::2
+domain vrf RED ipv6 host crimson 2001:db8:a::3 2001:db8:a::4
+domain vrf RED ipv6 host raspberry 2001:db8:a::5 2001:db8:a::6
+end
