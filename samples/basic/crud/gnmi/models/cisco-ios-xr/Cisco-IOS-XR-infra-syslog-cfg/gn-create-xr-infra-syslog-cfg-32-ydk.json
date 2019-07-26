@@ -1,0 +1,15 @@
+{
+  "Cisco-IOS-XR-infra-syslog-cfg:syslog": {
+    "monitor-logging": {
+      "logging-level": "disable"
+    },
+    "buffered-logging": {
+      "logging-level": "info",
+      "buffer-size": 125000000
+    },
+    "console-logging": {
+      "logging-level": "disable"
+    }
+  }
+}
+

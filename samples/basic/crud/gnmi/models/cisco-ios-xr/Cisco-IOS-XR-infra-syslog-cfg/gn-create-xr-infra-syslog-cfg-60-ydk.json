@@ -1,0 +1,31 @@
+{
+  "Cisco-IOS-XR-infra-syslog-cfg:syslog": {
+    "Cisco-IOS-XR-infra-correlator-cfg:suppression": {
+      "rules": {
+        "rule": [
+          {
+            "name": "RULE1",
+            "applied-to": {
+              "all": [null]
+            },
+            "alarm-causes": {
+              "alarm-cause": [
+                {
+                  "category": "MGBL",
+                  "group": "CONFIG",
+                  "code": "DB_COMMIT"
+                },
+                {
+                  "category": "SECURITY",
+                  "group": "LOGIN",
+                  "code": "AUTHEN_SUCCESS"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+

@@ -1,0 +1,9 @@
+!! IOS XR Configuration version = 6.2.1
+logging suppress rule RULE1
+ alarm MGBL CONFIG DB_COMMIT
+ alarm SECURITY LOGIN AUTHEN_SUCCESS
+!
+logging suppress apply rule RULE1
+ all-of-router
+!
+end

@@ -1,0 +1,41 @@
+{
+  "Cisco-IOS-XR-infra-syslog-cfg:syslog": {
+    "Cisco-IOS-XR-infra-correlator-cfg:correlator": {
+      "buffer-size": 65535,
+      "rules": {
+        "rule": [
+          {
+            "name": "RULE2",
+            "non-stateful": {
+              "timeout-root-cause": 360000,
+              "timeout": 3600000,
+              "non-root-causes": {
+                "non-root-cause": [
+                  {
+                    "category": "PLATFORM",
+                    "group": "ENVMON",
+                    "message-code": "FAN_CLEAR"
+                  },
+                  {
+                    "category": "PLATFORM",
+                    "group": "ENVMON",
+                    "message-code": "FANTRAY_FAIL"
+                  }
+                ]
+              },
+              "root-cause": {
+                "category": "PLATFORM",
+                "group": "ENVMON",
+                "message-code": "FAN_FAIL"
+              }
+            },
+            "applied-to": {
+              "all": [null]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+

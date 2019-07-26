@@ -1,0 +1,8 @@
+!! IOS XR Configuration version = 6.2.1
+logging archive
+ device disk0
+ severity debugging
+ frequency daily
+ archive-size 32
+!
+end

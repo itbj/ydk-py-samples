@@ -1,0 +1,8 @@
+{
+  "Cisco-IOS-XR-infra-syslog-cfg:syslog": {
+    "console-logging": {
+      "logging-level": "disable"
+    }
+  }
+}
+

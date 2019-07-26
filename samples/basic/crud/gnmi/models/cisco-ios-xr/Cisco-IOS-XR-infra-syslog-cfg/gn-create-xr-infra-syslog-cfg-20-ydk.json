@@ -1,0 +1,10 @@
+{
+  "Cisco-IOS-XR-infra-syslog-cfg:syslog-service": {
+    "timestamps": {
+      "log": {
+        "log-timestamp-disable": [null]
+      }
+    }
+  }
+}
+

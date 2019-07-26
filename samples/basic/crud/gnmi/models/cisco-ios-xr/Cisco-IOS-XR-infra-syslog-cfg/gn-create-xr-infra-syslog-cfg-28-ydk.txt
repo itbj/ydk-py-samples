@@ -1,0 +1,4 @@
+!! IOS XR Configuration version = 6.2.1
+service timestamps log datetime localtime msec show-timezone year
+service timestamps debug datetime localtime msec show-timezone year
+end

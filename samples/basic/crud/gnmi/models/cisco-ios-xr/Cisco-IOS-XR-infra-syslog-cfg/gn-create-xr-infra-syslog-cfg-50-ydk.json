@@ -1,0 +1,41 @@
+{
+  "Cisco-IOS-XR-infra-syslog-cfg:syslog": {
+    "logging-facilities": {
+      "facility-level": "local0"
+    },
+    "host-server": {
+      "vrfs": {
+        "vrf": [
+          {
+            "vrf-name": "default",
+            "ipv4s": {
+              "ipv4": [
+                {
+                  "address": "10.0.0.1",
+                  "ipv4-severity-port": {
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "source-interface-table": {
+      "source-interface-values": {
+        "source-interface-value": [
+          {
+            "src-interface-name-value": "Loopback0",
+            "source-interface-vrfs": {
+              "source-interface-vrf": [
+                {
+                  "vrf-name": "default"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

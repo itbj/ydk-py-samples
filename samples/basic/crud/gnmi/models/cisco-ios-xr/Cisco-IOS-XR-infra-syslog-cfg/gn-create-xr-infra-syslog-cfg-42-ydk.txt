@@ -1,0 +1,9 @@
+!! IOS XR Configuration version = 6.2.1
+logging archive
+ device harddisk
+ severity informational
+ file-size 10
+ archive-size 100
+ archive-length 52
+!
+end
