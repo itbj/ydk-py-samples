@@ -1,0 +1,7 @@
+{
+  "Cisco-IOS-XR-man-ems-cfg:grpc": {
+    "enable": [null],
+    "address-family": "ipv6"
+  }
+}
+
