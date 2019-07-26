@@ -1,0 +1,105 @@
+{
+  "Cisco-IOS-XR-telemetry-model-driven-cfg:telemetry-model-driven": {
+    "sensor-groups": {
+      "sensor-group": [
+        {
+          "sensor-group-identifier": "SGROUP1",
+          "sensor-paths": {
+            "sensor-path": [
+              {
+                "telemetry-sensor-path": "Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters"
+              }
+            ]
+          }
+        },
+        {
+          "sensor-group-identifier": "SGROUP2",
+          "sensor-paths": {
+            "sensor-path": [
+              {
+                "telemetry-sensor-path": "Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node/summary"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "subscriptions": {
+      "subscription": [
+        {
+          "subscription-identifier": "SUB1",
+          "sensor-profiles": {
+            "sensor-profile": [
+              {
+                "sensorgroupid": "SGROUP1",
+                "sample-interval": 5000
+              }
+            ]
+          },
+          "destination-profiles": {
+            "destination-profile": [
+              {
+                "destination-id": "DGROUP1"
+              }
+            ]
+          }
+        },
+        {
+          "subscription-identifier": "SUB2",
+          "sensor-profiles": {
+            "sensor-profile": [
+              {
+                "sensorgroupid": "SGROUP2",
+                "sample-interval": 8000
+              }
+            ]
+          },
+          "destination-profiles": {
+            "destination-profile": [
+              {
+                "destination-id": "DGROUP2"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "destination-groups": {
+      "destination-group": [
+        {
+          "destination-id": "DGROUP1",
+          "ipv4-destinations": {
+            "ipv4-destination": [
+              {
+                "ipv4-address": "172.30.8.4",
+                "destination-port": 5432,
+                "encoding": "self-describing-gpb",
+                "protocol": {
+                  "protocol": "grpc",
+                  "tls-hostname": "TLS_HOSTNAME"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "destination-id": "DGROUP2",
+          "ipv4-destinations": {
+            "ipv4-destination": [
+              {
+                "ipv4-address": "172.30.8.11",
+                "destination-port": 9876,
+                "encoding": "self-describing-gpb",
+                "protocol": {
+                  "protocol": "grpc",
+                  "tls-hostname": "TLS_HOSTNAME"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

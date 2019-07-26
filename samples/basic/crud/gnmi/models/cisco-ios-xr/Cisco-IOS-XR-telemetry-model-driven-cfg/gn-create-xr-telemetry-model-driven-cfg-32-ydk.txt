@@ -1,0 +1,11 @@
+!! IOS XR Configuration version = 6.1.2
+telemetry model-driven
+ sensor-group SGROUP1
+  sensor-path Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node/summary
+  sensor-path Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters
+ !
+ subscription SUB1
+  sensor-group-id SGROUP1 sample-interval 30000
+ !
+!
+end
