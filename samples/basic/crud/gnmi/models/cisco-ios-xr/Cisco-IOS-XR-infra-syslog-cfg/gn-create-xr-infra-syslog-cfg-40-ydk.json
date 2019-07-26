@@ -1,0 +1,11 @@
+{
+  "Cisco-IOS-XR-infra-syslog-cfg:syslog": {
+    "archive": {
+      "size": 32,
+      "device": "/disk0:",
+      "frequency": "daily",
+      "severity": "debug"
+    }
+  }
+}
+

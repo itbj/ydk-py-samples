@@ -1,0 +1,57 @@
+{
+  "Cisco-IOS-XR-infra-syslog-cfg:syslog": {
+    "host-name-prefix": "router",
+    "suppress-duplicates": [null],
+    "logging-facilities": {
+      "facility-level": "local0"
+    },
+    "host-server": {
+      "vrfs": {
+        "vrf": [
+          {
+            "vrf-name": "default",
+            "ipv4s": {
+              "ipv4": [
+                {
+                  "address": "10.0.0.1",
+                  "ipv4-severity-port": {
+                    "severity": 6
+                  }
+                },
+                {
+                  "address": "10.0.0.2",
+                  "ipv4-severity-port": {
+                    "severity": 6
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "ipv4": {
+      "tos": {
+        "type": "dscp",
+        "dscp": "cs2"
+      }
+    },
+    "source-interface-table": {
+      "source-interface-values": {
+        "source-interface-value": [
+          {
+            "src-interface-name-value": "Loopback0",
+            "source-interface-vrfs": {
+              "source-interface-vrf": [
+                {
+                  "vrf-name": "default"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+

@@ -1,0 +1,12 @@
+{
+  "Cisco-IOS-XR-infra-syslog-cfg:syslog": {
+    "archive": {
+      "size": 100,
+      "file-size": 10,
+      "device": "/harddisk:",
+      "severity": "informational",
+      "length": 52
+    }
+  }
+}
+

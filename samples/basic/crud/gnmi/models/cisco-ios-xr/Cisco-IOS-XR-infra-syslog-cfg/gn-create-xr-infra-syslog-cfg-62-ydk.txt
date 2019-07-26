@@ -1,0 +1,15 @@
+!! IOS XR Configuration version = 6.2.1
+logging correlator rule RULE2 type nonstateful
+ timeout 360000
+ rootcause PLATFORM ENVMON FAN_FAIL
+ nonrootcause
+  alarm PLATFORM ENVMON FAN_CLEAR
+  alarm PLATFORM ENVMON FANTRAY_FAIL
+ !
+ timeout-rootcause 360000
+!
+logging correlator apply rule RULE2
+ all-of-router
+!
+logging correlator buffer-size 65535
+end

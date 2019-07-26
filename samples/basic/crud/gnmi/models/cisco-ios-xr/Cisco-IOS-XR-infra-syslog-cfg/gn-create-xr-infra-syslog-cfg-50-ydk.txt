@@ -1,0 +1,5 @@
+!! IOS XR Configuration version = 6.2.1
+logging facility local0
+logging 10.0.0.1 vrf default
+logging source-interface Loopback0
+end

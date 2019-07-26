@@ -1,0 +1,23 @@
+{
+  "Cisco-IOS-XR-infra-syslog-cfg:syslog-service": {
+    "timestamps": {
+      "log": {
+        "log-datetime": {
+          "log-datetime-value": {
+            "time-stamp-value": "enable",
+            "msec": "enable"
+          }
+        }
+      },
+      "debug": {
+        "debug-datetime": {
+          "datetime-value": {
+            "time-stamp-value": "enable",
+            "msec": "enable"
+          }
+        }
+      }
+    }
+  }
+}
+

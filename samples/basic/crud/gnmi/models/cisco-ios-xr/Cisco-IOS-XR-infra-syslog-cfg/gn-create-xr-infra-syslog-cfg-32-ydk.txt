@@ -1,0 +1,6 @@
+!! IOS XR Configuration version = 6.2.1
+logging console disable
+logging monitor disable
+logging buffered 125000000
+logging buffered informational
+end

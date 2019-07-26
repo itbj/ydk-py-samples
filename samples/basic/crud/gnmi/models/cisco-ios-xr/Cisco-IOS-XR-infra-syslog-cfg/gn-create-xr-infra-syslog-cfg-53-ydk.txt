@@ -1,0 +1,9 @@
+!! IOS XR Configuration version = 6.2.1
+logging ipv4 dscp cs2
+logging facility local0
+logging 2001:db8::a:1 vrf MGMT-PLANE severity info
+logging 2001:db8::a:2 vrf MGMT-PLANE severity info
+logging source-interface Loopback0
+logging hostnameprefix router
+logging suppress duplicates
+end
