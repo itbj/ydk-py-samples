@@ -1,0 +1,65 @@
+{
+  "Cisco-IOS-XR-ipv4-bgp-cfg:bgp": {
+    "instance": [
+      {
+        "instance-name": "default",
+        "instance-as": [
+          {
+            "as": 0,
+            "four-byte-as": [
+              {
+                "as": 65001,
+                "bgp-running": [null],
+                "default-vrf": {
+                  "bgp-entity": {
+                    "neighbors": {
+                      "neighbor": [
+                        {
+                          "neighbor-address": "2001:db8:e:1::1",
+                          "neighbor-group-add-member": "EBGP"
+                        }
+                      ]
+                    },
+                    "neighbor-groups": {
+                      "neighbor-group": [
+                        {
+                          "neighbor-group-name": "EBGP",
+                          "create": [null],
+                          "neighbor-group-afs": {
+                            "neighbor-group-af": [
+                              {
+                                "af-name": "ipv6-unicast",
+                                "activate": [null],
+                                "route-policy-in": "POLICY3",
+                                "route-policy-out": "POLICY1"
+                              }
+                            ]
+                          },
+                          "remote-as": {
+                            "as-xx": 0,
+                            "as-yy": 65002
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "global": {
+                    "global-afs": {
+                      "global-af": [
+                        {
+                          "af-name": "ipv6-unicast",
+                          "enable": [null]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+
