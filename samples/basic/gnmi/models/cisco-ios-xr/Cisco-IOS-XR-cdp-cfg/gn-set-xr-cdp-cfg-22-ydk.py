@@ -85,7 +85,7 @@ if __name__ == "__main__":
     config_cdp(cdp)  # add object configuration
 
     # set configuration on gNMI device
-    cdp.yfilter = YFilter.update
+    cdp.yfilter = YFilter.replace
     gnmi.set(provider, cdp)
 
     exit()
