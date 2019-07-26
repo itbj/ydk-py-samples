@@ -1,0 +1,4 @@
+!! IOS XR Configuration version = 6.2.1
+arp vrf default 172.16.0.1 5254.0028.8988 ARPA
+arp vrf default 172.16.0.4 5254.007d.8f8f ARPA
+end

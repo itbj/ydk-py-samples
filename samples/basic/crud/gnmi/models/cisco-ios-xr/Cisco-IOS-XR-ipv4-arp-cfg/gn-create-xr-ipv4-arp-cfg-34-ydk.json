@@ -1,0 +1,28 @@
+{
+  "Cisco-IOS-XR-ipv4-arp-cfg:arpgmp": {
+    "vrf": [
+      {
+        "vrf-name": "RED",
+        "entries": {
+          "entry": [
+            {
+              "address": "172.16.0.1",
+              "mac-address": "52:54:00:28:89:88",
+              "encapsulation": "arpa",
+              "entry-type": "static",
+              "interface": "GigabitEthernet0/0/0/0"
+            },
+            {
+              "address": "172.16.0.4",
+              "mac-address": "52:54:00:7d:8f:8f",
+              "encapsulation": "arpa",
+              "entry-type": "static",
+              "interface": "GigabitEthernet0/0/0/1"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+
