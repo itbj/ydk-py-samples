@@ -1,0 +1,10 @@
+!! IOS XR Configuration version = 6.1.1
+rsvp
+ interface GigabitEthernet0/0/0/0
+  bandwidth rdm 1000000 sub-pool 250000
+ !
+ interface GigabitEthernet0/0/0/1
+  bandwidth rdm 1000000 sub-pool 250000
+ !
+!
+end

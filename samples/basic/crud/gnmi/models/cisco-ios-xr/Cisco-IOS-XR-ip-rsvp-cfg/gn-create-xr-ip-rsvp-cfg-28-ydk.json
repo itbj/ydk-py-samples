@@ -1,0 +1,29 @@
+{
+  "Cisco-IOS-XR-ip-rsvp-cfg:rsvp": {
+    "interfaces": {
+      "interface": [
+        {
+          "name": "GigabitEthernet0/0/0/0",
+          "bandwidth": {
+            "mam": {
+              "max-resv-bandwidth": 1000000,
+              "bc0-bandwidth": 600000,
+              "bc1-bandwidth": 400000
+            }
+          }
+        },
+        {
+          "name": "GigabitEthernet0/0/0/1",
+          "bandwidth": {
+            "mam": {
+              "max-resv-bandwidth": 1000000,
+              "bc0-bandwidth": 600000,
+              "bc1-bandwidth": 400000
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+

@@ -1,0 +1,35 @@
+{
+  "Cisco-IOS-XR-ip-rsvp-cfg:rsvp": {
+    "interfaces": {
+      "interface": [
+        {
+          "name": "GigabitEthernet0/0/0/0",
+          "bandwidth": {
+            "rdm": {
+              "bc0-bandwidth": 100,
+              "bc1-bandwidth": 25,
+              "rdm-keyword": "rdm",
+              "bc0-keyword": "not-specified",
+              "bc1-keyword": "sub-pool",
+              "bandwidth-mode": "percentage"
+            }
+          }
+        },
+        {
+          "name": "GigabitEthernet0/0/0/1",
+          "bandwidth": {
+            "rdm": {
+              "bc0-bandwidth": 100,
+              "bc1-bandwidth": 25,
+              "rdm-keyword": "rdm",
+              "bc0-keyword": "not-specified",
+              "bc1-keyword": "sub-pool",
+              "bandwidth-mode": "percentage"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
