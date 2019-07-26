@@ -1,0 +1,13 @@
+!! IOS XR Configuration version = 6.1.1
+vrf RED
+ address-family ipv6 unicast
+  import route-target
+   65172:1
+  !
+  export route-target
+   65172:1
+  !
+ !
+!
+end
+
