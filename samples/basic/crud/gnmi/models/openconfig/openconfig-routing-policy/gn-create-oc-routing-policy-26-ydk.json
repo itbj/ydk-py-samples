@@ -1,0 +1,111 @@
+{
+  "openconfig-routing-policy:routing-policy": {
+    "defined-sets": {
+      "prefix-sets": {
+        "prefix-set": [
+          {
+            "prefix-set-name": "PREFIX-SET1",
+            "config": {
+              "prefix-set-name": "PREFIX-SET1"
+            },
+            "prefixes": {
+              "prefix": [
+                {
+                  "ip-prefix": "10.0.0.0/16",
+                  "masklength-range": "24..32",
+                  "config": {
+                    "ip-prefix": "10.0.0.0/16",
+                    "masklength-range": "24..32"
+                  }
+                },
+                {
+                  "ip-prefix": "172.0.0.0/8",
+                  "masklength-range": "16..32",
+                  "config": {
+                    "ip-prefix": "172.0.0.0/8",
+                    "masklength-range": "16..32"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "openconfig-bgp-policy:bgp-defined-sets": {
+        "community-sets": {
+          "community-set": [
+            {
+              "community-set-name": "COMMUNITY-SET2",
+              "config": {
+                "community-set-name": "COMMUNITY-SET2",
+                "community-member": [
+                  "65172:17001"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "policy-definitions": {
+      "policy-definition": [
+        {
+          "name": "POLICY3",
+          "config": {
+            "name": "POLICY3"
+          },
+          "statements": {
+            "statement": [
+              {
+                "name": "prefix-set1",
+                "config": {
+                  "name": "prefix-set1"
+                },
+                "conditions": {
+                  "match-prefix-set": {
+                    "config": {
+                      "prefix-set": "PREFIX-SET1",
+                      "match-set-options": "ANY"
+                    }
+                  }
+                },
+                "actions": {
+                  "config": {
+                    "accept-route": [null]
+                  },
+                  "openconfig-bgp-policy:bgp-actions": {
+                    "config": {
+                      "set-local-pref": 1000
+                    },
+                    "set-community": {
+                      "config": {
+                        "options": "REPLACE"
+                      },
+                      "reference": {
+                        "config": {
+                          "community-set-ref": "COMMUNITY-SET2"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "name": "reject",
+                "config": {
+                  "name": "reject"
+                },
+                "actions": {
+                  "config": {
+                    "reject-route": [null]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

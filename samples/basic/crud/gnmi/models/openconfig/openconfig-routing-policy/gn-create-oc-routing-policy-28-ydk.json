@@ -1,0 +1,34 @@
+{
+  "openconfig-routing-policy:routing-policy": {
+    "policy-definitions": {
+      "policy-definition": [
+        {
+          "name": "POLICY4",
+          "config": {
+            "name": "POLICY4"
+          },
+          "statements": {
+            "statement": [
+              {
+                "name": "next-hop-self",
+                "config": {
+                  "name": "next-hop-self"
+                },
+                "actions": {
+                  "config": {
+                    "accept-route": [null]
+                  },
+                  "openconfig-bgp-policy:bgp-actions": {
+                    "config": {
+                      "set-next-hop": "SELF"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

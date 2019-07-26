@@ -1,0 +1,107 @@
+{
+  "openconfig-routing-policy:routing-policy": {
+    "defined-sets": {
+      "openconfig-bgp-policy:bgp-defined-sets": {
+        "community-sets": {
+          "community-set": [
+            {
+              "community-set-name": "COMMUNITY-SET1",
+              "config": {
+                "community-set-name": "COMMUNITY-SET1",
+                "community-member": [
+                  "ios-regex '^65172:17...$'",
+                  "65172:16001"
+                ]
+              }
+            }
+          ]
+        },
+        "as-path-sets": {
+          "as-path-set": [
+            {
+              "as-path-set-name": "AS-PATH-SET1",
+              "config": {
+                "as-path-set-name": "AS-PATH-SET1",
+                "as-path-set-member": [
+                  "^65172"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "policy-definitions": {
+      "policy-definition": [
+        {
+          "name": "POLICY2",
+          "config": {
+            "name": "POLICY2"
+          },
+          "statements": {
+            "statement": [
+              {
+                "name": "community-set1",
+                "config": {
+                  "name": "community-set1"
+                },
+                "conditions": {
+                  "openconfig-bgp-policy:bgp-conditions": {
+                    "match-community-set": {
+                      "config": {
+                        "community-set": "COMMUNITY-SET1",
+                        "match-set-options": "ALL"
+                      }
+                    }
+                  }
+                },
+                "actions": {
+                  "config": {
+                    "accept-route": [null]
+                  }
+                }
+              },
+              {
+                "name": "as-path-set1",
+                "config": {
+                  "name": "as-path-set1"
+                },
+                "conditions": {
+                  "openconfig-bgp-policy:bgp-conditions": {
+                    "match-as-path-set": {
+                      "config": {
+                        "as-path-set": "AS-PATH-SET1",
+                        "match-set-options": "ANY"
+                      }
+                    }
+                  }
+                },
+                "actions": {
+                  "config": {
+                    "accept-route": [null]
+                  },
+                  "openconfig-bgp-policy:bgp-actions": {
+                    "config": {
+                      "set-local-pref": 50
+                    }
+                  }
+                }
+              },
+              {
+                "name": "reject route",
+                "config": {
+                  "name": "reject route"
+                },
+                "actions": {
+                  "config": {
+                    "reject-route": [null]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
