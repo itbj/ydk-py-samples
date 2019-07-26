@@ -1,0 +1,3 @@
+locale country NG
+locale language en
+end
