@@ -1,0 +1,11 @@
+{
+  "Cisco-IOS-XR-man-ems-cfg:grpc": {
+    "enable": [null],
+    "max-request-per-user": 8,
+    "max-request-total": 32,
+    "tls": {
+      "enable": [null]
+    }
+  }
+}
+

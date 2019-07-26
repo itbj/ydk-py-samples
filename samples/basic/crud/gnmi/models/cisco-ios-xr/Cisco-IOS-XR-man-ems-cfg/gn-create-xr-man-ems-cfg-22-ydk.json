@@ -1,0 +1,9 @@
+{
+  "Cisco-IOS-XR-man-ems-cfg:grpc": {
+    "enable": [null],
+    "tls": {
+      "enable": [null]
+    }
+  }
+}
+
