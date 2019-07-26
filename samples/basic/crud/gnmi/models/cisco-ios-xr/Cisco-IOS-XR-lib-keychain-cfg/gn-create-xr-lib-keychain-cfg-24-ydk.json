@@ -1,0 +1,60 @@
+{
+  "Cisco-IOS-XR-lib-keychain-cfg:keychains": {
+    "keychain": [
+      {
+        "chain-name": "CHAIN3",
+        "macsec-keychain": {
+          "macsec-keys": {
+            "macsec-key": [
+              {
+                "key-id": "10",
+                "macsec-lifetime": {
+                  "start-hour": 0,
+                  "start-minutes": 0,
+                  "start-seconds": 0,
+                  "start-date": 1,
+                  "start-month": "jan",
+                  "start-year": 2017,
+                  "end-hour": 23,
+                  "end-minutes": 59,
+                  "end-seconds": 59,
+                  "end-date": 7,
+                  "end-month": "jan",
+                  "end-year": 2017
+                },
+                "macsec-key-string": {
+                  "string": "01435756085F5359761C1F5B4A5142445C5C557878707D6562724255455754000E0802065D574D400E0806010101015D0C56560A04504650530B5A545C7519185E",
+                  "cryptographic-algorithm": "aes-256-cmac",
+                  "encryption-type": "type7"
+                }
+              },
+              {
+                "key-id": "20",
+                "macsec-lifetime": {
+                  "start-hour": 23,
+                  "start-minutes": 0,
+                  "start-seconds": 0,
+                  "start-date": 7,
+                  "start-month": "jan",
+                  "start-year": 2017,
+                  "end-hour": 23,
+                  "end-minutes": 59,
+                  "end-seconds": 59,
+                  "end-date": 13,
+                  "end-month": "jan",
+                  "end-year": 2017
+                },
+                "macsec-key-string": {
+                  "string": "04035C505A751F1C58415241475F5F567B73737E66617141564E5457030D0B010556544E430D0B05020A02025E0F5555090F5345535008595757761A1B5D4A5746",
+                  "cryptographic-algorithm": "aes-256-cmac",
+                  "encryption-type": "type7"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
+
