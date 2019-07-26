@@ -1,0 +1,15 @@
+IS-IS DEFAULT Level-1 adjacencies:
+System Id      Interface        SNPA           State Hold Changed  NSF IPv4 IPv6
+                                                                       BFD  BFD
+ler1           Gi0/0/0/1        0000.0000.0000 Up    27   0:34:38  Yes None None
+lsr1           Gi0/0/0/2        0000.0000.0000 Up    21   0:34:38  Yes None None
+
+Total neighbor count: 2
+
+IS-IS DEFAULT Level-2 adjacencies:
+System Id      Interface        SNPA           State Hold Changed  NSF IPv4 IPv6
+                                                                       BFD  BFD
+ler2           Gi0/0/0/0        0000.0000.0000 Up    22   0:34:38  Yes None None
+ler1           Gi0/0/0/2        0000.0000.0000 Up    21   0:34:38  Yes None None
+
+Total neighbor count: 2

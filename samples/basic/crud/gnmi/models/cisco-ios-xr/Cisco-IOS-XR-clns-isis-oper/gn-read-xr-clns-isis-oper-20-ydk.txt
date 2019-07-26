@@ -1,0 +1,7 @@
+IS-IS DEFAULT neighbors:
+System Id      Interface        SNPA           State Holdtime Type IETF-NSF
+lsr2           Gi0/0/0/1        0000.0000.0000 Up    27       L2      Y    
+lsr1           Gi0/0/0/0        0000.0000.0000 Up    29       L2      Y    
+
+Total neighbor count: 2
+
