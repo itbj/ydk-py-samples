@@ -1,0 +1,10 @@
+!! IOS XR Configuration version = 6.1.1
+rsvp
+ interface GigabitEthernet0/0/0/0
+  bandwidth mam max-reservable-bw 1000000 bc0 600000 bc1 400000
+ !
+ interface GigabitEthernet0/0/0/1
+  bandwidth mam max-reservable-bw 1000000 bc0 600000 bc1 400000
+ !
+!
+end
