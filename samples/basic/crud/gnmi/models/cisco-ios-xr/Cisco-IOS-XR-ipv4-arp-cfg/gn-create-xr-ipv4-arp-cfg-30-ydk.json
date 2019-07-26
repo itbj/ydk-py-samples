@@ -1,0 +1,20 @@
+{
+  "Cisco-IOS-XR-ipv4-arp-cfg:arpgmp": {
+    "vrf": [
+      {
+        "vrf-name": "default",
+        "entries": {
+          "entry": [
+            {
+              "address": "172.16.0.1",
+              "mac-address": "52:54:00:28:89:88",
+              "encapsulation": "arpa",
+              "entry-type": "static"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+

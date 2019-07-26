@@ -1,0 +1,8 @@
+{
+  "Cisco-IOS-XR-ipv4-arp-cfg:arp": {
+    "max-entries": 1000,
+    "inner-cos": 4,
+    "outer-cos": 5
+  }
+}
+

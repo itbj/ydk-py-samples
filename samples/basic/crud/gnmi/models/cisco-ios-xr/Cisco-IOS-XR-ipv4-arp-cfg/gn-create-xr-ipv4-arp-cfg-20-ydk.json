@@ -1,0 +1,6 @@
+{
+  "Cisco-IOS-XR-ipv4-arp-cfg:arp": {
+    "outer-cos": 5
+  }
+}
+

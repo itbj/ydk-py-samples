@@ -1,0 +1,5 @@
+!! IOS XR Configuration version = 6.2.1
+arp inner-cos 4
+arp outer-cos 5
+arp max-entries 1000
+end
