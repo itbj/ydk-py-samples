@@ -1,0 +1,26 @@
+{
+  "Cisco-IOS-XR-ip-ntp-cfg:ntp": {
+    "update-calendar": [null],
+    "peer-vrfs": {
+      "peer-vrf": [
+        {
+          "vrf-name": "default",
+          "peer-ipv4s": {
+            "peer-ipv4": [
+              {
+                "address-ipv4": "10.0.0.1",
+                "peer-type-ipv4": [
+                  {
+                    "peer-type": "server",
+                    "source-interface": "Loopback0"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

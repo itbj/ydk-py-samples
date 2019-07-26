@@ -1,0 +1,7 @@
+!! IOS XR Configuration version = 6.1.1
+ntp
+ server vrf MGMT-PLANE ipv6 2001:db8::a:1 version 4 prefer iburst source Loopback0
+ update-calendar
+!
+end
+

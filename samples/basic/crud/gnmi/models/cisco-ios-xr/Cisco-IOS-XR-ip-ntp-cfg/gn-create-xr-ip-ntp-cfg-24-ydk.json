@@ -1,0 +1,29 @@
+{
+  "Cisco-IOS-XR-ip-ntp-cfg:ntp": {
+    "update-calendar": [null],
+    "peer-vrfs": {
+      "peer-vrf": [
+        {
+          "vrf-name": "MGMT-PLANE",
+          "peer-ipv4s": {
+            "peer-ipv4": [
+              {
+                "address-ipv4": "10.0.0.1",
+                "peer-type-ipv4": [
+                  {
+                    "peer-type": "server",
+                    "ntp-version": 4,
+                    "preferred-peer": [null],
+                    "source-interface": "Loopback0",
+                    "iburst": [null]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
