@@ -1,0 +1,32 @@
+{
+  "Cisco-IOS-XR-ipv4-acl-cfg:ipv4-acl-and-prefix-list": {
+    "accesses": {
+      "access": [
+        {
+          "access-list-name": "ACL1",
+          "access-list-entries": {
+            "access-list-entry": [
+              {
+                "sequence-number": 10,
+                "remark": "allow one host"
+              },
+              {
+                "sequence-number": 20,
+                "grant": "permit",
+                "source-network": {
+                  "source-address": "172.31.255.1",
+                  "source-wild-card-bits": "0.0.0.0"
+                }
+              },
+              {
+                "sequence-number": 30,
+                "grant": "deny"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

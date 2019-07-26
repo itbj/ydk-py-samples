@@ -1,0 +1,26 @@
+{
+  "Cisco-IOS-XR-ipv4-acl-cfg:ipv4-acl-and-prefix-list": {
+    "prefixes": {
+      "prefix": [
+        {
+          "prefix-list-name": "PREFIX-LIST1",
+          "prefix-list-entries": {
+            "prefix-list-entry": [
+              {
+                "sequence-number": 10,
+                "remark": "allow single prefix"
+              },
+              {
+                "sequence-number": 20,
+                "grant": "permit",
+                "prefix": "172.16.0.0",
+                "netmask": "255.255.0.0"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

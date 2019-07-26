@@ -1,0 +1,67 @@
+{
+  "Cisco-IOS-XR-ipv4-acl-cfg:ipv4-acl-and-prefix-list": {
+    "accesses": {
+      "access": [
+        {
+          "access-list-name": "ACL3",
+          "access-list-entries": {
+            "access-list-entry": [
+              {
+                "sequence-number": 10,
+                "remark": "log access attempts"
+              },
+              {
+                "sequence-number": 20,
+                "grant": "deny",
+                "log-option": "log-input",
+                "source-network": {
+                  "source-address": "173.31.1.0",
+                  "source-prefix-length": 24
+                },
+                "destination-network": {
+                  "destination-address": "172.16.0.0",
+                  "destination-prefix-length": 16
+                }
+              },
+              {
+                "sequence-number": 30,
+                "grant": "deny",
+                "log-option": "log-input",
+                "source-network": {
+                  "source-address": "172.31.2.0",
+                  "source-prefix-length": 24
+                },
+                "destination-network": {
+                  "destination-address": "172.16.0.0",
+                  "destination-prefix-length": 16
+                },
+                "dscp": {
+                  "dscp-min": "ef"
+                }
+              },
+              {
+                "sequence-number": 40,
+                "grant": "deny",
+                "counter-name": "ACL3-COUNTER",
+                "log-option": "log-input",
+                "source-network": {
+                  "source-address": "172.31.3.0",
+                  "source-prefix-length": 24
+                },
+                "destination-network": {
+                  "destination-address": "172.16.0.0",
+                  "destination-prefix-length": 16
+                }
+              },
+              {
+                "sequence-number": 50,
+                "grant": "permit"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

@@ -1,0 +1,9 @@
+!! IOS XR Configuration version = 6.2.1
+ipv4 access-list ACL3
+ 10 remark log access attempts
+ 20 deny ipv4 172.31.1.0/24 172.16.0.0/16 log-input
+ 30 deny ipv4 172.31.2.0/24 172.16.0.0/16 dscp ef log-input
+ 40 deny ipv4 172.31.3.0/24 172.16.0.0/16 log-input counter ACL3-COUNTER
+ 50 permit ipv4 any any
+!
+end
