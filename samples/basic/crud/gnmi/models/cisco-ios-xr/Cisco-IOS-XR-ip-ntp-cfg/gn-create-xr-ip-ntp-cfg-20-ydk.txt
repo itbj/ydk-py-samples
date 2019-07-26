@@ -1,0 +1,6 @@
+!! IOS XR Configuration version = 6.1.1
+ntp
+ server 10.0.0.1
+!
+end
+

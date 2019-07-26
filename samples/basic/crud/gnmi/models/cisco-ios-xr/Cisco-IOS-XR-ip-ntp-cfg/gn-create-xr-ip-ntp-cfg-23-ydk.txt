@@ -1,0 +1,5 @@
+ntp
+ server ipv6 2001:db8::a:1 source Loopback0
+ update-calendar
+!
+end

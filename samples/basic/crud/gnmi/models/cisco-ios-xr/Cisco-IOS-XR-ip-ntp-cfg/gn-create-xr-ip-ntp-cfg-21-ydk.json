@@ -1,0 +1,24 @@
+{
+  "Cisco-IOS-XR-ip-ntp-cfg:ntp": {
+    "peer-vrfs": {
+      "peer-vrf": [
+        {
+          "vrf-name": "default",
+          "peer-ipv6s": {
+            "peer-ipv6": [
+              {
+                "address-ipv6": "2001:db8::a:1",
+                "peer-type-ipv6": [
+                  {
+                    "peer-type": "server"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
