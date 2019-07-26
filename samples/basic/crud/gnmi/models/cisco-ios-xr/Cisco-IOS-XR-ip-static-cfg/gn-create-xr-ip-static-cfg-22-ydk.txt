@@ -1,0 +1,7 @@
+router static
+ address-family ipv4 unicast
+  172.16.0.0/16 Null0
+ !
+!
+end
+

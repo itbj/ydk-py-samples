@@ -1,0 +1,7 @@
+router static
+ address-family ipv6 unicast
+  2001:db8:a::/64 Null0
+ !
+!
+end
+
