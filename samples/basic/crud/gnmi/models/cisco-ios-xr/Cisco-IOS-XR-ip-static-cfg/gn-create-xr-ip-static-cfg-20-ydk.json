@@ -1,0 +1,30 @@
+{
+  "Cisco-IOS-XR-ip-static-cfg:router-static": {
+    "default-vrf": {
+      "address-family": {
+        "vrfipv4": {
+          "vrf-unicast": {
+            "vrf-prefixes": {
+              "vrf-prefix": [
+                {
+                  "prefix": "0.0.0.0",
+                  "prefix-length": 0,
+                  "vrf-route": {
+                    "vrf-next-hop-table": {
+                      "vrf-next-hop-next-hop-address": [
+                        {
+                          "next-hop-address": "172.16.1.3"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
