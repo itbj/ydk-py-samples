@@ -1,0 +1,4 @@
+!! IOS XR Configuration version = 6.1.1
+hostname Router
+end
+
