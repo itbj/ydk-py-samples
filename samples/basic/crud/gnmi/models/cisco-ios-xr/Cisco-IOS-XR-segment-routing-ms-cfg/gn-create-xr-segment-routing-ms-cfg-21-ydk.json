@@ -1,0 +1,16 @@
+{
+  "Cisco-IOS-XR-segment-routing-ms-cfg:sr": {
+    "mappings": {
+      "mapping": [
+        {
+          "af": "ipv6",
+          "ip": "2001:db8::ff:1",
+          "mask": 128,
+          "sid-start": 4061,
+          "sid-range": 1
+        }
+      ]
+    }
+  }
+}
+
