@@ -1,0 +1,8 @@
+{
+  "Cisco-IOS-XR-cdp-cfg:cdp": {
+    "timer": 15,
+    "enable": true,
+    "hold-time": 60
+  }
+}
+

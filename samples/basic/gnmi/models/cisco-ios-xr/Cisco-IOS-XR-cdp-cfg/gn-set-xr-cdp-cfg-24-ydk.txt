@@ -1,0 +1,5 @@
+cdp timer 15
+cdp
+cdp log adjacency changes
+cdp holdtime 60
+end
