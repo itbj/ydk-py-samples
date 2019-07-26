@@ -1,0 +1,11 @@
+!! IOS XR Configuration version = 6.1.2
+segment-routing
+ mapping-server
+  prefix-sid-map
+   address-family ipv6
+    2001:db8::ff:1/128 4061 range 1
+   !
+  !
+ !
+!
+end

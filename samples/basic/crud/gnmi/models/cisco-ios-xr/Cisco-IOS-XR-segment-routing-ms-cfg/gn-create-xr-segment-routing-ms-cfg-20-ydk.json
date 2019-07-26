@@ -1,0 +1,16 @@
+{
+  "Cisco-IOS-XR-segment-routing-ms-cfg:sr": {
+    "mappings": {
+      "mapping": [
+        {
+          "af": "ipv4",
+          "ip": "172.16.255.1",
+          "mask": 32,
+          "sid-start": 4041,
+          "sid-range": 1
+        }
+      ]
+    }
+  }
+}
+
