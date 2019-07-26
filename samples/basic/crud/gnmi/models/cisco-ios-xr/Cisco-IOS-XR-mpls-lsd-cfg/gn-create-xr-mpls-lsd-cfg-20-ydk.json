@@ -1,0 +1,6 @@
+{
+  "Cisco-IOS-XR-mpls-lsd-cfg:mpls-lsd": {
+    "mpls-ip-ttl-propagate-disable": "all"
+  }
+}
+
