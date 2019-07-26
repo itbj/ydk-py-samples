@@ -1,0 +1,30 @@
+{
+  "openconfig-routing-policy:routing-policy": {
+    "policy-definitions": {
+      "policy-definition": [
+        {
+          "name": "POLICY1",
+          "config": {
+            "name": "POLICY1"
+          },
+          "statements": {
+            "statement": [
+              {
+                "name": "accept route",
+                "config": {
+                  "name": "accept route"
+                },
+                "actions": {
+                  "config": {
+                    "accept-route": [null]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
