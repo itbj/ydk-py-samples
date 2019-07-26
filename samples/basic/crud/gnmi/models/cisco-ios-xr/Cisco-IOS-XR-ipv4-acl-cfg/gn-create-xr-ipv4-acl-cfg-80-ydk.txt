@@ -1,0 +1,6 @@
+!! IOS XR Configuration version = 6.2.1
+ipv4 prefix-list PREFIX-LIST1
+ 10 remark allow single prefix
+ 20 permit 172.16.0.0/16
+!
+end

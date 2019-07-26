@@ -1,0 +1,9 @@
+{
+  "Cisco-IOS-XR-ipv4-acl-cfg:ipv4-acl-and-prefix-list": {
+    "log-update": {
+      "threshold": 5,
+      "rate": 10
+    }
+  }
+}
+

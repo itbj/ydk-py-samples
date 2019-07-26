@@ -1,0 +1,4 @@
+!! IOS XR Configuration version = 6.2.1
+ipv4 access-list log-update rate 10
+ipv4 access-list log-update threshold 5
+end
