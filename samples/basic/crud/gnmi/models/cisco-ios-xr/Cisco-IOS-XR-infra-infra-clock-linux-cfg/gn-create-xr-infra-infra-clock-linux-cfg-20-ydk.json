@@ -1,0 +1,9 @@
+{
+  "Cisco-IOS-XR-infra-infra-clock-linux-cfg:clock": {
+    "time-zone": {
+      "time-zone-name": "PST",
+      "area-name": "PST8PDT"
+    }
+  }
+}
+
