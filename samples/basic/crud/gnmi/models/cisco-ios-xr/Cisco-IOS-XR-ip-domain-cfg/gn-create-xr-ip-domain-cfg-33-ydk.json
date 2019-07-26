@@ -1,0 +1,29 @@
+{
+  "Cisco-IOS-XR-ip-domain-cfg:ip-domain": {
+    "vrfs": {
+      "vrf": [
+        {
+          "vrf-name": "RED",
+          "name": "red.example",
+          "servers": {
+            "server": [
+              {
+                "order": 0,
+                "server-address": "2001:db8:800a::1"
+              },
+              {
+                "order": 1,
+                "server-address": "2001:db8:800a::2"
+              },
+              {
+                "order": 2,
+                "server-address": "2001:db8:800a::3"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

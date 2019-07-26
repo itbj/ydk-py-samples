@@ -1,0 +1,6 @@
+!! IOS XR Configuration version = 6.0.1
+domain ipv6 host east 2001:db8::1
+domain ipv6 host west 2001:db8::2
+domain ipv6 host north 2001:db8::3 2001:db8::4
+domain ipv6 host south 2001:db8::5 2001:db8::6
+end

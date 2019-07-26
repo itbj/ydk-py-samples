@@ -1,0 +1,42 @@
+{
+  "Cisco-IOS-XR-ip-domain-cfg:ip-domain": {
+    "vrfs": {
+      "vrf": [
+        {
+          "vrf-name": "RED",
+          "ipv4-hosts": {
+            "ipv4-host": [
+              {
+                "host-name": "ruby",
+                "address": [
+                  "192.168.0.1"
+                ]
+              },
+              {
+                "host-name": "flame",
+                "address": [
+                  "192.168.0.2"
+                ]
+              },
+              {
+                "host-name": "crimson",
+                "address": [
+                  "192.168.0.3",
+                  "192.168.0.4"
+                ]
+              },
+              {
+                "host-name": "raspberry",
+                "address": [
+                  "192.168.0.5",
+                  "192.168.0.6"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

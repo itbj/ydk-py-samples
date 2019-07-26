@@ -1,0 +1,8 @@
+!! IOS XR Configuration version = 6.1.1
+domain vrf RED list rouge.example
+domain vrf RED list vermelho.example
+domain vrf RED list rojo.example
+domain vrf RED name-server 2001:db8:800a::1
+domain vrf RED name-server 2001:db8:800a::2
+domain vrf RED name-server 2001:db8:800a::3
+end
