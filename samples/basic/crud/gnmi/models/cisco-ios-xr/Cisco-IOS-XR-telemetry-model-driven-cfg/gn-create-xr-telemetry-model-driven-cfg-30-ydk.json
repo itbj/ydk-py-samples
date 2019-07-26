@@ -1,0 +1,34 @@
+{
+  "Cisco-IOS-XR-telemetry-model-driven-cfg:telemetry-model-driven": {
+    "sensor-groups": {
+      "sensor-group": [
+        {
+          "sensor-group-identifier": "SGROUP1",
+          "sensor-paths": {
+            "sensor-path": [
+              {
+                "telemetry-sensor-path": "Cisco-IOS-XR-infra-statsd-oper:infra-statistics/interfaces/interface/latest/generic-counters"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "subscriptions": {
+      "subscription": [
+        {
+          "subscription-identifier": "SUB1",
+          "sensor-profiles": {
+            "sensor-profile": [
+              {
+                "sensorgroupid": "SGROUP1",
+                "sample-interval": 30000
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
