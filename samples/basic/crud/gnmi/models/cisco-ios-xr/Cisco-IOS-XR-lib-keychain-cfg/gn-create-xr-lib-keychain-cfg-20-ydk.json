@@ -1,0 +1,33 @@
+{
+  "Cisco-IOS-XR-lib-keychain-cfg:keychains": {
+    "keychain": [
+      {
+        "chain-name": "CHAIN1",
+        "macsec-keychain": {
+          "macsec-keys": {
+            "macsec-key": [
+              {
+                "key-id": "10",
+                "macsec-lifetime": {
+                  "start-hour": 0,
+                  "start-minutes": 0,
+                  "start-seconds": 0,
+                  "start-date": 1,
+                  "start-month": "jan",
+                  "start-year": 2017,
+                  "infinite-flag": true
+                },
+                "macsec-key-string": {
+                  "string": "101E584B5643475D5B547B79777C6663754356445055030F0F03055C504C430F0F",
+                  "cryptographic-algorithm": "aes-128-cmac",
+                  "encryption-type": "type7"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
+
