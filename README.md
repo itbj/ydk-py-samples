@@ -1,4 +1,4 @@
-#300-535 20200725T1407 BJ
+# 300-535 20200725T1407 BJ
 # Sample Apps for YDK-Py
 This repository provides a collection of sample applications that use [YDK-Py](https://github.com/CiscoDevNet/ydk-py) for network programmability.  YDK-Py is the Python package for the Cisco YANG development kit (YDK) which provides model-driven APIs generated from a variety of YANG models.  
 
@@ -127,4 +127,11 @@ $ vagrant box update
 ```
 
 ## Documentation and Support
-Read the [API documentation](http://ydk.cisco.com/py/docs/) for details on how to use the API and specific models.  For support, join the [YDK community](https://communities.cisco.com/community/developer/ydk) to connect with other users and with the makers of YDK
+Read the [API documentation](http://ydk.cisco.com/py/docs/) for details on how to use the API and specific models.  For support, join the [YDK community](https://communities.cisco.com/community/developer/ydk) to connect with other users and with the makers of YDK  
+## URLs  
+http://ydk.cisco.com/py/docs/api/services/crud_service.html  
+https://developer.cisco.com/codeexchange/github/repo/CiscoDevNet/ydk-gen/  
+https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2018/pdf/BRKDEV-2632.pdf  
+
+
+
